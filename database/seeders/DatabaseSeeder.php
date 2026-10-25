@@ -25,12 +25,48 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // 1. Admin User
-        $admin = User::firstOrCreate(
-            ['email' => 'admin@thaipos.com'],
+        // 1. Staff Users with Roles
+        User::updateOrCreate(
+            ['email' => 'admin@thaiglass.com'],
             [
-                'name' => 'Aluminium Shop Admin',
+                'name' => 'Md. Borhan Uddin (মালিক)',
                 'password' => Hash::make('password'),
+                'role' => 'admin',
+                'phone' => '01712-345678',
+                'is_active' => true,
+            ]
+        );
+
+        User::updateOrCreate(
+            ['email' => 'manager@thaiglass.com'],
+            [
+                'name' => 'তারেক মাহমুদ (শপ ম্যানেজার)',
+                'password' => Hash::make('password'),
+                'role' => 'manager',
+                'phone' => '01812-345678',
+                'is_active' => true,
+            ]
+        );
+
+        User::updateOrCreate(
+            ['email' => 'cashier@thaiglass.com'],
+            [
+                'name' => 'তানভীর আহমেদ (পিওএস ক্যাশিয়ার)',
+                'password' => Hash::make('password'),
+                'role' => 'cashier',
+                'phone' => '01912-345678',
+                'is_active' => true,
+            ]
+        );
+
+        User::updateOrCreate(
+            ['email' => 'storekeeper@thaiglass.com'],
+            [
+                'name' => 'রফিকুল ইসলাম (গোডাউন ইন-চার্জ)',
+                'password' => Hash::make('password'),
+                'role' => 'storekeeper',
+                'phone' => '01612-345678',
+                'is_active' => true,
             ]
         );
 

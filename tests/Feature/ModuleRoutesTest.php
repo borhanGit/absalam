@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\User;
 use Database\Seeders\DatabaseSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -16,8 +17,11 @@ class ModuleRoutesTest extends TestCase
         $this->seed(DatabaseSeeder::class);
     }
 
-    public function test_all_15_modules_render_successfully(): void
+    public function test_all_modules_render_successfully(): void
     {
+        $admin = User::where('email', 'admin@thaiglass.com')->first();
+        $this->actingAs($admin);
+
         $routes = [
             '/',
             '/dashboard',
@@ -42,6 +46,9 @@ class ModuleRoutesTest extends TestCase
             '/accounts',
             '/accounts/cashbook',
             '/accounts/profit-loss',
+            '/users',
+            '/users/create',
+            '/profile',
         ];
 
         foreach ($routes as $route) {

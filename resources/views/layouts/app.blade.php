@@ -1,42 +1,29 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full bg-slate-950 text-slate-100">
+<html lang="bn" class="dark">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'Dashboard') | {{ config('app.name', 'ThaiAluminiumPOS') }}</title>
+    <title>@yield('page_title', 'Dashboard') | Dhaka Thai & Aluminium Glass House</title>
     
-    <!-- Google Fonts Inter / Jakarta -->
+    <!-- Modern Google Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .font-mono-numbers { font-family: 'JetBrains Mono', monospace; }
-        .glass-panel {
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(51, 65, 85, 0.6);
-        }
-    </style>
-    @stack('styles')
 </head>
-<body class="min-h-full flex flex-col bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
-
-    <div class="flex min-h-screen">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-cyan-500 selection:text-slate-950">
+    <div class="flex-1 flex overflow-hidden">
         <!-- Sidebar Navigation -->
-        <aside class="w-64 border-r border-slate-800 bg-slate-900/95 flex flex-col shrink-0 z-30">
-            <!-- Brand Logo -->
-            <div class="h-16 flex items-center gap-3 px-5 border-b border-slate-800">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-slate-950 font-black text-lg shadow-md shadow-cyan-500/20">
-                    T
+        <aside class="w-64 bg-slate-900/80 backdrop-blur-md border-r border-slate-800 flex flex-col shrink-0">
+            <!-- App Logo & Branding -->
+            <div class="h-16 flex items-center px-4 border-b border-slate-800 gap-3">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-black text-slate-950 text-sm shadow-md shadow-cyan-500/20">
+                    TH
                 </div>
-                <div>
-                    <h1 class="text-sm font-bold text-white tracking-tight leading-tight">Thai Aluminium</h1>
-                    <span class="text-[11px] text-cyan-400 font-medium">POS & ERP System</span>
+                <div class="leading-tight">
+                    <span class="font-bold text-sm tracking-tight text-white block">ঢাকা থাই ও গ্লাস</span>
+                    <span class="text-[10px] text-cyan-400 font-medium">POS & Inventory System</span>
                 </div>
             </div>
 
@@ -49,6 +36,8 @@
                         <a href="{{ route('dashboard') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('dashboard') ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
                             <span>🏠</span> ড্যাশবোর্ড (Dashboard)
                         </a>
+
+                        @if(!auth()->check() || auth()->user()->hasRole(['admin', 'manager', 'cashier']))
                         <a href="{{ route('pos.create') }}" class="flex items-center justify-between px-3 py-2 rounded-lg font-bold bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-md shadow-cyan-500/20 hover:from-cyan-500 hover:to-blue-500 transition">
                             <span class="flex items-center gap-2"><span>⚡</span> পিওএস কাউন্টার (POS)</span>
                             <span class="px-1.5 py-0.5 rounded text-[10px] bg-slate-950/30">F2</span>
@@ -59,9 +48,13 @@
                         <a href="{{ route('quotations.index') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('quotations.*') ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
                             <span>📐</span> জানালা/দরজা কোটেশন
                         </a>
+                        @endif
+
+                        @if(!auth()->check() || auth()->user()->hasRole(['admin', 'manager', 'storekeeper']))
                         <a href="{{ route('purchases.index') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('purchases.*') ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
                             <span>🏭</span> পারচেজ ও ফ্যাক্টরি চালান
                         </a>
+                        @endif
                     </div>
                 </div>
 
@@ -88,13 +81,16 @@
                         <a href="{{ route('customers.index') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('customers.*') ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
                             <span>👥</span> কাস্টমার ও থাই মিস্ত্রি
                         </a>
+                        @if(!auth()->check() || auth()->user()->hasRole(['admin', 'manager', 'storekeeper']))
                         <a href="{{ route('suppliers.index') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('suppliers.*') ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
                             <span>🏢</span> মিল ও সাপ্লায়ার্স
                         </a>
+                        @endif
                     </div>
                 </div>
 
                 <!-- Group 4: Finance, Cheque & Accounts -->
+                @if(!auth()->check() || auth()->user()->hasRole(['admin', 'manager', 'cashier']))
                 <div>
                     <div class="px-3 mb-2 font-bold tracking-wider text-slate-400 uppercase text-[10px]">ফাইন্যান্স ও একাউন্টস (Finance)</div>
                     <div class="space-y-1">
@@ -104,30 +100,60 @@
                         <a href="{{ route('receipts.index') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('receipts.*') ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
                             <span>💵</span> কালেকশন ও মানি রিসিট
                         </a>
+                        @if(!auth()->check() || auth()->user()->hasRole(['admin', 'manager']))
                         <a href="{{ route('payments.index') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('payments.*') ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
                             <span>📤</span> সাপ্লায়ার পেমেন্ট (Payments)
                         </a>
                         <a href="{{ route('expenses.index') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('expenses.*') ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
                             <span>📉</span> দোকান খরচ (Expenses)
                         </a>
+                        @endif
+                        @if(!auth()->check() || auth()->user()->isAdmin())
                         <a href="{{ route('accounts.index') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('accounts.*') ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/20' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
                             <span>📊</span> ক্যাশ বুক ও আর্থিক রিপোর্ট
                         </a>
+                        @endif
                     </div>
                 </div>
+                @endif
+
+                <!-- Group 5: Settings & Administration -->
+                @if(!auth()->check() || auth()->user()->isAdmin())
+                <div>
+                    <div class="px-3 mb-2 font-bold tracking-wider text-purple-400 uppercase text-[10px]">অ্যাডমিনিস্ট্রেশন (Administration)</div>
+                    <div class="space-y-1">
+                        <a href="{{ route('users.index') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('users.*') ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
+                            <span>🛡️</span> ইউজার ও পারমিশন (Users)
+                        </a>
+                    </div>
+                </div>
+                @endif
             </nav>
 
-            <!-- User Footer in Sidebar -->
-            <div class="p-3 border-t border-slate-800 bg-slate-950/60 flex items-center justify-between text-xs">
-                <div class="flex items-center gap-2">
-                    <div class="w-7 h-7 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 font-bold">
-                        A
+            <!-- User Profile & Session Footer in Sidebar -->
+            <div class="p-3 border-t border-slate-800 bg-slate-950/80 flex items-center justify-between text-xs">
+                @auth
+                <div class="flex items-center gap-2.5 min-w-0">
+                    <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-cyan-600 to-blue-600 flex items-center justify-center text-white font-bold shrink-0 shadow-sm">
+                        {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
                     </div>
-                    <div>
-                        <span class="font-semibold text-white block">Shop Admin</span>
-                        <span class="text-[10px] text-emerald-400">● অনলাইন</span>
+                    <div class="min-w-0 truncate">
+                        <a href="{{ route('profile') }}" class="font-semibold text-white block hover:text-cyan-400 truncate">{{ auth()->user()->name }}</a>
+                        <span class="text-[10px] text-cyan-400 block truncate">{{ auth()->user()->roleNameBengali() }}</span>
                     </div>
                 </div>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" title="লগআউট" class="p-1.5 rounded-lg bg-slate-800 hover:bg-rose-500/20 hover:text-rose-400 text-slate-400 border border-slate-700 transition">
+                        🚪
+                    </button>
+                </form>
+                @else
+                <div class="flex items-center justify-between w-full">
+                    <span class="text-slate-400">লগইন করুন</span>
+                    <a href="{{ route('login') }}" class="px-2.5 py-1 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-[11px]">লগইন</a>
+                </div>
+                @endauth
             </div>
         </aside>
 
@@ -142,11 +168,22 @@
                 <div class="flex items-center gap-3 text-xs">
                     <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700 text-slate-300">
                         <span>🏢 শাখা:</span>
-                        <span class="font-semibold text-white">প্রধান শোরুম (মিরপুর)</span>
+                        <span class="font-semibold text-white">
+                            {{ auth()->user()?->warehouse?->name ?? 'প্রধান শোরুম (মিরপুর)' }}
+                        </span>
                     </div>
-                    <a href="{{ route('pos.create') }}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold transition">
-                        <span>⚡</span> নতুন সেলস (POS)
+
+                    @if(!auth()->check() || auth()->user()->hasRole(['admin', 'manager', 'cashier']))
+                    <a href="{{ route('pos.create') }}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold transition shadow-sm">
+                        <span>⚡</span> পিওএস কাউন্টার
                     </a>
+                    @endif
+
+                    @auth
+                    <a href="{{ route('profile') }}" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition">
+                        👤 প্রোফাইল
+                    </a>
+                    @endauth
                 </div>
             </header>
 
