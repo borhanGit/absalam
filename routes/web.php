@@ -88,6 +88,7 @@ Route::middleware('auth')->group(function () {
         Route::resource('sales', SaleController::class)->only(['index', 'show']);
 
         // Thai Window/Door Quotation Estimator
+        Route::post('quotations/{quotation}/convert', [JobQuotationController::class, 'convertToSale'])->name('quotations.convert');
         Route::post('quotations/{quotation}/convert-to-sale', [JobQuotationController::class, 'convertToSale'])->name('quotations.convert-to-sale');
         Route::resource('quotations', JobQuotationController::class);
 
