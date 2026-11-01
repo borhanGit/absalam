@@ -5,7 +5,7 @@
 @section('content')
 <div class="space-y-6">
     <!-- Header with Date Picker & Actions -->
-    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-slate-900/60 p-4 rounded-2xl border border-slate-800">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-slate-900/60 p-4 rounded-2xl border border-slate-800 print:hidden no-print">
         <div>
             <h1 class="text-xl font-bold text-white flex items-center gap-2">
                 <span>📖</span> দৈনিক ক্যাশ বুক ও নগদ জমার হিসাব

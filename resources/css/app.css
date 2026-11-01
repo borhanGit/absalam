@@ -7,3 +7,107 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/* Comprehensive Print Stylesheet */
+@media print {
+    /* Hide all application chrome, sidebars, headers, toolbars, buttons and modals */
+    aside,
+    header,
+    nav,
+    .no-print,
+    .print\:hidden,
+    [class*="print:hidden"],
+    button,
+    .btn,
+    .flash-message {
+        display: none !important;
+    }
+
+    /* Force pure white background on page and text readability */
+    html,
+    body {
+        background: #ffffff !important;
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        font-size: 11pt !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* Unlock parent overflow containers */
+    div,
+    main,
+    section {
+        overflow: visible !important;
+    }
+
+    /* Reset layout wrapper */
+    body > div,
+    main {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+    }
+
+    /* Reset width limits on invoice/quotation containers */
+    .max-w-4xl,
+    .max-w-3xl,
+    .max-w-2xl,
+    .max-w-xl,
+    .max-w-lg {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Reset printable card styles */
+    .rounded-2xl,
+    .rounded-3xl,
+    .rounded-xl {
+        border-radius: 0 !important;
+    }
+
+    .shadow-2xl,
+    .shadow-xl,
+    .shadow-lg,
+    .shadow-md {
+        box-shadow: none !important;
+    }
+
+    .border-slate-800,
+    .border-slate-700 {
+        border-color: #e2e8f0 !important;
+    }
+
+    /* Keep table rows intact and avoid page cutoffs */
+    table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+    }
+
+    thead {
+        display: table-header-group !important;
+    }
+
+    tr {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    @page {
+        size: A4 portrait;
+        margin: 10mm 12mm 12mm 12mm;
+    }
+}

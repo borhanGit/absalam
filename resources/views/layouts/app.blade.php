@@ -11,11 +11,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <style>
+        @media print {
+            aside, header, nav, .no-print, [class*="print:hidden"], button {
+                display: none !important;
+            }
+            html, body {
+                background: #ffffff !important;
+                background-color: #ffffff !important;
+                color: #000000 !important;
+                height: auto !important;
+                min-height: auto !important;
+                overflow: visible !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            body > div, main {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                overflow: visible !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                background: transparent !important;
+            }
+            .max-w-4xl, .max-w-3xl, .max-w-2xl, .max-w-xl {
+                max-width: 100% !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            @page {
+                size: A4 portrait;
+                margin: 8mm 12mm 12mm 12mm;
+            }
+        }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-cyan-500 selection:text-slate-950">
-    <div class="flex-1 flex overflow-hidden">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-cyan-500 selection:text-slate-950 print:bg-white print:text-black">
+    <div class="flex-1 flex overflow-hidden print:overflow-visible print:block print:w-full">
         <!-- Sidebar Navigation -->
-        <aside class="w-64 bg-slate-900/80 backdrop-blur-md border-r border-slate-800 flex flex-col shrink-0">
+        <aside class="w-64 bg-slate-900/80 backdrop-blur-md border-r border-slate-800 flex flex-col shrink-0 print:hidden">
             <!-- App Logo & Branding -->
             <div class="h-16 flex items-center px-4 border-b border-slate-800 gap-3">
                 <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-black text-slate-950 text-sm shadow-md shadow-cyan-500/20">
@@ -158,9 +197,9 @@
         </aside>
 
         <!-- Main Workspace -->
-        <div class="flex-1 flex flex-col min-w-0 overflow-hidden">
+        <div class="flex-1 flex flex-col min-w-0 overflow-hidden print:overflow-visible print:block print:w-full print:m-0 print:p-0">
             <!-- Top Header -->
-            <header class="h-16 border-b border-slate-800 bg-slate-900/60 backdrop-blur-md flex items-center justify-between px-6 shrink-0">
+            <header class="h-16 border-b border-slate-800 bg-slate-900/60 backdrop-blur-md flex items-center justify-between px-6 shrink-0 print:hidden">
                 <div class="flex items-center gap-4">
                     <h2 class="text-base font-bold text-white">@yield('page_title', 'Dashboard')</h2>
                 </div>
@@ -188,26 +227,28 @@
             </header>
 
             <!-- Flash Notifications -->
-            @if(session('success'))
-                <div class="m-6 mb-0 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-sm flex items-center justify-between">
-                    <div class="flex items-center gap-2">
-                        <span>✓</span>
-                        <span>{{ session('success') }}</span>
+            <div class="print:hidden">
+                @if(session('success'))
+                    <div class="m-6 mb-0 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-sm flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span>✓</span>
+                            <span>{{ session('success') }}</span>
+                        </div>
                     </div>
-                </div>
-            @endif
+                @endif
 
-            @if(session('error'))
-                <div class="m-6 mb-0 p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-sm flex items-center justify-between">
-                    <div class="flex items-center gap-2">
-                        <span>⚠️</span>
-                        <span>{{ session('error') }}</span>
+                @if(session('error'))
+                    <div class="m-6 mb-0 p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-sm flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span>⚠️</span>
+                            <span>{{ session('error') }}</span>
+                        </div>
                     </div>
-                </div>
-            @endif
+                @endif
+            </div>
 
             <!-- Page Body -->
-            <main class="flex-1 overflow-y-auto p-6 space-y-6">
+            <main class="flex-1 overflow-y-auto p-6 space-y-6 print:p-0 print:m-0 print:overflow-visible print:block print:w-full print:bg-white">
                 @yield('content')
             </main>
         </div>

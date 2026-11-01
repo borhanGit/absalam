@@ -3,9 +3,9 @@
 @section('page_title', 'মানি রিসিট ভাউচার #' . $receipt->receipt_no)
 
 @section('content')
-<div class="max-w-2xl mx-auto space-y-6">
+<div class="max-w-2xl mx-auto space-y-6 print:max-w-none print:w-full print:m-0 print:p-0 print:space-y-0">
     <!-- Top Action Bar -->
-    <div class="flex items-center justify-between no-print">
+    <div class="flex items-center justify-between no-print print:hidden">
         <a href="{{ route('receipts.index') }}" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white text-xs border border-slate-700 transition">
             ← রিসিট তালিকায় ফিরুন
         </a>
@@ -17,7 +17,7 @@
     </div>
 
     <!-- Printable Receipt Card -->
-    <div class="bg-white text-slate-900 rounded-2xl p-8 shadow-2xl border border-slate-300 print:shadow-none print:border-none print:m-0 print:p-6 print:rounded-none">
+    <div class="bg-white text-slate-900 rounded-2xl p-8 shadow-2xl border border-slate-300 print:shadow-none print:border-none print:m-0 print:p-0 print:w-full print:rounded-none">
         <!-- Receipt Header -->
         <div class="text-center border-b-2 border-slate-900 pb-4 mb-6">
             <h1 class="text-2xl font-black tracking-tight text-slate-950 uppercase">{{ $company->company_name ?? 'Dhaka Thai & Aluminium Glass House' }}</h1>

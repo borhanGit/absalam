@@ -4,10 +4,10 @@
 @section('page_title', 'প্রজেক্ট কোটেশন ও এস্টিমেট #' . $quotation->quotation_no)
 
 @section('content')
-<div class="max-w-4xl mx-auto space-y-6">
+<div class="max-w-4xl mx-auto space-y-6 print:max-w-none print:w-full print:m-0 print:p-0 print:space-y-0">
 
     <!-- Action Toolbar (Hidden in Print) -->
-    <div class="flex items-center justify-between gap-4 print:hidden">
+    <div class="flex items-center justify-between gap-4 print:hidden no-print">
         <a href="{{ route('quotations.index') }}" class="text-xs text-slate-400 hover:text-white transition">
             ← কোটেশন তালিকায় ফিরুন
         </a>
@@ -32,7 +32,7 @@
     </div>
 
     <!-- Official Proposal Sheet -->
-    <div class="rounded-2xl border border-slate-800 bg-white text-slate-900 p-8 sm:p-10 shadow-2xl print:shadow-none print:border-none print:p-0">
+    <div class="rounded-2xl border border-slate-800 bg-white text-slate-900 p-8 sm:p-10 shadow-2xl print:shadow-none print:border-none print:p-0 print:m-0 print:w-full print:rounded-none">
         <!-- Header -->
         <div class="border-b-2 border-slate-900 pb-5 mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
