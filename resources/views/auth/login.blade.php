@@ -85,7 +85,7 @@
             </form>
 
             <!-- Quick Demo Role Switcher for pairwise testing -->
-            <div class="mt-6 pt-5 border-t border-slate-800 space-y-3">
+            <!-- <div class="mt-6 pt-5 border-t border-slate-800 space-y-3">
                 <div class="text-[11px] font-semibold text-slate-400 text-center">
                     দ্রুত লগইন করার জন্য রোল নির্বাচন করুন (Demo Accounts)
                 </div>
@@ -107,7 +107,7 @@
                         <span class="text-[10px] text-slate-500 block">গোডাউন ও অফ-কাট স্টক</span>
                     </button>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="text-center text-[11px] text-slate-500">
