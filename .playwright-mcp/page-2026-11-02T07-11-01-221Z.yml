@@ -1,0 +1,206 @@
+- generic [ref=f22e2]:
+  - complementary [ref=f22e3]:
+    - generic [ref=f22e8]:
+      - generic [ref=f22e9]: ঢাকা থাই ও গ্লাস
+      - text: ENTERPRISE POS & ERP
+    - navigation [ref=f22e10]:
+      - generic [ref=f22e11]:
+        - generic [ref=f22e12]: অপারেশনস (Operations)
+        - generic [ref=f22e13]:
+          - link "ড্যাশবোর্ড (Dashboard)" [ref=f22e14] [cursor=pointer]:
+            - /url: http://localhost:8000/dashboard
+          - link "পিওএস কাউন্টার (POS) F2" [ref=f22e21] [cursor=pointer]:
+            - /url: http://localhost:8000/pos
+            - generic [ref=f22e22]: পিওএস কাউন্টার (POS)
+            - generic [ref=f22e26]: F2
+          - link "সেলস চালান (Sales List)" [ref=f22e27] [cursor=pointer]:
+            - /url: http://localhost:8000/sales
+          - link "জানালা/দরজা কোটেশন" [ref=f22e33] [cursor=pointer]:
+            - /url: http://localhost:8000/quotations
+          - link "পারচেজ ও ফ্যাক্টরি চালান" [ref=f22e37] [cursor=pointer]:
+            - /url: http://localhost:8000/purchases
+      - generic [ref=f22e41]:
+        - generic [ref=f22e42]: ইনভেন্টরি (Inventory)
+        - generic [ref=f22e43]:
+          - link "পণ্য তালিকা (Products Master)" [ref=f22e44] [cursor=pointer]:
+            - /url: http://localhost:8000/products
+          - link "ওয়্যারহাউস স্টক (Stock)" [ref=f22e49] [cursor=pointer]:
+            - /url: http://localhost:8000/stocks
+          - link "কাটিং অফ-কাট ও স্ক্র্যাপ" [ref=f22e54] [cursor=pointer]:
+            - /url: http://localhost:8000/offcuts
+      - generic [ref=f22e62]:
+        - generic [ref=f22e63]: পার্টি ও লেজার (Parties & CRM)
+        - generic [ref=f22e64]:
+          - link "কাস্টমার ও থাই মিস্ত্রি" [ref=f22e65] [cursor=pointer]:
+            - /url: http://localhost:8000/customers
+          - link "মিল ও সাপ্লায়ার্স" [ref=f22e72] [cursor=pointer]:
+            - /url: http://localhost:8000/suppliers
+      - generic [ref=f22e77]:
+        - generic [ref=f22e78]: ফাইন্যান্স ও একাউন্টস (Finance)
+        - generic [ref=f22e79]:
+          - link "চেক ম্যানেজমেন্ট (Cheques)" [ref=f22e80] [cursor=pointer]:
+            - /url: http://localhost:8000/cheques
+          - link "কালেকশন ও মানি রিসিট" [ref=f22e84] [cursor=pointer]:
+            - /url: http://localhost:8000/receipts
+          - link "সাপ্লায়ার পেমেন্ট (Payments)" [ref=f22e89] [cursor=pointer]:
+            - /url: http://localhost:8000/payments
+          - link "দোকান খরচ (Expenses)" [ref=f22e93] [cursor=pointer]:
+            - /url: http://localhost:8000/expenses
+          - link "ক্যাশ বুক ও আর্থিক রিপোর্ট" [ref=f22e98] [cursor=pointer]:
+            - /url: http://localhost:8000/accounts
+      - generic [ref=f22e101]:
+        - generic [ref=f22e102]: অ্যাডমিনিস্ট্রেশন (Administration)
+        - link "ইউজার ও পারমিশন (Users)" [ref=f22e104] [cursor=pointer]:
+          - /url: http://localhost:8000/users
+    - generic [ref=f22e109]:
+      - generic [ref=f22e110]:
+        - generic [ref=f22e111]: M
+        - generic [ref=f22e112]:
+          - link "Md. Borhan Uddin (মালিক)" [ref=f22e113] [cursor=pointer]:
+            - /url: http://localhost:8000/profile
+          - generic [ref=f22e114]: মালিক / সুপার অ্যাডমিন (Admin)
+      - button "লগআউট" [ref=f22e116]
+  - generic [ref=f22e120]:
+    - banner [ref=f22e121]:
+      - heading "ব্যবহারকারী ও ভূমিকা ব্যবস্থাপনা (User Management)" [level=1] [ref=f22e123]
+      - generic [ref=f22e124]:
+        - generic [ref=f22e125]:
+          - generic [ref=f22e129]: "শাখা:"
+          - generic [ref=f22e130]: প্রধান শোরুম (মিরপুর)
+        - link "পিওএস কাউন্টার" [ref=f22e131] [cursor=pointer]:
+          - /url: http://localhost:8000/pos
+        - link "প্রোফাইল" [ref=f22e135] [cursor=pointer]:
+          - /url: http://localhost:8000/profile
+    - main [ref=f22e140]:
+      - generic [ref=f22e141]:
+        - generic [ref=f22e142]:
+          - generic [ref=f22e143]:
+            - heading "সিস্টেম ব্যবহারকারী ও ভূমিকা রেজিস্টার" [level=1] [ref=f22e144]
+            - paragraph [ref=f22e145]: দোকানের অ্যাডমিন, ম্যানেজার, ক্যাশিয়ার ও গোডাউন ইন-চার্জদের একাউন্ট ও অনুমতি নিয়ন্ত্রণ
+          - link "নতুন ব্যবহারকারী যোগ করুন" [ref=f22e146] [cursor=pointer]:
+            - /url: http://localhost:8000/users/create
+        - generic [ref=f22e149]:
+          - generic [ref=f22e150]:
+            - generic [ref=f22e151]: সর্বমোট ব্যবহারকারী
+            - generic [ref=f22e152]: 5 জন
+            - generic [ref=f22e153]: নিবন্ধিত স্টাফ
+          - generic [ref=f22e154]:
+            - generic [ref=f22e155]: অ্যাডমিন (Admin)
+            - generic [ref=f22e156]: 1 জন
+            - generic [ref=f22e157]: পূর্ণ নিয়ন্ত্রণ
+          - generic [ref=f22e158]:
+            - generic [ref=f22e159]: ম্যানেজার (Manager)
+            - generic [ref=f22e160]: 1 জন
+            - generic [ref=f22e161]: সেলস ও গোডাউন
+          - generic [ref=f22e162]:
+            - generic [ref=f22e163]: ক্যাশিয়ার (Cashier)
+            - generic [ref=f22e164]: 2 জন
+            - generic [ref=f22e165]: পিওএস কাউন্টার
+          - generic [ref=f22e166]:
+            - generic [ref=f22e167]: স্টোরকিপার (Store)
+            - generic [ref=f22e168]: 1 জন
+            - generic [ref=f22e169]: গোডাউন ও স্টক
+        - generic [ref=f22e170]:
+          - generic [ref=f22e171]:
+            - generic [ref=f22e172]: রোল দিয়ে ফিল্টার
+            - combobox [ref=f22e173]:
+              - option "-- সকল ভূমিকা (All Roles) --" [selected]
+              - option "অ্যাডমিন (Admin)"
+              - option "ম্যানেজার (Manager)"
+              - option "ক্যাশিয়ার (Cashier)"
+              - option "স্টোরকিপার (Storekeeper)"
+          - generic [ref=f22e174]:
+            - generic [ref=f22e175]: নাম, ইমেইল বা ফোন দিয়ে খুঁজুন
+            - textbox "সার্চ করুন..." [ref=f22e176]
+          - generic [ref=f22e177]:
+            - button "ফিল্টার করুন" [ref=f22e178]
+            - link "রিসেট" [ref=f22e179] [cursor=pointer]:
+              - /url: http://localhost:8000/users
+        - table [ref=f22e182]:
+          - rowgroup [ref=f22e183]:
+            - row [ref=f22e184]:
+              - columnheader "ব্যবহারকারী" [ref=f22e185]
+              - columnheader "ভূমিকা (Role)" [ref=f22e186]
+              - columnheader "শাখা / ওয়্যারহাউস" [ref=f22e187]
+              - columnheader "মোবাইল নম্বর" [ref=f22e188]
+              - columnheader "স্ট্যাটাস" [ref=f22e189]
+              - columnheader "অ্যাকশন" [ref=f22e190]
+          - rowgroup [ref=f22e191]:
+            - row [ref=f22e192]:
+              - cell "� তারেক মাহমুদ (শপ ম্যানেজার) manager@thaiglass.com" [ref=f22e193]:
+                - generic [ref=f22e194]:
+                  - generic [ref=f22e195]: �
+                  - generic [ref=f22e196]:
+                    - generic [ref=f22e197]: তারেক মাহমুদ (শপ ম্যানেজার)
+                    - text: manager@thaiglass.com
+              - cell "শপ ম্যানেজার (Manager)" [ref=f22e198]
+              - cell "সব শাখা (সার্বজনীন)" [ref=f22e200]
+              - cell "01812-345678" [ref=f22e201]
+              - cell "সক্রিয়" [ref=f22e202]
+              - cell [ref=f22e205]:
+                - generic [ref=f22e206]:
+                  - link "এডিট" [ref=f22e207] [cursor=pointer]:
+                    - /url: http://localhost:8000/users/3/edit
+                  - button "মুছে ফেলুন" [ref=f22e211]
+            - row [ref=f22e214]:
+              - cell "� তানভীর আহমেদ (পিওএস ক্যাশিয়ার) cashier@thaiglass.com" [ref=f22e215]:
+                - generic [ref=f22e216]:
+                  - generic [ref=f22e217]: �
+                  - generic [ref=f22e218]:
+                    - generic [ref=f22e219]: তানভীর আহমেদ (পিওএস ক্যাশিয়ার)
+                    - text: cashier@thaiglass.com
+              - cell "কাউন্টার ক্যাশিয়ার (Cashier)" [ref=f22e220]
+              - cell "সব শাখা (সার্বজনীন)" [ref=f22e222]
+              - cell "01912-345678" [ref=f22e223]
+              - cell "সক্রিয়" [ref=f22e224]
+              - cell [ref=f22e227]:
+                - generic [ref=f22e228]:
+                  - link "এডিট" [ref=f22e229] [cursor=pointer]:
+                    - /url: http://localhost:8000/users/4/edit
+                  - button "মুছে ফেলুন" [ref=f22e233]
+            - row [ref=f22e236]:
+              - cell "� রফিকুল ইসলাম (গোডাউন ইন-চার্জ) storekeeper@thaiglass.com" [ref=f22e237]:
+                - generic [ref=f22e238]:
+                  - generic [ref=f22e239]: �
+                  - generic [ref=f22e240]:
+                    - generic [ref=f22e241]: রফিকুল ইসলাম (গোডাউন ইন-চার্জ)
+                    - text: storekeeper@thaiglass.com
+              - cell "গোডাউন ইন-চার্জ (Storekeeper)" [ref=f22e242]
+              - cell "সব শাখা (সার্বজনীন)" [ref=f22e244]
+              - cell "01612-345678" [ref=f22e245]
+              - cell "সক্রিয়" [ref=f22e246]
+              - cell [ref=f22e249]:
+                - generic [ref=f22e250]:
+                  - link "এডিট" [ref=f22e251] [cursor=pointer]:
+                    - /url: http://localhost:8000/users/5/edit
+                  - button "মুছে ফেলুন" [ref=f22e255]
+            - row [ref=f22e258]:
+              - cell "M Md. Borhan Uddin (মালিক) admin@thaiglass.com" [ref=f22e259]:
+                - generic [ref=f22e260]:
+                  - generic [ref=f22e261]: M
+                  - generic [ref=f22e262]:
+                    - generic [ref=f22e263]: Md. Borhan Uddin (মালিক)
+                    - text: admin@thaiglass.com
+              - cell "মালিক / সুপার অ্যাডমিন (Admin)" [ref=f22e264]
+              - cell "সব শাখা (সার্বজনীন)" [ref=f22e266]
+              - cell "01712-345678" [ref=f22e267]
+              - cell "সক্রিয়" [ref=f22e268]
+              - cell [ref=f22e271]:
+                - link "এডিট" [ref=f22e273] [cursor=pointer]:
+                  - /url: http://localhost:8000/users/2/edit
+            - row [ref=f22e276]:
+              - cell "A Aluminium Shop Admin admin@thaipos.com" [ref=f22e277]:
+                - generic [ref=f22e278]:
+                  - generic [ref=f22e279]: A
+                  - generic [ref=f22e280]:
+                    - generic [ref=f22e281]: Aluminium Shop Admin
+                    - text: admin@thaipos.com
+              - cell "কাউন্টার ক্যাশিয়ার (Cashier)" [ref=f22e282]
+              - cell "সব শাখা (সার্বজনীন)" [ref=f22e284]
+              - cell "-" [ref=f22e285]
+              - cell "সক্রিয়" [ref=f22e286]
+              - cell [ref=f22e289]:
+                - generic [ref=f22e290]:
+                  - link "এডিট" [ref=f22e291] [cursor=pointer]:
+                    - /url: http://localhost:8000/users/1/edit
+                  - button "মুছে ফেলুন" [ref=f22e295]

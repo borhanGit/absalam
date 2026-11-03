@@ -1,0 +1,132 @@
+- generic [ref=f7e2]:
+  - complementary [ref=f7e3]:
+    - generic [ref=f7e8]:
+      - generic [ref=f7e9]: ঢাকা থাই ও গ্লাস
+      - text: ENTERPRISE POS & ERP
+    - navigation [ref=f7e10]:
+      - generic [ref=f7e11]:
+        - generic [ref=f7e12]: অপারেশনস (Operations)
+        - generic [ref=f7e13]:
+          - link "ড্যাশবোর্ড (Dashboard)" [ref=f7e14] [cursor=pointer]:
+            - /url: http://localhost:8000/dashboard
+          - link "পিওএস কাউন্টার (POS) F2" [ref=f7e21] [cursor=pointer]:
+            - /url: http://localhost:8000/pos
+            - generic [ref=f7e22]: পিওএস কাউন্টার (POS)
+            - generic [ref=f7e26]: F2
+          - link "সেলস চালান (Sales List)" [ref=f7e27] [cursor=pointer]:
+            - /url: http://localhost:8000/sales
+          - link "জানালা/দরজা কোটেশন" [ref=f7e33] [cursor=pointer]:
+            - /url: http://localhost:8000/quotations
+          - link "পারচেজ ও ফ্যাক্টরি চালান" [ref=f7e37] [cursor=pointer]:
+            - /url: http://localhost:8000/purchases
+      - generic [ref=f7e41]:
+        - generic [ref=f7e42]: ইনভেন্টরি (Inventory)
+        - generic [ref=f7e43]:
+          - link "পণ্য তালিকা (Products Master)" [ref=f7e44] [cursor=pointer]:
+            - /url: http://localhost:8000/products
+          - link "ওয়্যারহাউস স্টক (Stock)" [ref=f7e49] [cursor=pointer]:
+            - /url: http://localhost:8000/stocks
+          - link "কাটিং অফ-কাট ও স্ক্র্যাপ" [ref=f7e54] [cursor=pointer]:
+            - /url: http://localhost:8000/offcuts
+      - generic [ref=f7e62]:
+        - generic [ref=f7e63]: পার্টি ও লেজার (Parties & CRM)
+        - generic [ref=f7e64]:
+          - link "কাস্টমার ও থাই মিস্ত্রি" [ref=f7e65] [cursor=pointer]:
+            - /url: http://localhost:8000/customers
+          - link "মিল ও সাপ্লায়ার্স" [ref=f7e72] [cursor=pointer]:
+            - /url: http://localhost:8000/suppliers
+      - generic [ref=f7e77]:
+        - generic [ref=f7e78]: ফাইন্যান্স ও একাউন্টস (Finance)
+        - generic [ref=f7e79]:
+          - link "চেক ম্যানেজমেন্ট (Cheques)" [ref=f7e80] [cursor=pointer]:
+            - /url: http://localhost:8000/cheques
+          - link "কালেকশন ও মানি রিসিট" [ref=f7e84] [cursor=pointer]:
+            - /url: http://localhost:8000/receipts
+          - link "সাপ্লায়ার পেমেন্ট (Payments)" [ref=f7e89] [cursor=pointer]:
+            - /url: http://localhost:8000/payments
+          - link "দোকান খরচ (Expenses)" [ref=f7e93] [cursor=pointer]:
+            - /url: http://localhost:8000/expenses
+          - link "ক্যাশ বুক ও আর্থিক রিপোর্ট" [ref=f7e98] [cursor=pointer]:
+            - /url: http://localhost:8000/accounts
+      - generic [ref=f7e101]:
+        - generic [ref=f7e102]: অ্যাডমিনিস্ট্রেশন (Administration)
+        - link "ইউজার ও পারমিশন (Users)" [ref=f7e104] [cursor=pointer]:
+          - /url: http://localhost:8000/users
+    - generic [ref=f7e109]:
+      - generic [ref=f7e110]:
+        - generic [ref=f7e111]: M
+        - generic [ref=f7e112]:
+          - link "Md. Borhan Uddin (মালিক)" [ref=f7e113] [cursor=pointer]:
+            - /url: http://localhost:8000/profile
+          - generic [ref=f7e114]: মালিক / সুপার অ্যাডমিন (Admin)
+      - button "লগআউট" [ref=f7e116]
+  - generic [ref=f7e120]:
+    - banner [ref=f7e121]:
+      - heading "সেলস চালান ও ইনভয়েস তালিকা (Sales Invoices)" [level=1] [ref=f7e123]
+      - generic [ref=f7e124]:
+        - generic [ref=f7e125]:
+          - generic [ref=f7e129]: "শাখা:"
+          - generic [ref=f7e130]: প্রধান শোরুম (মিরপুর)
+        - link "পিওএস কাউন্টার" [ref=f7e131] [cursor=pointer]:
+          - /url: http://localhost:8000/pos
+        - link "প্রোফাইল" [ref=f7e135] [cursor=pointer]:
+          - /url: http://localhost:8000/profile
+    - main [ref=f7e140]:
+      - generic [ref=f7e141]:
+        - generic [ref=f7e142]:
+          - generic [ref=f7e143]:
+            - text: সর্বমোট বিক্রয়
+            - generic [ref=f7e144]: ৳2,100.00
+          - generic [ref=f7e145]:
+            - text: মোট ক্যাশ সংগ্রহ
+            - generic [ref=f7e146]: ৳2,000.00
+          - generic [ref=f7e147]:
+            - text: মোট বাকি টাকা
+            - generic [ref=f7e148]: ৳100.00
+        - generic [ref=f7e149]:
+          - generic [ref=f7e150]:
+            - textbox "চালান নং বা কাস্টমার খুঁজুন..." [ref=f7e151]
+            - combobox [ref=f7e152]:
+              - option "সকল স্ট্যাটাস" [selected]
+              - option "পরিশোধ (Paid)"
+              - option "আংশিক (Partial)"
+              - option "বাকি (Due)"
+            - textbox [ref=f7e153]
+            - button "ফিল্টার" [ref=f7e154]
+          - link "নতুন পিওএস সেলস" [ref=f7e155] [cursor=pointer]:
+            - /url: http://localhost:8000/pos
+        - table [ref=f7e161]:
+          - rowgroup [ref=f7e162]:
+            - row [ref=f7e163]:
+              - columnheader "চালান নং" [ref=f7e164]
+              - columnheader "তারিখ" [ref=f7e165]
+              - columnheader "কাস্টমার / মিস্ত্রি" [ref=f7e166]
+              - columnheader "শাখা / ওয়্যারহাউস" [ref=f7e167]
+              - columnheader "আইটেম মোট" [ref=f7e168]
+              - columnheader "ভ্যান/লেবার" [ref=f7e169]
+              - columnheader "সর্বমোট বিল" [ref=f7e170]
+              - columnheader "জমা" [ref=f7e171]
+              - columnheader "বাকি" [ref=f7e172]
+              - columnheader "স্ট্যাটাস" [ref=f7e173]
+              - columnheader "অ্যাকশন" [ref=f7e174]
+          - rowgroup [ref=f7e175]:
+            - row [ref=f7e176]:
+              - cell [ref=f7e177]:
+                - link "INV-2026-00001" [ref=f7e178] [cursor=pointer]:
+                  - /url: http://localhost:8000/sales/1
+              - cell "2026-10-24" [ref=f7e179]
+              - cell "Kawsar Ahmed (Thai Mistri) 01819-112233" [ref=f7e180]:
+                - generic [ref=f7e181]: Kawsar Ahmed (Thai Mistri)
+                - text: 01819-112233
+              - cell "Main Showroom & Sales Counter" [ref=f7e182]
+              - cell "৳2,100.00" [ref=f7e183]
+              - cell "৳0.00" [ref=f7e184]
+              - cell "৳2,100.00" [ref=f7e185]
+              - cell "৳2,000.00" [ref=f7e186]
+              - cell "৳100.00" [ref=f7e187]
+              - cell "আংশিক" [ref=f7e188]
+              - cell [ref=f7e190]:
+                - link "চালান দেখুন ↗" [ref=f7e191] [cursor=pointer]:
+                  - /url: http://localhost:8000/sales/1
+                  - generic [ref=f7e192]: চালান দেখুন
+                  - generic [ref=f7e193]: ↗

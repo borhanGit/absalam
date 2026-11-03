@@ -1,0 +1,209 @@
+- generic [ref=f1e2]:
+  - complementary [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - generic [ref=f1e5]: TH
+      - generic [ref=f1e6]:
+        - generic [ref=f1e7]: ঢাকা থাই ও গ্লাস
+        - text: POS & Inventory System
+    - navigation [ref=f1e8]:
+      - generic [ref=f1e9]:
+        - generic [ref=f1e10]: অপারেশনস (Operations)
+        - generic [ref=f1e11]:
+          - link "🏠 ড্যাশবোর্ড (Dashboard)" [ref=f1e12] [cursor=pointer]:
+            - /url: http://localhost:8000/dashboard
+            - generic [ref=f1e13]: 🏠
+            - text: ড্যাশবোর্ড (Dashboard)
+          - link "⚡ পিওএস কাউন্টার (POS) F2" [ref=f1e14] [cursor=pointer]:
+            - /url: http://localhost:8000/pos
+            - generic [ref=f1e15]:
+              - generic [ref=f1e16]: ⚡
+              - text: পিওএস কাউন্টার (POS)
+            - generic [ref=f1e17]: F2
+          - link "🛒 সেলস চালান (Sales List)" [ref=f1e18] [cursor=pointer]:
+            - /url: http://localhost:8000/sales
+            - generic [ref=f1e19]: 🛒
+            - text: সেলস চালান (Sales List)
+          - link "📐 জানালা/দরজা কোটেশন" [ref=f1e20] [cursor=pointer]:
+            - /url: http://localhost:8000/quotations
+            - generic [ref=f1e21]: 📐
+            - text: জানালা/দরজা কোটেশন
+          - link "🏭 পারচেজ ও ফ্যাক্টরি চালান" [ref=f1e22] [cursor=pointer]:
+            - /url: http://localhost:8000/purchases
+            - generic [ref=f1e23]: 🏭
+            - text: পারচেজ ও ফ্যাক্টরি চালান
+      - generic [ref=f1e24]:
+        - generic [ref=f1e25]: ইনভেন্টরি (Inventory)
+        - generic [ref=f1e26]:
+          - link "🏷️ পণ্য তালিকা (Products Master)" [ref=f1e27] [cursor=pointer]:
+            - /url: http://localhost:8000/products
+            - generic [ref=f1e28]: 🏷️
+            - text: পণ্য তালিকা (Products Master)
+          - link "📦 ওয়্যারহাউস স্টক (Stock)" [ref=f1e29] [cursor=pointer]:
+            - /url: http://localhost:8000/stocks
+            - generic [ref=f1e30]: 📦
+            - text: ওয়্যারহাউস স্টক (Stock)
+          - link "✂️ কাটিং অফ-কাট ও স্ক্র্যাপ" [ref=f1e31] [cursor=pointer]:
+            - /url: http://localhost:8000/offcuts
+            - generic [ref=f1e32]: ✂️
+            - text: কাটিং অফ-কাট ও স্ক্র্যাপ
+      - generic [ref=f1e33]:
+        - generic [ref=f1e34]: পার্টি ও লেজার (Parties & CRM)
+        - generic [ref=f1e35]:
+          - link "👥 কাস্টমার ও থাই মিস্ত্রি" [ref=f1e36] [cursor=pointer]:
+            - /url: http://localhost:8000/customers
+            - generic [ref=f1e37]: 👥
+            - text: কাস্টমার ও থাই মিস্ত্রি
+          - link "🏢 মিল ও সাপ্লায়ার্স" [ref=f1e38] [cursor=pointer]:
+            - /url: http://localhost:8000/suppliers
+            - generic [ref=f1e39]: 🏢
+            - text: মিল ও সাপ্লায়ার্স
+      - generic [ref=f1e40]:
+        - generic [ref=f1e41]: ফাইন্যান্স ও একাউন্টস (Finance)
+        - generic [ref=f1e42]:
+          - link "🏦 চেক ম্যানেজমেন্ট (Cheques)" [ref=f1e43] [cursor=pointer]:
+            - /url: http://localhost:8000/cheques
+            - generic [ref=f1e44]: 🏦
+            - text: চেক ম্যানেজমেন্ট (Cheques)
+          - link "💵 কালেকশন ও মানি রিসিট" [ref=f1e45] [cursor=pointer]:
+            - /url: http://localhost:8000/receipts
+            - generic [ref=f1e46]: 💵
+            - text: কালেকশন ও মানি রিসিট
+          - link "📤 সাপ্লায়ার পেমেন্ট (Payments)" [ref=f1e47] [cursor=pointer]:
+            - /url: http://localhost:8000/payments
+            - generic [ref=f1e48]: 📤
+            - text: সাপ্লায়ার পেমেন্ট (Payments)
+          - link "📉 দোকান খরচ (Expenses)" [ref=f1e49] [cursor=pointer]:
+            - /url: http://localhost:8000/expenses
+            - generic [ref=f1e50]: 📉
+            - text: দোকান খরচ (Expenses)
+          - link "📊 ক্যাশ বুক ও আর্থিক রিপোর্ট" [ref=f1e51] [cursor=pointer]:
+            - /url: http://localhost:8000/accounts
+            - generic [ref=f1e52]: 📊
+            - text: ক্যাশ বুক ও আর্থিক রিপোর্ট
+      - generic [ref=f1e53]:
+        - generic [ref=f1e54]: অ্যাডমিনিস্ট্রেশন (Administration)
+        - link "🛡️ ইউজার ও পারমিশন (Users)" [ref=f1e56] [cursor=pointer]:
+          - /url: http://localhost:8000/users
+          - generic [ref=f1e57]: 🛡️
+          - text: ইউজার ও পারমিশন (Users)
+    - generic [ref=f1e58]:
+      - generic [ref=f1e59]:
+        - generic [ref=f1e60]: M
+        - generic [ref=f1e61]:
+          - link "Md. Borhan Uddin (মালিক)" [ref=f1e62] [cursor=pointer]:
+            - /url: http://localhost:8000/profile
+          - generic [ref=f1e63]: মালিক / সুপার অ্যাডমিন (Admin)
+      - button "🚪" [ref=f1e65]
+  - generic [ref=f1e66]:
+    - banner [ref=f1e67]:
+      - heading "ব্যবসা ওভারভিউ ও কন্ট্রোল প্যানেল (Dashboard)" [level=2] [ref=f1e69]
+      - generic [ref=f1e70]:
+        - generic [ref=f1e71]:
+          - generic [ref=f1e72]: "🏢 শাখা:"
+          - generic [ref=f1e73]: প্রধান শোরুম (মিরপুর)
+        - link "⚡ পিওএস কাউন্টার" [ref=f1e74] [cursor=pointer]:
+          - /url: http://localhost:8000/pos
+          - generic [ref=f1e75]: ⚡
+          - text: পিওএস কাউন্টার
+        - link "👤 প্রোফাইল" [ref=f1e76] [cursor=pointer]:
+          - /url: http://localhost:8000/profile
+    - generic [ref=f1e79]:
+      - generic [ref=f1e80]: ✓
+      - generic [ref=f1e81]: স্বাগতম, Md. Borhan Uddin (মালিক)! আপনি সফলভাবে লগইন করেছেন।
+    - main [ref=f1e82]:
+      - generic [ref=f1e83]:
+        - generic [ref=f1e84]:
+          - generic [ref=f1e85]:
+            - generic [ref=f1e86]:
+              - generic [ref=f1e87]: আজকের মোট বিক্রয়
+              - generic [ref=f1e88]: 🛒
+            - generic [ref=f1e89]: ৳0.00
+            - paragraph [ref=f1e90]: ক্যাশ ও ক্রেডিট সর্বমোট
+          - generic [ref=f1e91]:
+            - generic [ref=f1e92]:
+              - generic [ref=f1e93]: আজকের ক্যাশ আদায়
+              - generic [ref=f1e94]: 💵
+            - generic [ref=f1e95]: ৳0.00
+            - paragraph [ref=f1e96]: কাউন্টার ও বাকি কালেকশন
+          - generic [ref=f1e97]:
+            - generic [ref=f1e98]:
+              - generic [ref=f1e99]: মোট কাস্টমার বাকি
+              - generic [ref=f1e100]: 👥
+            - generic [ref=f1e101]: ৳143,600.00
+            - paragraph [ref=f1e102]: মিস্ত্রি ও পার্টির মোট বাকি
+          - generic [ref=f1e103]:
+            - generic [ref=f1e104]:
+              - generic [ref=f1e105]: মিল ও সাপ্লায়ার দেনা
+              - generic [ref=f1e106]: 🏭
+            - generic [ref=f1e107]: ৳193,300.00
+            - paragraph [ref=f1e108]: মিল চালানের বকেয়া বিল
+          - generic [ref=f1e109]:
+            - generic [ref=f1e110]:
+              - generic [ref=f1e111]: হাতে থাকা চেক
+              - generic [ref=f1e112]: 🏦
+            - generic [ref=f1e113]: ৳0.00
+            - paragraph [ref=f1e114]: 0 টি জমা দেওয়ার অপেক্ষায়
+        - generic [ref=f1e115]:
+          - link "কাউন্টার সেলস ⚡ নতুন পিওএস (POS) 🛒" [ref=f1e116] [cursor=pointer]:
+            - /url: http://localhost:8000/pos
+            - generic [ref=f1e117]:
+              - generic [ref=f1e118]: কাউন্টার সেলস
+              - text: ⚡ নতুন পিওএস (POS)
+            - generic [ref=f1e119]: 🛒
+          - link "প্রজেক্ট এস্টিমেটর 📐 জানালা/দরজা কোটেশন 📝" [ref=f1e120] [cursor=pointer]:
+            - /url: http://localhost:8000/quotations/create
+            - generic [ref=f1e121]:
+              - generic [ref=f1e122]: প্রজেক্ট এস্টিমেটর
+              - text: 📐 জানালা/দরজা কোটেশন
+            - generic [ref=f1e123]: 📝
+          - link "মিল থেকে মাল গ্রহণ 🏭 নতুন পারচেজ এন্ট্রি 📦" [ref=f1e124] [cursor=pointer]:
+            - /url: http://localhost:8000/purchases/create
+            - generic [ref=f1e125]:
+              - generic [ref=f1e126]: মিল থেকে মাল গ্রহণ
+              - text: 🏭 নতুন পারচেজ এন্ট্রি
+            - generic [ref=f1e127]: 📦
+          - link "বাকি আদায় 💵 মানি রিসিট গ্রহণ 🧾" [ref=f1e128] [cursor=pointer]:
+            - /url: http://localhost:8000/receipts/create
+            - generic [ref=f1e129]:
+              - generic [ref=f1e130]: বাকি আদায়
+              - text: 💵 মানি রিসিট গ্রহণ
+            - generic [ref=f1e131]: 🧾
+        - generic [ref=f1e132]:
+          - generic [ref=f1e133]:
+            - generic [ref=f1e134]:
+              - heading "🛒 সাম্প্রতিক সেলস চালানসমূহ (Recent Invoices)" [level=3] [ref=f1e136]:
+                - generic [ref=f1e137]: 🛒
+                - text: সাম্প্রতিক সেলস চালানসমূহ (Recent Invoices)
+              - link "সকল চালান দেখুন →" [ref=f1e138] [cursor=pointer]:
+                - /url: http://localhost:8000/sales
+            - table [ref=f1e140]:
+              - rowgroup [ref=f1e141]:
+                - row [ref=f1e142]:
+                  - columnheader "চালান নং" [ref=f1e143]
+                  - columnheader "কাস্টমার / মিস্ত্রি" [ref=f1e144]
+                  - columnheader "তারিখ" [ref=f1e145]
+                  - columnheader "মোট মূল্য" [ref=f1e146]
+                  - columnheader "পরিশোধ" [ref=f1e147]
+                  - columnheader "বাকি" [ref=f1e148]
+                  - columnheader "স্ট্যাটাস" [ref=f1e149]
+              - rowgroup [ref=f1e150]:
+                - row [ref=f1e151]:
+                  - cell [ref=f1e152]:
+                    - link "INV-2026-00001" [ref=f1e153] [cursor=pointer]:
+                      - /url: http://localhost:8000/sales/1
+                  - cell "Kawsar Ahmed (Thai Mistri)" [ref=f1e154]
+                  - cell "2026-10-24" [ref=f1e155]
+                  - cell "৳2,100.00" [ref=f1e156]
+                  - cell "৳2,000.00" [ref=f1e157]
+                  - cell "৳100.00" [ref=f1e158]
+                  - cell "আংশিক" [ref=f1e159]
+          - generic [ref=f1e160]:
+            - generic [ref=f1e161]:
+              - generic [ref=f1e162]:
+                - heading "✂️ স্টকে থাকা কাটিং অফ-কাট (Off-Cuts)" [level=3] [ref=f1e163]:
+                  - generic [ref=f1e164]: ✂️
+                  - text: স্টকে থাকা কাটিং অফ-কাট (Off-Cuts)
+                - paragraph [ref=f1e165]: ছোট অর্ডারে রিইউজ করার জন্য মজুত টুকরো
+              - link "সব →" [ref=f1e166] [cursor=pointer]:
+                - /url: http://localhost:8000/offcuts
+            - generic [ref=f1e167]: বর্তমানে কোনো অবিক্রিত অফ-কাট টুকরো নেই।

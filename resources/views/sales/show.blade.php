@@ -8,21 +8,27 @@
 
     <!-- Action Toolbar (Hidden in Print) -->
     <div class="flex items-center justify-between gap-4 print:hidden no-print">
-        <a href="{{ route('sales.index') }}" class="text-xs text-slate-400 hover:text-white transition flex items-center gap-1.5">
+        <a href="{{ route('sales.index') }}" class="btn-secondary text-xs py-1.5 px-3">
             ← চালান তালিকায় ফিরুন
         </a>
-        <div class="flex items-center gap-2">
-            <a href="{{ route('pos.create') }}" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold transition">
-                ⚡ নতুন পিওএস
+        <div class="flex items-center gap-2.5">
+            <a href="{{ route('pos.create') }}" class="btn-primary text-xs">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+                <span>নতুন পিওএস</span>
             </a>
-            <button onclick="window.print()" class="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-bold shadow-lg shadow-cyan-500/20 transition flex items-center gap-1.5">
-                <span>🖨️</span> প্রিন্ট চালান (Print)
+            <button onclick="window.print()" class="btn-secondary text-xs">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/>
+                </svg>
+                <span>প্রিন্ট চালান</span>
             </button>
         </div>
     </div>
 
     <!-- Printable Invoice Sheet -->
-    <div class="rounded-2xl border border-slate-800 bg-white text-slate-900 p-8 sm:p-10 shadow-2xl print:shadow-none print:border-none print:p-0 print:m-0 print:w-full print:rounded-none">
+    <div class="rounded-2xl border border-slate-200 bg-white text-slate-900 p-8 sm:p-10 shadow-xl print:shadow-none print:border-none print:p-0 print:m-0 print:w-full print:rounded-none">
         <!-- Invoice Header -->
         <div class="border-b-2 border-slate-900 pb-5 mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
@@ -33,7 +39,7 @@
                     {{ $company->address ?? 'মিরপুর-১০, ঢাকা-১২১৬, বাংলাদেশ' }}
                 </p>
                 <p class="text-xs text-slate-700 font-semibold mt-0.5">
-                    📞 {{ $company->phone ?? '01712-345678' }} • প্রোপাইটর: {{ $company->proprietor_name ?? 'মো: বোরহান উদ্দিন' }}
+                    ফোন: {{ $company->phone ?? '01712-345678' }} • প্রোপাইটর: {{ $company->proprietor_name ?? 'মো: বোরহান উদ্দিন' }}
                 </p>
             </div>
             <div class="sm:text-right">
@@ -43,7 +49,7 @@
                 <div class="text-xs font-mono font-bold text-slate-800">
                     চালান নং: <span class="text-sm font-black">{{ $sale->invoice_no }}</span>
                 </div>
-                <div class="text-xs text-slate-600">তারিখ: {{ $sale->sale_date }}</div>
+                <div class="text-xs text-slate-600 tnum">তারিখ: {{ $sale->sale_date }}</div>
             </div>
         </div>
 
@@ -84,7 +90,7 @@
                             <td class="p-2.5 font-bold">
                                 {{ $item->product->name ?? '-' }}
                             </td>
-                            <td class="p-2.5 text-slate-600 font-mono">
+                            <td class="p-2.5 text-slate-600 font-mono tnum">
                                 @if($item->height_inch && $item->width_inch)
                                     {{ $item->height_inch }}" × {{ $item->width_inch }}" ({{ number_format($item->total_sqft, 2) }} SFT)
                                 @elseif($item->length_feet)
@@ -93,11 +99,11 @@
                                     ফুল বার / পিস
                                 @endif
                             </td>
-                            <td class="p-2.5 text-center font-bold font-mono">
+                            <td class="p-2.5 text-center font-bold font-mono tnum">
                                 {{ number_format($item->quantity, 2) }} {{ $item->unit->code ?? '' }}
                             </td>
-                            <td class="p-2.5 text-right font-mono">৳{{ number_format($item->unit_price, 2) }}</td>
-                            <td class="p-2.5 text-right font-bold font-mono">৳{{ number_format($item->subtotal, 2) }}</td>
+                            <td class="p-2.5 text-right font-mono tnum">৳{{ number_format($item->unit_price, 2) }}</td>
+                            <td class="p-2.5 text-right font-bold font-mono tnum">৳{{ number_format($item->subtotal, 2) }}</td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -117,37 +123,37 @@
             <div class="w-full sm:w-64 space-y-1.5 font-mono text-slate-800 border-t sm:border-t-0 pt-3 sm:pt-0">
                 <div class="flex justify-between">
                     <span class="text-slate-600">আইটেম মোট:</span>
-                    <span>৳{{ number_format($sale->subtotal, 2) }}</span>
+                    <span class="tnum">৳{{ number_format($sale->subtotal, 2) }}</span>
                 </div>
                 @if($sale->carrying_cost > 0)
                     <div class="flex justify-between">
                         <span class="text-slate-600">ভ্যান / পরিবহন ভাড়া (+):</span>
-                        <span>৳{{ number_format($sale->carrying_cost, 2) }}</span>
+                        <span class="tnum">৳{{ number_format($sale->carrying_cost, 2) }}</span>
                     </div>
                 @endif
                 @if($sale->labor_fitting_cost > 0)
                     <div class="flex justify-between">
                         <span class="text-slate-600">কাটিং / লেবার মজুরি (+):</span>
-                        <span>৳{{ number_format($sale->labor_fitting_cost, 2) }}</span>
+                        <span class="tnum">৳{{ number_format($sale->labor_fitting_cost, 2) }}</span>
                     </div>
                 @endif
                 @if($sale->discount_amount > 0)
                     <div class="flex justify-between text-rose-600">
                         <span>ডিসকাউন্ট (-):</span>
-                        <span>৳{{ number_format($sale->discount_amount, 2) }}</span>
+                        <span class="tnum">৳{{ number_format($sale->discount_amount, 2) }}</span>
                     </div>
                 @endif
                 <div class="flex justify-between font-bold text-sm text-slate-950 border-t border-slate-900 pt-1.5 pb-1">
                     <span>সর্বমোট বিল:</span>
-                    <span>৳{{ number_format($sale->grand_total, 2) }}</span>
+                    <span class="tnum">৳{{ number_format($sale->grand_total, 2) }}</span>
                 </div>
                 <div class="flex justify-between text-emerald-700 font-bold">
                     <span>নগদ পরিশোধ:</span>
-                    <span>৳{{ number_format($sale->paid_amount, 2) }}</span>
+                    <span class="tnum">৳{{ number_format($sale->paid_amount, 2) }}</span>
                 </div>
                 <div class="flex justify-between text-amber-700 font-black border-t border-slate-300 pt-1">
                     <span>বকেয়া / বাকি (Due):</span>
-                    <span>৳{{ number_format($sale->due_amount, 2) }}</span>
+                    <span class="tnum">৳{{ number_format($sale->due_amount, 2) }}</span>
                 </div>
             </div>
         </div>

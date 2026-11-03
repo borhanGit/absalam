@@ -1,0 +1,173 @@
+- generic [ref=f20e2]:
+  - complementary [ref=f20e3]:
+    - generic [ref=f20e8]:
+      - generic [ref=f20e9]: ঢাকা থাই ও গ্লাস
+      - text: ENTERPRISE POS & ERP
+    - navigation [ref=f20e10]:
+      - generic [ref=f20e11]:
+        - generic [ref=f20e12]: অপারেশনস (Operations)
+        - generic [ref=f20e13]:
+          - link "ড্যাশবোর্ড (Dashboard)" [ref=f20e14] [cursor=pointer]:
+            - /url: http://localhost:8000/dashboard
+          - link "পিওএস কাউন্টার (POS) F2" [ref=f20e21] [cursor=pointer]:
+            - /url: http://localhost:8000/pos
+            - generic [ref=f20e22]: পিওএস কাউন্টার (POS)
+            - generic [ref=f20e26]: F2
+          - link "সেলস চালান (Sales List)" [ref=f20e27] [cursor=pointer]:
+            - /url: http://localhost:8000/sales
+          - link "জানালা/দরজা কোটেশন" [ref=f20e33] [cursor=pointer]:
+            - /url: http://localhost:8000/quotations
+          - link "পারচেজ ও ফ্যাক্টরি চালান" [ref=f20e37] [cursor=pointer]:
+            - /url: http://localhost:8000/purchases
+      - generic [ref=f20e41]:
+        - generic [ref=f20e42]: ইনভেন্টরি (Inventory)
+        - generic [ref=f20e43]:
+          - link "পণ্য তালিকা (Products Master)" [ref=f20e44] [cursor=pointer]:
+            - /url: http://localhost:8000/products
+          - link "ওয়্যারহাউস স্টক (Stock)" [ref=f20e49] [cursor=pointer]:
+            - /url: http://localhost:8000/stocks
+          - link "কাটিং অফ-কাট ও স্ক্র্যাপ" [ref=f20e54] [cursor=pointer]:
+            - /url: http://localhost:8000/offcuts
+      - generic [ref=f20e62]:
+        - generic [ref=f20e63]: পার্টি ও লেজার (Parties & CRM)
+        - generic [ref=f20e64]:
+          - link "কাস্টমার ও থাই মিস্ত্রি" [ref=f20e65] [cursor=pointer]:
+            - /url: http://localhost:8000/customers
+          - link "মিল ও সাপ্লায়ার্স" [ref=f20e72] [cursor=pointer]:
+            - /url: http://localhost:8000/suppliers
+      - generic [ref=f20e77]:
+        - generic [ref=f20e78]: ফাইন্যান্স ও একাউন্টস (Finance)
+        - generic [ref=f20e79]:
+          - link "চেক ম্যানেজমেন্ট (Cheques)" [ref=f20e80] [cursor=pointer]:
+            - /url: http://localhost:8000/cheques
+          - link "কালেকশন ও মানি রিসিট" [ref=f20e84] [cursor=pointer]:
+            - /url: http://localhost:8000/receipts
+          - link "সাপ্লায়ার পেমেন্ট (Payments)" [ref=f20e89] [cursor=pointer]:
+            - /url: http://localhost:8000/payments
+          - link "দোকান খরচ (Expenses)" [ref=f20e93] [cursor=pointer]:
+            - /url: http://localhost:8000/expenses
+          - link "ক্যাশ বুক ও আর্থিক রিপোর্ট" [ref=f20e98] [cursor=pointer]:
+            - /url: http://localhost:8000/accounts
+      - generic [ref=f20e101]:
+        - generic [ref=f20e102]: অ্যাডমিনিস্ট্রেশন (Administration)
+        - link "ইউজার ও পারমিশন (Users)" [ref=f20e104] [cursor=pointer]:
+          - /url: http://localhost:8000/users
+    - generic [ref=f20e109]:
+      - generic [ref=f20e110]:
+        - generic [ref=f20e111]: M
+        - generic [ref=f20e112]:
+          - link "Md. Borhan Uddin (মালিক)" [ref=f20e113] [cursor=pointer]:
+            - /url: http://localhost:8000/profile
+          - generic [ref=f20e114]: মালিক / সুপার অ্যাডমিন (Admin)
+      - button "লগআউট" [ref=f20e116]
+  - generic [ref=f20e120]:
+    - banner [ref=f20e121]:
+      - heading "হিসাব ও চার্ট অব একাউন্টস (Accounts & Financials)" [level=1] [ref=f20e123]
+      - generic [ref=f20e124]:
+        - generic [ref=f20e125]:
+          - generic [ref=f20e129]: "শাখা:"
+          - generic [ref=f20e130]: প্রধান শোরুম (মিরপুর)
+        - link "পিওএস কাউন্টার" [ref=f20e131] [cursor=pointer]:
+          - /url: http://localhost:8000/pos
+        - link "প্রোফাইল" [ref=f20e135] [cursor=pointer]:
+          - /url: http://localhost:8000/profile
+    - main [ref=f20e140]:
+      - generic [ref=f20e141]:
+        - generic [ref=f20e142]:
+          - generic [ref=f20e143]:
+            - heading "চার্ট অব একাউন্টস ও আর্থিক ব্যবস্থাপনা" [level=1] [ref=f20e144]
+            - paragraph [ref=f20e145]: চার্ট অব একাউন্টস, সম্পদ, দায়, মোট দেনা-পাওনা ও ব্যবসায়িক মূলধন সারসংক্ষেপ
+          - generic [ref=f20e146]:
+            - link "দৈনিক ক্যাশ বুক" [ref=f20e147] [cursor=pointer]:
+              - /url: http://localhost:8000/accounts/cashbook
+            - link "লাভ-লোকসান হিসাব (P&L)" [ref=f20e150] [cursor=pointer]:
+              - /url: http://localhost:8000/accounts/profit-loss
+        - generic [ref=f20e153]:
+          - generic [ref=f20e154]:
+            - generic [ref=f20e155]: কাস্টমার বকেয়া (Receivable)
+            - generic [ref=f20e156]: ৳ 143,600.00
+            - generic [ref=f20e157]: গ্রাহক ও মিস্ত্রিদের কাছে পাওনা
+          - generic [ref=f20e158]:
+            - generic [ref=f20e159]: সাপ্লায়ার দেনা (Payable)
+            - generic [ref=f20e160]: ৳ 193,300.00
+            - generic [ref=f20e161]: মিল ও ফ্যাক্টরিদের পরিশোধযোগ্য
+          - generic [ref=f20e162]:
+            - generic [ref=f20e163]: দোকান স্টক মূল্য (Stock Asset)
+            - generic [ref=f20e164]: ৳ 842,550.00
+            - generic [ref=f20e165]: মজুদ পণ্যের ক্রয়মূল্য
+          - generic [ref=f20e166]:
+            - generic [ref=f20e167]: মোট দোকান ব্যয় (Total Expenses)
+            - generic [ref=f20e168]: ৳ 0.00
+            - generic [ref=f20e169]: সকল অপারেটিং খরচ
+        - generic [ref=f20e170]:
+          - generic [ref=f20e171]:
+            - heading "চার্ট অব একাউন্টস তালিকা (Chart of Accounts)" [level=2] [ref=f20e175]
+            - generic [ref=f20e176]: স্ট্যান্ডার্ড হিসাব কোড অনুসারে সাজানো
+          - table [ref=f20e178]:
+            - rowgroup [ref=f20e179]:
+              - row [ref=f20e180]:
+                - columnheader "হিসাব কোড (Code)" [ref=f20e181]
+                - columnheader "হিসাবের নাম (Account Name)" [ref=f20e182]
+                - columnheader "হিসাবের ধরন (Type)" [ref=f20e183]
+                - columnheader "স্ট্যাটাস" [ref=f20e184]
+            - rowgroup [ref=f20e185]:
+              - row [ref=f20e186]:
+                - cell "1001" [ref=f20e187]
+                - cell "Cash in Hand (ক্যাশ খাতা)" [ref=f20e188]
+                - cell "সম্পদ (Asset)" [ref=f20e189]
+                - cell "সক্রিয়" [ref=f20e190]
+              - row [ref=f20e191]:
+                - cell "1002" [ref=f20e192]
+                - cell "Bank Accounts (ব্যাংক খাতা)" [ref=f20e193]
+                - cell "সম্পদ (Asset)" [ref=f20e194]
+                - cell "সক্রিয়" [ref=f20e195]
+              - row [ref=f20e196]:
+                - cell "1003" [ref=f20e197]
+                - cell "Accounts Receivable (কাস্টমার বাকি)" [ref=f20e198]
+                - cell "সম্পদ (Asset)" [ref=f20e199]
+                - cell "সক্রিয়" [ref=f20e200]
+              - row [ref=f20e201]:
+                - cell "1004" [ref=f20e202]
+                - cell "Inventory Asset (স্টক ভ্যালু)" [ref=f20e203]
+                - cell "সম্পদ (Asset)" [ref=f20e204]
+                - cell "সক্রিয়" [ref=f20e205]
+              - row [ref=f20e206]:
+                - cell "2001" [ref=f20e207]
+                - cell "Accounts Payable (সাপ্লায়ার বাকি)" [ref=f20e208]
+                - cell "দায় (Liability)" [ref=f20e209]
+                - cell "সক্রিয়" [ref=f20e210]
+              - row [ref=f20e211]:
+                - cell "3001" [ref=f20e212]
+                - cell "Owner Equity / Capital (মূলধন)" [ref=f20e213]
+                - cell "মালিকানা (Equity)" [ref=f20e214]
+                - cell "সক্রিয়" [ref=f20e215]
+              - row [ref=f20e216]:
+                - cell "4001" [ref=f20e217]
+                - cell "Sales Revenue (বিক্রয় আয়)" [ref=f20e218]
+                - cell "আয় (Revenue)" [ref=f20e219]
+                - cell "সক্রিয়" [ref=f20e220]
+              - row [ref=f20e221]:
+                - cell "5001" [ref=f20e222]
+                - cell "Cost of Goods Sold / Purchases (ক্রয় খরচ)" [ref=f20e223]
+                - cell "ব্যয় (Expense)" [ref=f20e224]
+                - cell "সক্রিয়" [ref=f20e225]
+              - row [ref=f20e226]:
+                - cell "5002" [ref=f20e227]
+                - cell "Shop / Godown Rent (ভাড়া খরচ)" [ref=f20e228]
+                - cell "ব্যয় (Expense)" [ref=f20e229]
+                - cell "সক্রিয়" [ref=f20e230]
+              - row [ref=f20e231]:
+                - cell "5003" [ref=f20e232]
+                - cell "Staff Salary & Wages (বেতন খরচ)" [ref=f20e233]
+                - cell "ব্যয় (Expense)" [ref=f20e234]
+                - cell "সক্রিয়" [ref=f20e235]
+              - row [ref=f20e236]:
+                - cell "5004" [ref=f20e237]
+                - cell "Transport & Carrying (পরিবহন ও ভ্যান খরচ)" [ref=f20e238]
+                - cell "ব্যয় (Expense)" [ref=f20e239]
+                - cell "সক্রিয়" [ref=f20e240]
+              - row [ref=f20e241]:
+                - cell "5005" [ref=f20e242]
+                - cell "General / Office Expenses (আপ্যায়ন ও বিবিধ)" [ref=f20e243]
+                - cell "ব্যয় (Expense)" [ref=f20e244]
+                - cell "সক্রিয়" [ref=f20e245]

@@ -1,0 +1,129 @@
+- generic [ref=f26e2]:
+  - complementary [ref=f26e3]:
+    - generic [ref=f26e8]:
+      - generic [ref=f26e9]: ঢাকা থাই ও গ্লাস
+      - text: ENTERPRISE POS & ERP
+    - navigation [ref=f26e10]:
+      - generic [ref=f26e11]:
+        - generic [ref=f26e12]: অপারেশনস (Operations)
+        - generic [ref=f26e13]:
+          - link "ড্যাশবোর্ড (Dashboard)" [ref=f26e14] [cursor=pointer]:
+            - /url: http://localhost:8000/dashboard
+          - link "পিওএস কাউন্টার (POS) F2" [ref=f26e21] [cursor=pointer]:
+            - /url: http://localhost:8000/pos
+            - generic [ref=f26e22]: পিওএস কাউন্টার (POS)
+            - generic [ref=f26e26]: F2
+          - link "সেলস চালান (Sales List)" [ref=f26e27] [cursor=pointer]:
+            - /url: http://localhost:8000/sales
+          - link "জানালা/দরজা কোটেশন" [ref=f26e33] [cursor=pointer]:
+            - /url: http://localhost:8000/quotations
+          - link "পারচেজ ও ফ্যাক্টরি চালান" [ref=f26e37] [cursor=pointer]:
+            - /url: http://localhost:8000/purchases
+      - generic [ref=f26e41]:
+        - generic [ref=f26e42]: ইনভেন্টরি (Inventory)
+        - generic [ref=f26e43]:
+          - link "পণ্য তালিকা (Products Master)" [ref=f26e44] [cursor=pointer]:
+            - /url: http://localhost:8000/products
+          - link "ওয়্যারহাউস স্টক (Stock)" [ref=f26e49] [cursor=pointer]:
+            - /url: http://localhost:8000/stocks
+          - link "কাটিং অফ-কাট ও স্ক্র্যাপ" [ref=f26e54] [cursor=pointer]:
+            - /url: http://localhost:8000/offcuts
+      - generic [ref=f26e62]:
+        - generic [ref=f26e63]: পার্টি ও লেজার (Parties & CRM)
+        - generic [ref=f26e64]:
+          - link "কাস্টমার ও থাই মিস্ত্রি" [ref=f26e65] [cursor=pointer]:
+            - /url: http://localhost:8000/customers
+          - link "মিল ও সাপ্লায়ার্স" [ref=f26e72] [cursor=pointer]:
+            - /url: http://localhost:8000/suppliers
+      - generic [ref=f26e77]:
+        - generic [ref=f26e78]: ফাইন্যান্স ও একাউন্টস (Finance)
+        - generic [ref=f26e79]:
+          - link "চেক ম্যানেজমেন্ট (Cheques)" [ref=f26e80] [cursor=pointer]:
+            - /url: http://localhost:8000/cheques
+          - link "কালেকশন ও মানি রিসিট" [ref=f26e84] [cursor=pointer]:
+            - /url: http://localhost:8000/receipts
+          - link "সাপ্লায়ার পেমেন্ট (Payments)" [ref=f26e89] [cursor=pointer]:
+            - /url: http://localhost:8000/payments
+          - link "দোকান খরচ (Expenses)" [ref=f26e93] [cursor=pointer]:
+            - /url: http://localhost:8000/expenses
+          - link "ক্যাশ বুক ও আর্থিক রিপোর্ট" [ref=f26e98] [cursor=pointer]:
+            - /url: http://localhost:8000/accounts
+      - generic [ref=f26e101]:
+        - generic [ref=f26e102]: অ্যাডমিনিস্ট্রেশন (Administration)
+        - link "ইউজার ও পারমিশন (Users)" [ref=f26e104] [cursor=pointer]:
+          - /url: http://localhost:8000/users
+    - generic [ref=f26e109]:
+      - generic [ref=f26e110]:
+        - generic [ref=f26e111]: M
+        - generic [ref=f26e112]:
+          - link "Md. Borhan Uddin (মালিক)" [ref=f26e113] [cursor=pointer]:
+            - /url: http://localhost:8000/profile
+          - generic [ref=f26e114]: মালিক / সুপার অ্যাডমিন (Admin)
+      - button "লগআউট" [ref=f26e116]
+  - generic [ref=f26e120]:
+    - banner [ref=f26e121]:
+      - 'heading "কাস্টমার লেজার ও খতিয়ান: Kawsar Ahmed (Thai Mistri)" [level=1] [ref=f26e123]'
+      - generic [ref=f26e124]:
+        - generic [ref=f26e125]:
+          - generic [ref=f26e129]: "শাখা:"
+          - generic [ref=f26e130]: প্রধান শোরুম (মিরপুর)
+        - link "পিওএস কাউন্টার" [ref=f26e131] [cursor=pointer]:
+          - /url: http://localhost:8000/pos
+        - link "প্রোফাইল" [ref=f26e135] [cursor=pointer]:
+          - /url: http://localhost:8000/profile
+    - main [ref=f26e140]:
+      - generic [ref=f26e141]:
+        - generic [ref=f26e142]:
+          - link "কাস্টমার তালিকায় ফিরুন" [ref=f26e143] [cursor=pointer]:
+            - /url: http://localhost:8000/customers
+          - link "টাকা গ্রহণ (Money Receipt)" [ref=f26e147] [cursor=pointer]:
+            - /url: http://localhost:8000/receipts/create?customer_id=1
+        - generic [ref=f26e150]:
+          - generic [ref=f26e151]:
+            - generic [ref=f26e152]: K
+            - generic [ref=f26e153]:
+              - generic [ref=f26e154]:
+                - heading "Kawsar Ahmed (Thai Mistri)" [level=2] [ref=f26e155]
+                - generic [ref=f26e156]: Contractor mistri
+              - generic [ref=f26e157]:
+                - generic [ref=f26e158]: 01819-112233
+                - generic [ref=f26e161]: Mirpur-11, Block-C, Dhaka
+          - generic [ref=f26e166]:
+            - generic [ref=f26e167]: বর্তমান বকেয়া (Due)
+            - text: ৳18,600.00
+        - generic [ref=f26e168]:
+          - generic [ref=f26e169]:
+            - generic [ref=f26e170]:
+              - heading "চালানে মাল ক্রয়ের ইতিহাস" [level=3] [ref=f26e174]
+              - generic [ref=f26e175]: 1 টি চালান
+            - table [ref=f26e177]:
+              - rowgroup [ref=f26e178]:
+                - row [ref=f26e179]:
+                  - columnheader "চালান নং" [ref=f26e180]
+                  - columnheader "তারিখ" [ref=f26e181]
+                  - columnheader "মোট বিল" [ref=f26e182]
+                  - columnheader "নগদ" [ref=f26e183]
+                  - columnheader "বাকি" [ref=f26e184]
+              - rowgroup [ref=f26e185]:
+                - row [ref=f26e186]:
+                  - cell [ref=f26e187]:
+                    - link "INV-2026-00001" [ref=f26e188] [cursor=pointer]:
+                      - /url: http://localhost:8000/sales/1
+                  - cell "2026-10-24" [ref=f26e189]
+                  - cell "৳2,100.00" [ref=f26e190]
+                  - cell "৳2,000.00" [ref=f26e191]
+                  - cell "৳100.00" [ref=f26e192]
+          - generic [ref=f26e193]:
+            - generic [ref=f26e194]:
+              - heading "বাকি পরিশোধ ও রিসিটের ইতিহাস" [level=3] [ref=f26e198]
+              - generic [ref=f26e199]: 0 টি রিসিট
+            - table [ref=f26e201]:
+              - rowgroup [ref=f26e202]:
+                - row [ref=f26e203]:
+                  - columnheader "রিসিট নং" [ref=f26e204]
+                  - columnheader "তারিখ" [ref=f26e205]
+                  - columnheader "মাধ্যম" [ref=f26e206]
+                  - columnheader "জমা টাকা (৳)" [ref=f26e207]
+              - rowgroup [ref=f26e208]:
+                - row [ref=f26e209]:
+                  - cell "এখনও কোনো মানি রিসিট গ্রহণ করা হয়নি।" [ref=f26e210]
