@@ -1,0 +1,122 @@
+- generic [ref=f23e2]:
+  - complementary [ref=f23e3]:
+    - generic [ref=f23e8]:
+      - generic [ref=f23e9]: ঢাকা থাই ও গ্লাস
+      - text: ENTERPRISE POS & ERP
+    - navigation [ref=f23e10]:
+      - generic [ref=f23e11]:
+        - generic [ref=f23e12]: অপারেশনস (Operations)
+        - generic [ref=f23e13]:
+          - link "ড্যাশবোর্ড (Dashboard)" [ref=f23e14] [cursor=pointer]:
+            - /url: http://localhost:8000/dashboard
+          - link "পিওএস কাউন্টার (POS) F2" [ref=f23e21] [cursor=pointer]:
+            - /url: http://localhost:8000/pos
+            - generic [ref=f23e22]: পিওএস কাউন্টার (POS)
+            - generic [ref=f23e26]: F2
+          - link "সেলস চালান (Sales List)" [ref=f23e27] [cursor=pointer]:
+            - /url: http://localhost:8000/sales
+          - link "জানালা/দরজা কোটেশন" [ref=f23e33] [cursor=pointer]:
+            - /url: http://localhost:8000/quotations
+          - link "পারচেজ ও ফ্যাক্টরি চালান" [ref=f23e37] [cursor=pointer]:
+            - /url: http://localhost:8000/purchases
+      - generic [ref=f23e41]:
+        - generic [ref=f23e42]: ইনভেন্টরি (Inventory)
+        - generic [ref=f23e43]:
+          - link "পণ্য তালিকা (Products Master)" [ref=f23e44] [cursor=pointer]:
+            - /url: http://localhost:8000/products
+          - link "ওয়্যারহাউস স্টক (Stock)" [ref=f23e49] [cursor=pointer]:
+            - /url: http://localhost:8000/stocks
+          - link "কাটিং অফ-কাট ও স্ক্র্যাপ" [ref=f23e54] [cursor=pointer]:
+            - /url: http://localhost:8000/offcuts
+      - generic [ref=f23e62]:
+        - generic [ref=f23e63]: পার্টি ও লেজার (Parties & CRM)
+        - generic [ref=f23e64]:
+          - link "কাস্টমার ও থাই মিস্ত্রি" [ref=f23e65] [cursor=pointer]:
+            - /url: http://localhost:8000/customers
+          - link "মিল ও সাপ্লায়ার্স" [ref=f23e72] [cursor=pointer]:
+            - /url: http://localhost:8000/suppliers
+      - generic [ref=f23e77]:
+        - generic [ref=f23e78]: ফাইন্যান্স ও একাউন্টস (Finance)
+        - generic [ref=f23e79]:
+          - link "চেক ম্যানেজমেন্ট (Cheques)" [ref=f23e80] [cursor=pointer]:
+            - /url: http://localhost:8000/cheques
+          - link "কালেকশন ও মানি রিসিট" [ref=f23e84] [cursor=pointer]:
+            - /url: http://localhost:8000/receipts
+          - link "সাপ্লায়ার পেমেন্ট (Payments)" [ref=f23e89] [cursor=pointer]:
+            - /url: http://localhost:8000/payments
+          - link "দোকান খরচ (Expenses)" [ref=f23e93] [cursor=pointer]:
+            - /url: http://localhost:8000/expenses
+          - link "ক্যাশ বুক ও আর্থিক রিপোর্ট" [ref=f23e98] [cursor=pointer]:
+            - /url: http://localhost:8000/accounts
+      - generic [ref=f23e101]:
+        - generic [ref=f23e102]: অ্যাডমিনিস্ট্রেশন (Administration)
+        - link "ইউজার ও পারমিশন (Users)" [ref=f23e104] [cursor=pointer]:
+          - /url: http://localhost:8000/users
+    - generic [ref=f23e109]:
+      - generic [ref=f23e110]:
+        - generic [ref=f23e111]: M
+        - generic [ref=f23e112]:
+          - link "Md. Borhan Uddin (মালিক)" [ref=f23e113] [cursor=pointer]:
+            - /url: http://localhost:8000/profile
+          - generic [ref=f23e114]: মালিক / সুপার অ্যাডমিন (Admin)
+      - button "লগআউট" [ref=f23e116]
+  - generic [ref=f23e120]:
+    - banner [ref=f23e121]:
+      - heading "দোকান পরিচালনা ও দৈনন্দিন খরচের হিসাব" [level=1] [ref=f23e123]
+      - generic [ref=f23e124]:
+        - generic [ref=f23e125]:
+          - generic [ref=f23e129]: "শাখা:"
+          - generic [ref=f23e130]: প্রধান শোরুম (মিরপুর)
+        - link "পিওএস কাউন্টার" [ref=f23e131] [cursor=pointer]:
+          - /url: http://localhost:8000/pos
+        - link "প্রোফাইল" [ref=f23e135] [cursor=pointer]:
+          - /url: http://localhost:8000/profile
+    - main [ref=f23e140]:
+      - generic [ref=f23e141]:
+        - generic [ref=f23e142]:
+          - generic [ref=f23e143]:
+            - heading "দোকান পরিচালনা ও দৈনিক খরচ রেজিস্টার" [level=1] [ref=f23e144]
+            - paragraph [ref=f23e145]: দোকান ভাড়া, বিদ্যুৎ বিল, কারিগর মজুরি, চা-নাস্তা ও কাটিং সরঞ্জাম ক্রয় খরচ
+          - link "নতুন খরচ এন্ট্রি" [ref=f23e146] [cursor=pointer]:
+            - /url: http://localhost:8000/expenses/create
+        - generic [ref=f23e149]:
+          - generic [ref=f23e150]:
+            - generic [ref=f23e151]: আজকের খরচ (Today)
+            - generic [ref=f23e152]: ৳ 0.00
+            - generic [ref=f23e153]: 02 Nov, 2026
+          - generic [ref=f23e154]:
+            - generic [ref=f23e155]: চলতি মাসের খরচ (This Month)
+            - generic [ref=f23e156]: ৳ 0.00
+            - generic [ref=f23e157]: November, 2026
+          - generic [ref=f23e158]:
+            - generic [ref=f23e159]: সর্বমোট খরচ (Total Expenses)
+            - generic [ref=f23e160]: ৳ 0.00
+            - generic [ref=f23e161]: সব রেকর্ডকৃত খরচ
+        - generic [ref=f23e162]:
+          - generic [ref=f23e163]:
+            - generic [ref=f23e164]: খরচের খাত (Category)
+            - combobox [ref=f23e165]:
+              - option "-- সকল খাত --" [selected]
+          - generic [ref=f23e166]:
+            - generic [ref=f23e167]: তারিখ থেকে
+            - textbox [ref=f23e168]
+          - generic [ref=f23e169]:
+            - generic [ref=f23e170]: তারিখ পর্যন্ত
+            - textbox [ref=f23e171]
+          - generic [ref=f23e172]:
+            - button "ফিল্টার" [ref=f23e173]
+            - link "রিসেট" [ref=f23e174] [cursor=pointer]:
+              - /url: http://localhost:8000/expenses
+        - table [ref=f23e177]:
+          - rowgroup [ref=f23e178]:
+            - row [ref=f23e179]:
+              - columnheader "ভাউচার নং" [ref=f23e180]
+              - columnheader "তারিখ" [ref=f23e181]
+              - columnheader "খরচের খাত" [ref=f23e182]
+              - columnheader "বিবরণ / নোট" [ref=f23e183]
+              - columnheader "পেমেন্ট মাধ্যম" [ref=f23e184]
+              - columnheader "টাকার পরিমাণ" [ref=f23e185]
+              - columnheader "অ্যাকশন" [ref=f23e186]
+          - rowgroup [ref=f23e187]:
+            - row [ref=f23e188]:
+              - cell "কোনো খরচের রেকর্ড পাওয়া যায়নি।" [ref=f23e189]

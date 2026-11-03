@@ -1,0 +1,19 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]: TH
+    - heading "Dhaka Thai & Aluminium Glass House" [level=1] [ref=e5]
+    - paragraph [ref=e6]: পিওএস কাউন্টার, থাই গ্লাস ডাইমেনশন বিলিং ও ওয়্যারহাউস সফটওয়্যার
+  - generic [ref=e8]:
+    - generic [ref=e9]:
+      - generic [ref=e10]: ইমেইল ঠিকানা (Email)
+      - textbox "name@company.com" [active] [ref=e12]: admin@thaiglass.com
+    - generic [ref=e13]:
+      - generic [ref=e14]: পাসওয়ার্ড (Password)
+      - textbox "••••••••" [ref=e16]: password
+    - generic [ref=e18] [cursor=pointer]:
+      - checkbox "মনে রাখুন (Remember me)" [ref=e19]
+      - generic [ref=e20]: মনে রাখুন (Remember me)
+    - button "🔐 সিস্টেমে প্রবেশ করুন" [ref=e21]:
+      - generic [ref=e22]: 🔐
+      - text: সিস্টেমে প্রবেশ করুন
+  - generic [ref=e23]: © 2026 Dhaka Thai & Aluminium Glass House. All rights reserved.

@@ -1,0 +1,175 @@
+- generic [ref=f5e2]:
+  - complementary [ref=f5e3]:
+    - generic [ref=f5e8]:
+      - generic [ref=f5e9]: ঢাকা থাই ও গ্লাস
+      - text: ENTERPRISE POS & ERP
+    - navigation [ref=f5e10]:
+      - generic [ref=f5e11]:
+        - generic [ref=f5e12]: অপারেশনস (Operations)
+        - generic [ref=f5e13]:
+          - link "ড্যাশবোর্ড (Dashboard)" [ref=f5e14] [cursor=pointer]:
+            - /url: http://localhost:8000/dashboard
+          - link "পিওএস কাউন্টার (POS) F2" [ref=f5e21] [cursor=pointer]:
+            - /url: http://localhost:8000/pos
+            - generic [ref=f5e22]: পিওএস কাউন্টার (POS)
+            - generic [ref=f5e26]: F2
+          - link "সেলস চালান (Sales List)" [ref=f5e27] [cursor=pointer]:
+            - /url: http://localhost:8000/sales
+          - link "জানালা/দরজা কোটেশন" [ref=f5e33] [cursor=pointer]:
+            - /url: http://localhost:8000/quotations
+          - link "পারচেজ ও ফ্যাক্টরি চালান" [ref=f5e37] [cursor=pointer]:
+            - /url: http://localhost:8000/purchases
+      - generic [ref=f5e41]:
+        - generic [ref=f5e42]: ইনভেন্টরি (Inventory)
+        - generic [ref=f5e43]:
+          - link "পণ্য তালিকা (Products Master)" [ref=f5e44] [cursor=pointer]:
+            - /url: http://localhost:8000/products
+          - link "ওয়্যারহাউস স্টক (Stock)" [ref=f5e49] [cursor=pointer]:
+            - /url: http://localhost:8000/stocks
+          - link "কাটিং অফ-কাট ও স্ক্র্যাপ" [ref=f5e54] [cursor=pointer]:
+            - /url: http://localhost:8000/offcuts
+      - generic [ref=f5e62]:
+        - generic [ref=f5e63]: পার্টি ও লেজার (Parties & CRM)
+        - generic [ref=f5e64]:
+          - link "কাস্টমার ও থাই মিস্ত্রি" [ref=f5e65] [cursor=pointer]:
+            - /url: http://localhost:8000/customers
+          - link "মিল ও সাপ্লায়ার্স" [ref=f5e72] [cursor=pointer]:
+            - /url: http://localhost:8000/suppliers
+      - generic [ref=f5e77]:
+        - generic [ref=f5e78]: ফাইন্যান্স ও একাউন্টস (Finance)
+        - generic [ref=f5e79]:
+          - link "চেক ম্যানেজমেন্ট (Cheques)" [ref=f5e80] [cursor=pointer]:
+            - /url: http://localhost:8000/cheques
+          - link "কালেকশন ও মানি রিসিট" [ref=f5e84] [cursor=pointer]:
+            - /url: http://localhost:8000/receipts
+          - link "সাপ্লায়ার পেমেন্ট (Payments)" [ref=f5e89] [cursor=pointer]:
+            - /url: http://localhost:8000/payments
+          - link "দোকান খরচ (Expenses)" [ref=f5e93] [cursor=pointer]:
+            - /url: http://localhost:8000/expenses
+          - link "ক্যাশ বুক ও আর্থিক রিপোর্ট" [ref=f5e98] [cursor=pointer]:
+            - /url: http://localhost:8000/accounts
+      - generic [ref=f5e101]:
+        - generic [ref=f5e102]: অ্যাডমিনিস্ট্রেশন (Administration)
+        - link "ইউজার ও পারমিশন (Users)" [ref=f5e104] [cursor=pointer]:
+          - /url: http://localhost:8000/users
+    - generic [ref=f5e109]:
+      - generic [ref=f5e110]:
+        - generic [ref=f5e111]: M
+        - generic [ref=f5e112]:
+          - link "Md. Borhan Uddin (মালিক)" [ref=f5e113] [cursor=pointer]:
+            - /url: http://localhost:8000/profile
+          - generic [ref=f5e114]: মালিক / সুপার অ্যাডমিন (Admin)
+      - button "লগআউট" [ref=f5e116]
+  - generic [ref=f5e120]:
+    - banner [ref=f5e121]:
+      - heading "থাই ও গ্লাস পিওএস কাউন্টার (Quick POS Billing)" [level=1] [ref=f5e123]
+      - generic [ref=f5e124]:
+        - generic [ref=f5e125]:
+          - generic [ref=f5e129]: "শাখা:"
+          - generic [ref=f5e130]: প্রধান শোরুম (মিরপুর)
+        - link "পিওএস কাউন্টার" [ref=f5e131] [cursor=pointer]:
+          - /url: http://localhost:8000/pos
+        - link "প্রোফাইল" [ref=f5e135] [cursor=pointer]:
+          - /url: http://localhost:8000/profile
+    - main [ref=f5e140]:
+      - generic [ref=f5e142]:
+        - generic [ref=f5e143]:
+          - generic [ref=f5e144]:
+            - generic [ref=f5e145]:
+              - generic [ref=f5e146]: আইটেম নির্বাচন ও সাইজ ইনপুট
+              - generic [ref=f5e151]: কাঁচের মাপ ইঞ্চিতে দিলে অটো স্কয়ার ফিট হিসাব হবে
+            - generic [ref=f5e152]:
+              - combobox [ref=f5e154]:
+                - option "পণ্য নির্বাচন করুন..."
+                - option "[PROFILE] 4\" Sliding Bottom (1.2mm SS Finish) (৳2300.00/bar)" [selected]
+                - option "[PROFILE] 4\" Sliding Top (1.2mm SS Finish) (৳2100.00/bar)"
+                - option "[PROFILE] 4\" Sliding Interlock (1.2mm SS Finish) (৳1800.00/bar)"
+                - option "[GLASS] 5mm Clear Sheet Glass (PHP) (৳70.00/sqft)"
+                - option "[GLASS] 5mm Tinted Dark Black Glass (Nasir) (৳85.00/sqft)"
+                - option "[ACCESSORY] Sliding Heavy Duty Double Bearing Roller (৳130.00/pcs)"
+                - option "[ACCESSORY] Crescent Sliding Window Lock (SS Finish) (৳220.00/pcs)"
+                - option "[ACCESSORY] Silicone Sealant Clear (GP 300ml) (৳290.00/tube)"
+                - option "[SCRAP] Aluminium Scrap / Bhangari (ভাঙারি) (৳270.00/kg)"
+              - spinbutton "দর / রেট" [ref=f5e156]: "2300"
+              - button "কার্টে যোগ করুন" [ref=f5e158]
+            - generic [ref=f5e233]:
+              - generic [ref=f5e234]:
+                - generic [ref=f5e235]: উচ্চতা (ইঞ্চি)
+                - spinbutton [ref=f5e236]: "54"
+              - generic [ref=f5e237]:
+                - generic [ref=f5e238]: প্রস্থ (ইঞ্চি)
+                - spinbutton [ref=f5e239]: "36"
+              - generic [ref=f5e240]:
+                - generic [ref=f5e241]: সংখ্যা (Pcs)
+                - spinbutton [ref=f5e242]: "1"
+              - generic [ref=f5e243]:
+                - generic [ref=f5e244]: মোট স্কয়ার ফিট
+                - textbox [ref=f5e245]: 13.50 SFT
+              - generic [ref=f5e246]:
+                - generic [ref=f5e247]: কাটিং দৈর্ঘ্য (ফুট)
+                - spinbutton [ref=f5e248]: "16"
+          - generic [ref=f5e162]:
+            - generic [ref=f5e163]:
+              - generic [ref=f5e164]: বিক্রয়ের পণ্য তালিকা (0 টি আইটেম)
+              - button "কার্ট খালি করুন" [ref=f5e170]
+            - table [ref=f5e172]:
+              - rowgroup [ref=f5e173]:
+                - row [ref=f5e174]:
+                  - columnheader "পণ্যের নাম" [ref=f5e175]
+                  - columnheader "সাইজ / পরিমাপ" [ref=f5e176]
+                  - columnheader "পরিমাণ" [ref=f5e177]
+                  - columnheader "দর (৳)" [ref=f5e178]
+                  - columnheader "মোট (৳)" [ref=f5e179]
+                  - columnheader "রিমুভ" [ref=f5e180]
+              - rowgroup [ref=f5e181]:
+                - row [ref=f5e182]:
+                  - cell "উপরে আইটেম সিলেক্ট করে \"কার্টে যোগ করুন\"-এ চাপুন।" [ref=f5e183]
+        - generic [ref=f5e185]:
+          - generic [ref=f5e186]:
+            - generic [ref=f5e187]: চালান ও পেমেন্ট বিবরণ
+            - generic [ref=f5e192]: INV-AUTO
+          - generic [ref=f5e193]:
+            - generic [ref=f5e194]:
+              - generic [ref=f5e195]: বিক্রয় শাখা
+              - combobox [ref=f5e196]:
+                - option "Main Showroom & Sales Counter" [selected]
+                - option "Central Godown (Stock Yard)"
+                - option "Cutting & Fabrication Workshop"
+            - generic [ref=f5e197]:
+              - generic [ref=f5e198]: তারিখ
+              - textbox [ref=f5e199]: 2026-11-02
+          - generic [ref=f5e200]:
+            - generic [ref=f5e201]: কাস্টমার নির্বাচন করুন *
+            - combobox [ref=f5e202]:
+              - 'option "Kawsar Ahmed (Thai Mistri) (Contractor_mistri) — বাকি: ৳18,600" [selected]'
+              - 'option "Rahim Construction & Real Estate Ltd (Builder) — বাকি: ৳125,000"'
+              - 'option "Engr. Tanvir Hasan (House Owner) (Retail) — বাকি: ৳0"'
+          - generic [ref=f5e203]:
+            - generic [ref=f5e204]: থাই মিস্ত্রি / রেফারেন্স (কমিশনের জন্য)
+            - combobox [ref=f5e205]:
+              - option "কোনো মিস্ত্রি নেই" [selected]
+              - option "Kawsar Ahmed (Thai Mistri) (01819-112233)"
+          - generic [ref=f5e206]:
+            - generic [ref=f5e207]:
+              - generic [ref=f5e208]: "আইটেম সাবটোটাল:"
+              - generic [ref=f5e209]: ৳0.00
+            - generic [ref=f5e210]:
+              - generic [ref=f5e211]: "ভ্যান / পরিবহন ভাড়া (+):"
+              - spinbutton [ref=f5e212]: "0"
+            - generic [ref=f5e213]:
+              - generic [ref=f5e214]: "কাটিং / ফিটিং মজুরি (+):"
+              - spinbutton [ref=f5e215]: "0"
+            - generic [ref=f5e216]:
+              - generic [ref=f5e217]: "ডিসকাউন্ট (-):"
+              - spinbutton [ref=f5e218]: "0"
+            - generic [ref=f5e219]:
+              - generic [ref=f5e220]: "সর্বমোট প্রদেয় বিল:"
+              - generic [ref=f5e221]: ৳0.00
+            - generic [ref=f5e222]:
+              - generic [ref=f5e223]:
+                - generic [ref=f5e224]: "ক্যাশ গ্রহণ / পরিশোধ (৳):"
+                - spinbutton [ref=f5e225]: "0"
+              - generic [ref=f5e226]:
+                - generic [ref=f5e227]: "বাকি টাকা (Due):"
+                - generic [ref=f5e228]: ৳0.00
+          - button "চালান নিশ্চিত করুন ও প্রিন্ট করুন" [disabled] [ref=f5e229]

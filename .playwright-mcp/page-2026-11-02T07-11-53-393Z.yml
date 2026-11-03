@@ -1,0 +1,127 @@
+- generic [ref=f25e2]:
+  - complementary [ref=f25e3]:
+    - generic [ref=f25e8]:
+      - generic [ref=f25e9]: ঢাকা থাই ও গ্লাস
+      - text: ENTERPRISE POS & ERP
+    - navigation [ref=f25e10]:
+      - generic [ref=f25e11]:
+        - generic [ref=f25e12]: অপারেশনস (Operations)
+        - generic [ref=f25e13]:
+          - link "ড্যাশবোর্ড (Dashboard)" [ref=f25e14] [cursor=pointer]:
+            - /url: http://localhost:8000/dashboard
+          - link "পিওএস কাউন্টার (POS) F2" [ref=f25e21] [cursor=pointer]:
+            - /url: http://localhost:8000/pos
+            - generic [ref=f25e22]: পিওএস কাউন্টার (POS)
+            - generic [ref=f25e26]: F2
+          - link "সেলস চালান (Sales List)" [ref=f25e27] [cursor=pointer]:
+            - /url: http://localhost:8000/sales
+          - link "জানালা/দরজা কোটেশন" [ref=f25e33] [cursor=pointer]:
+            - /url: http://localhost:8000/quotations
+          - link "পারচেজ ও ফ্যাক্টরি চালান" [ref=f25e37] [cursor=pointer]:
+            - /url: http://localhost:8000/purchases
+      - generic [ref=f25e41]:
+        - generic [ref=f25e42]: ইনভেন্টরি (Inventory)
+        - generic [ref=f25e43]:
+          - link "পণ্য তালিকা (Products Master)" [ref=f25e44] [cursor=pointer]:
+            - /url: http://localhost:8000/products
+          - link "ওয়্যারহাউস স্টক (Stock)" [ref=f25e49] [cursor=pointer]:
+            - /url: http://localhost:8000/stocks
+          - link "কাটিং অফ-কাট ও স্ক্র্যাপ" [ref=f25e54] [cursor=pointer]:
+            - /url: http://localhost:8000/offcuts
+      - generic [ref=f25e62]:
+        - generic [ref=f25e63]: পার্টি ও লেজার (Parties & CRM)
+        - generic [ref=f25e64]:
+          - link "কাস্টমার ও থাই মিস্ত্রি" [ref=f25e65] [cursor=pointer]:
+            - /url: http://localhost:8000/customers
+          - link "মিল ও সাপ্লায়ার্স" [ref=f25e72] [cursor=pointer]:
+            - /url: http://localhost:8000/suppliers
+      - generic [ref=f25e77]:
+        - generic [ref=f25e78]: ফাইন্যান্স ও একাউন্টস (Finance)
+        - generic [ref=f25e79]:
+          - link "চেক ম্যানেজমেন্ট (Cheques)" [ref=f25e80] [cursor=pointer]:
+            - /url: http://localhost:8000/cheques
+          - link "কালেকশন ও মানি রিসিট" [ref=f25e84] [cursor=pointer]:
+            - /url: http://localhost:8000/receipts
+          - link "সাপ্লায়ার পেমেন্ট (Payments)" [ref=f25e89] [cursor=pointer]:
+            - /url: http://localhost:8000/payments
+          - link "দোকান খরচ (Expenses)" [ref=f25e93] [cursor=pointer]:
+            - /url: http://localhost:8000/expenses
+          - link "ক্যাশ বুক ও আর্থিক রিপোর্ট" [ref=f25e98] [cursor=pointer]:
+            - /url: http://localhost:8000/accounts
+      - generic [ref=f25e101]:
+        - generic [ref=f25e102]: অ্যাডমিনিস্ট্রেশন (Administration)
+        - link "ইউজার ও পারমিশন (Users)" [ref=f25e104] [cursor=pointer]:
+          - /url: http://localhost:8000/users
+    - generic [ref=f25e109]:
+      - generic [ref=f25e110]:
+        - generic [ref=f25e111]: M
+        - generic [ref=f25e112]:
+          - link "Md. Borhan Uddin (মালিক)" [ref=f25e113] [cursor=pointer]:
+            - /url: http://localhost:8000/profile
+          - generic [ref=f25e114]: মালিক / সুপার অ্যাডমিন (Admin)
+      - button "লগআউট" [ref=f25e116]
+  - generic [ref=f25e120]:
+    - banner [ref=f25e121]:
+      - 'heading "সাপ্লায়ার লেজার ও খতিয়ান: Kai Aluminium Industries Ltd" [level=1] [ref=f25e123]'
+      - generic [ref=f25e124]:
+        - generic [ref=f25e125]:
+          - generic [ref=f25e129]: "শাখা:"
+          - generic [ref=f25e130]: প্রধান শোরুম (মিরপুর)
+        - link "পিওএস কাউন্টার" [ref=f25e131] [cursor=pointer]:
+          - /url: http://localhost:8000/pos
+        - link "প্রোফাইল" [ref=f25e135] [cursor=pointer]:
+          - /url: http://localhost:8000/profile
+    - main [ref=f25e140]:
+      - generic [ref=f25e141]:
+        - generic [ref=f25e142]:
+          - link "সাপ্লায়ার তালিকায় ফিরুন" [ref=f25e143] [cursor=pointer]:
+            - /url: http://localhost:8000/suppliers
+          - link "পেমেন্ট প্রদান করুন (Make Payment)" [ref=f25e147] [cursor=pointer]:
+            - /url: http://localhost:8000/payments/create?supplier_id=1
+        - generic [ref=f25e150]:
+          - generic [ref=f25e151]:
+            - generic [ref=f25e152]: K
+            - generic [ref=f25e153]:
+              - generic [ref=f25e154]:
+                - heading "Kai Aluminium Industries Ltd" [level=2] [ref=f25e155]
+                - generic [ref=f25e156]: Kai Aluminium Ltd
+              - generic [ref=f25e157]:
+                - generic [ref=f25e158]: 01711-000001
+                - generic [ref=f25e161]: Tongi Industrial Area, Gazipur
+          - generic [ref=f25e166]:
+            - generic [ref=f25e167]: বর্তমান দেনা (Payable)
+            - text: ৳135,800.00
+        - generic [ref=f25e168]:
+          - generic [ref=f25e169]:
+            - generic [ref=f25e170]:
+              - heading "মাল ক্রয়ের ইতিহাস (Purchases)" [level=3] [ref=f25e174]
+              - generic [ref=f25e175]: 1 টি চালান
+            - table [ref=f25e177]:
+              - rowgroup [ref=f25e178]:
+                - row [ref=f25e179]:
+                  - columnheader "চালান নং" [ref=f25e180]
+                  - columnheader "তারিখ" [ref=f25e181]
+                  - columnheader "মোট বিল" [ref=f25e182]
+                  - columnheader "নগদ পরিশোধ" [ref=f25e183]
+                  - columnheader "বাকি" [ref=f25e184]
+              - rowgroup [ref=f25e185]:
+                - row [ref=f25e186]:
+                  - cell "PUR-2026-0001" [ref=f25e187]
+                  - cell "2026-10-24" [ref=f25e188]
+                  - cell "৳0.00" [ref=f25e189]
+                  - cell "৳50,000.00" [ref=f25e190]
+                  - cell "৳50,800.00" [ref=f25e191]
+          - generic [ref=f25e192]:
+            - generic [ref=f25e193]:
+              - heading "পেমেন্ট প্রদানের ইতিহাস" [level=3] [ref=f25e197]
+              - generic [ref=f25e198]: 0 টি পেমেন্ট
+            - table [ref=f25e200]:
+              - rowgroup [ref=f25e201]:
+                - row [ref=f25e202]:
+                  - columnheader "ভাউচার নং" [ref=f25e203]
+                  - columnheader "তারিখ" [ref=f25e204]
+                  - columnheader "মাধ্যম" [ref=f25e205]
+                  - columnheader "পরিশোধিত টাকা (৳)" [ref=f25e206]
+              - rowgroup [ref=f25e207]:
+                - row [ref=f25e208]:
+                  - cell "এখনও কোনো পেমেন্ট প্রদান করা হয়নি।" [ref=f25e209]

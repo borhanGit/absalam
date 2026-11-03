@@ -1,24 +1,29 @@
 @extends('layouts.app')
 
 @section('title', 'নতুন থাই কোটেশন তৈরি')
-@section('page_title', '📐 নতুন জানালা / দরজা প্রজেক্ট কোটেশন এস্টিমেটর')
+@section('page_title', 'নতুন জানালা / দরজা প্রজেক্ট কোটেশন এস্টিমেটর')
 
 @section('content')
-<div class="max-w-5xl mx-auto">
+<div class="max-w-5xl mx-auto space-y-6">
     <form method="POST" action="{{ route('quotations.store') }}" class="space-y-6">
         @csrf
 
         <!-- Project & Client Info -->
-        <div class="rounded-2xl border border-slate-800 glass-panel p-6 space-y-4">
-            <h3 class="text-sm font-bold text-white flex items-center justify-between border-b border-slate-800 pb-3">
-                <span>🏢 ক্লায়েন্ট ও প্রজেক্ট তথ্য</span>
-                <a href="{{ route('quotations.index') }}" class="text-xs text-slate-400 hover:text-white">← ফিরে যান</a>
-            </h3>
+        <div class="rounded-xl card-shell p-6 space-y-4">
+            <div class="flex items-center justify-between border-b border-[#e3e8ee]/10 pb-3">
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-[#533afd]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                    <span class="text-sm font-semibold text-white">ক্লায়েন্ট ও প্রজেক্ট তথ্য</span>
+                </div>
+                <a href="{{ route('quotations.index') }}" class="text-xs text-[#64748d] hover:text-white transition">← ফিরে যান</a>
+            </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
                 <div>
                     <label class="block text-slate-300 font-semibold mb-1">কাস্টমার / ক্লায়েন্ট <span class="text-rose-400">*</span></label>
-                    <select name="customer_id" required class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs focus:border-cyan-500 focus:outline-none">
+                    <select name="customer_id" required class="w-full px-3 py-2 rounded-xl bg-[#070d18] border border-[#e3e8ee]/15 text-white text-xs focus:border-[#533afd] focus:outline-none">
                         @foreach($customers as $c)
                             <option value="{{ $c->id }}">{{ $c->name }} ({{ $c->phone }})</option>
                         @endforeach
@@ -27,91 +32,98 @@
 
                 <div>
                     <label class="block text-slate-300 font-semibold mb-1">প্রজেক্ট / সাইটের নাম</label>
-                    <input type="text" name="project_name" value="{{ old('project_name', '৫ তলা আবাসিক ভবন থাই জানালা প্রজেক্ট') }}" placeholder="যেমন: ধানমন্ডি ফ্ল্যাট ইন্টেরিয়র" class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs focus:border-cyan-500 focus:outline-none">
+                    <input type="text" name="project_name" value="{{ old('project_name', '৫ তলা আবাসিক ভবন থাই জানালা প্রজেক্ট') }}" placeholder="যেমন: ধানমন্ডি ফ্ল্যাট ইন্টেরিয়র" class="w-full px-3 py-2 rounded-xl bg-[#070d18] border border-[#e3e8ee]/15 text-white text-xs focus:border-[#533afd] focus:outline-none">
                 </div>
 
                 <div>
                     <label class="block text-slate-300 font-semibold mb-1">কোটেশন তারিখ <span class="text-rose-400">*</span></label>
-                    <input type="date" name="quotation_date" value="{{ date('Y-m-d') }}" required class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs focus:border-cyan-500 focus:outline-none">
+                    <input type="date" name="quotation_date" value="{{ date('Y-m-d') }}" required class="w-full px-3 py-2 rounded-xl bg-[#070d18] border border-[#e3e8ee]/15 text-white text-xs tnum focus:border-[#533afd] focus:outline-none">
                 </div>
             </div>
         </div>
 
         <!-- Window / Door Specifications Grid -->
-        <div class="rounded-2xl border border-slate-800 glass-panel p-6 space-y-4">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <div class="rounded-xl card-shell p-6 space-y-4">
+            <div class="flex items-center justify-between border-b border-[#e3e8ee]/10 pb-3">
                 <div>
-                    <h3 class="text-sm font-bold text-white">জানালা ও দরজার স্পেসিফিকেশন আইটেম</h3>
-                    <p class="text-xs text-slate-400">মাপ ইঞ্চিতে ইনপুট দিন, স্বয়ংক্রিয়ভাবে মোট স্কয়ার ফিট বের হবে</p>
+                    <h2 class="text-sm font-semibold text-white">জানালা ও দরজার স্পেসিফিকেশন আইটেম</h2>
+                    <p class="text-xs text-[#64748d]">মাপ ইঞ্চিতে ইনপুট দিন, স্বয়ংক্রিয়ভাবে মোট স্কয়ার ফিট বের হবে</p>
                 </div>
-                <button type="button" onclick="addQuoteRow()" class="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 font-bold text-xs hover:bg-cyan-500/20 transition">
-                    ➕ আরেকটি মাপ যোগ করুন
+                <button type="button" onclick="addQuoteRow()" class="btn-secondary text-xs py-1.5 px-3">
+                    <svg class="w-3.5 h-3.5 text-[#533afd]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    <span>আরেকটি মাপ যোগ করুন</span>
                 </button>
             </div>
 
             <!-- Items Dynamic Table -->
             <div class="overflow-x-auto">
                 <table class="w-full text-left text-xs">
-                    <thead class="bg-slate-900 text-slate-400">
+                    <thead class="bg-[#070d18]/80 text-[#64748d] border-b border-[#e3e8ee]/5">
                         <tr>
-                            <th class="p-2.5">কাঠামো টাইপ ও অবস্থান</th>
-                            <th class="p-2.5 text-center">চওড়া (ইঞ্চি)</th>
-                            <th class="p-2.5 text-center">উচ্চতা (ইঞ্চি)</th>
-                            <th class="p-2.5 text-center">সংখ্যা</th>
-                            <th class="p-2.5 text-center">মোট SFT</th>
-                            <th class="p-2.5">সেকশন & কাঁচ</th>
-                            <th class="p-2.5 text-right">রেট/SFT (৳)</th>
-                            <th class="p-2.5 text-right">মোট (৳)</th>
-                            <th class="p-2.5 text-center">অ্যাকশন</th>
+                            <th class="p-3 font-semibold">কাঠামো টাইপ ও অবস্থান</th>
+                            <th class="p-3 text-center font-semibold">চওড়া (ইঞ্চি)</th>
+                            <th class="p-3 text-center font-semibold">উচ্চতা (ইঞ্চি)</th>
+                            <th class="p-3 text-center font-semibold">সংখ্যা</th>
+                            <th class="p-3 text-center font-semibold">মোট SFT</th>
+                            <th class="p-3 font-semibold">সেকশন & কাঁচ</th>
+                            <th class="p-3 text-right font-semibold">রেট/SFT (৳)</th>
+                            <th class="p-3 text-right font-semibold">মোট (৳)</th>
+                            <th class="p-3 text-center font-semibold">অ্যাকশন</th>
                         </tr>
                     </thead>
-                    <tbody id="quoteItemsBody" class="divide-y divide-slate-800 text-slate-300">
+                    <tbody id="quoteItemsBody" class="divide-y divide-[#e3e8ee]/5 text-slate-300">
                         <!-- Initial Row -->
-                        <tr class="quote-row">
-                            <td class="p-2.5">
-                                <select name="items[0][structure_type]" class="w-full px-2 py-1.5 rounded bg-slate-900 border border-slate-700 text-white text-xs">
+                        <tr class="quote-row hover:bg-white/[0.02] transition">
+                            <td class="p-3">
+                                <select name="items[0][structure_type]" class="w-full px-2 py-1.5 rounded-lg bg-[#070d18] border border-[#e3e8ee]/15 text-white text-xs focus:border-[#533afd] focus:outline-none">
                                     <option value="sliding_window_2_track">২-ট্র্যাক স্লাইডিং জানালা</option>
                                     <option value="sliding_window_3_track">৩-ট্র্যাক স্লাইডিং জানালা (নেট সহ)</option>
                                     <option value="casement_window">ক্যাসমেন্ট ওপেনিং জানালা</option>
                                     <option value="fixed_partition">ফিক্সড গ্লাস পারটিশন</option>
                                     <option value="swing_door">সুইং থাই ডোর</option>
                                 </select>
-                                <input type="text" name="items[0][location_tag]" placeholder="যেমন: বেডরুম W-1" class="w-full mt-1 px-2 py-1 rounded bg-slate-950 border border-slate-800 text-slate-400 text-[11px]">
+                                <input type="text" name="items[0][location_tag]" placeholder="যেমন: বেডরুম W-1" class="w-full mt-1.5 px-2 py-1 rounded bg-[#070d18]/60 border border-[#e3e8ee]/10 text-slate-300 text-[11px] focus:border-[#533afd] focus:outline-none">
                             </td>
-                            <td class="p-2.5">
-                                <input type="number" name="items[0][width_inch]" value="48" step="0.5" oninput="recalcRow(this)" class="w-20 px-2 py-1.5 rounded bg-slate-900 border border-slate-700 text-white text-center font-mono">
+                            <td class="p-3">
+                                <input type="number" name="items[0][width_inch]" value="48" step="0.5" oninput="recalcRow(this)" class="w-20 px-2 py-1.5 rounded bg-[#070d18] border border-[#e3e8ee]/15 text-white text-center font-mono tnum focus:border-[#533afd] focus:outline-none">
                             </td>
-                            <td class="p-2.5">
-                                <input type="number" name="items[0][height_inch]" value="48" step="0.5" oninput="recalcRow(this)" class="w-20 px-2 py-1.5 rounded bg-slate-900 border border-slate-700 text-white text-center font-mono">
+                            <td class="p-3">
+                                <input type="number" name="items[0][height_inch]" value="48" step="0.5" oninput="recalcRow(this)" class="w-20 px-2 py-1.5 rounded bg-[#070d18] border border-[#e3e8ee]/15 text-white text-center font-mono tnum focus:border-[#533afd] focus:outline-none">
                             </td>
-                            <td class="p-2.5">
-                                <input type="number" name="items[0][quantity]" value="4" min="1" oninput="recalcRow(this)" class="w-16 px-2 py-1.5 rounded bg-slate-900 border border-slate-700 text-white text-center font-mono">
+                            <td class="p-3">
+                                <input type="number" name="items[0][quantity]" value="4" min="1" oninput="recalcRow(this)" class="w-16 px-2 py-1.5 rounded bg-[#070d18] border border-[#e3e8ee]/15 text-white text-center font-mono tnum focus:border-[#533afd] focus:outline-none">
                             </td>
-                            <td class="p-2.5 text-center font-bold text-cyan-400 font-mono row-sqft">
+                            <td class="p-3 text-center font-bold text-[#533afd] font-mono tnum row-sqft">
                                 64.00
                             </td>
-                            <td class="p-2.5">
-                                <select name="items[0][profile_product_id]" class="w-36 px-2 py-1 rounded bg-slate-900 border border-slate-700 text-white text-[11px] block mb-1">
+                            <td class="p-3">
+                                <select name="items[0][profile_product_id]" class="w-36 px-2 py-1 rounded bg-[#070d18] border border-[#e3e8ee]/15 text-white text-[11px] block mb-1 focus:border-[#533afd] focus:outline-none">
                                     <option value="">সেকশন চয়ন...</option>
                                     @foreach($profileProducts as $p)
                                         <option value="{{ $p->id }}">{{ $p->name }}</option>
                                     @endforeach
                                 </select>
-                                <select name="items[0][glass_product_id]" class="w-36 px-2 py-1 rounded bg-slate-900 border border-slate-700 text-white text-[11px] block">
+                                <select name="items[0][glass_product_id]" class="w-36 px-2 py-1 rounded bg-[#070d18] border border-[#e3e8ee]/15 text-white text-[11px] block focus:border-[#533afd] focus:outline-none">
                                     <option value="">কাঁচ চয়ন...</option>
                                     @foreach($glassProducts as $g)
                                         <option value="{{ $g->id }}">{{ $g->name }}</option>
                                     @endforeach
                                 </select>
                             </td>
-                            <td class="p-2.5 text-right">
-                                <input type="number" name="items[0][rate_per_sqft]" value="420" step="5" oninput="recalcRow(this)" class="w-24 px-2 py-1.5 rounded bg-slate-900 border border-slate-700 text-white text-right font-mono">
+                            <td class="p-3 text-right">
+                                <input type="number" name="items[0][rate_per_sqft]" value="420" step="5" oninput="recalcRow(this)" class="w-24 px-2 py-1.5 rounded bg-[#070d18] border border-[#e3e8ee]/15 text-white text-right font-mono tnum focus:border-[#533afd] focus:outline-none">
                             </td>
-                            <td class="p-2.5 text-right font-bold text-emerald-400 font-mono-numbers row-total">
+                            <td class="p-3 text-right font-medium text-emerald-400 tnum row-total">
                                 ৳26,880.00
                             </td>
-                            <td class="p-2.5 text-center">
-                                <button type="button" onclick="removeQuoteRow(this)" class="text-rose-400 hover:text-rose-300 font-bold">✕</button>
+                            <td class="p-3 text-center">
+                                <button type="button" onclick="removeQuoteRow(this)" class="w-6 h-6 rounded-full inline-flex items-center justify-center text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 transition">
+                                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                </button>
                             </td>
                         </tr>
                     </tbody>
@@ -119,42 +131,45 @@
             </div>
 
             <!-- Additional Charges & Grand Total -->
-            <div class="border-t border-slate-800 pt-4 flex flex-col sm:flex-row justify-between gap-6 text-xs">
+            <div class="border-t border-[#e3e8ee]/10 pt-4 flex flex-col sm:flex-row justify-between gap-6 text-xs">
                 <div class="sm:w-1/2 space-y-2">
                     <label class="block font-semibold text-slate-300">শর্তাবলী ও ওয়ারেন্টি নোট</label>
-                    <textarea name="terms_and_conditions" rows="3" class="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs">১. ডেলিভারির সময়কাল: চুক্তি স্বাক্ষরের ৭-১০ কার্যদিবস।
+                    <textarea name="terms_and_conditions" rows="3" class="w-full p-2.5 rounded-xl bg-[#070d18] border border-[#e3e8ee]/15 text-white text-xs focus:border-[#533afd] focus:outline-none">১. ডেলিভারির সময়কাল: চুক্তি স্বাক্ষরের ৭-১০ কার্যদিবস।
 ২. কাজের শুরুতে ৫০% অগ্রিম, মালামাল সাইটে পৌঁছালে ৪০% এবং ফিটিং শেষে ১০% বিল পরিশোধযোগ্য।</textarea>
                 </div>
 
-                <div class="sm:w-80 space-y-2 font-mono text-slate-300">
+                <div class="sm:w-80 space-y-2 text-slate-300">
                     <div class="flex justify-between">
                         <span>মোট স্কয়ার ফিট (SFT):</span>
-                        <span id="qtnTotalSqft" class="font-bold text-cyan-400">64.00 SFT</span>
+                        <span id="qtnTotalSqft" class="font-bold text-[#533afd] tnum">64.00 SFT</span>
                     </div>
                     <div class="flex items-center justify-between gap-2">
-                        <span>ফিটিং / ইনস্টলেশন খরচ (+):</span>
-                        <input type="number" name="fitting_installation_cost" id="qtnFitting" value="0" oninput="recalcGrandTotal()" class="w-28 px-2 py-1 rounded bg-slate-900 border border-slate-700 text-white text-right font-mono">
+                        <span class="text-[#64748d]">ফিটিং / ইনস্টলেশন খরচ (+):</span>
+                        <input type="number" name="fitting_installation_cost" id="qtnFitting" value="0" oninput="recalcGrandTotal()" class="w-28 px-2 py-1 rounded bg-[#070d18] border border-[#e3e8ee]/15 text-white text-right font-mono tnum focus:border-[#533afd] focus:outline-none">
                     </div>
                     <div class="flex items-center justify-between gap-2">
-                        <span>পরিবহন ভাড়া (+):</span>
-                        <input type="number" name="transport_cost" id="qtnTransport" value="0" oninput="recalcGrandTotal()" class="w-28 px-2 py-1 rounded bg-slate-900 border border-slate-700 text-white text-right font-mono">
+                        <span class="text-[#64748d]">পরিবহন ভাড়া (+):</span>
+                        <input type="number" name="transport_cost" id="qtnTransport" value="0" oninput="recalcGrandTotal()" class="w-28 px-2 py-1 rounded bg-[#070d18] border border-[#e3e8ee]/15 text-white text-right font-mono tnum focus:border-[#533afd] focus:outline-none">
                     </div>
                     <div class="flex items-center justify-between gap-2">
-                        <span>ডিসকাউন্ট (-):</span>
-                        <input type="number" name="discount_amount" id="qtnDiscount" value="0" oninput="recalcGrandTotal()" class="w-28 px-2 py-1 rounded bg-slate-900 border border-slate-700 text-white text-right font-mono text-rose-400">
+                        <span class="text-[#64748d]">ডিসকাউন্ট (-):</span>
+                        <input type="number" name="discount_amount" id="qtnDiscount" value="0" oninput="recalcGrandTotal()" class="w-28 px-2 py-1 rounded bg-[#070d18] border border-[#e3e8ee]/15 text-rose-400 text-right font-mono tnum focus:border-[#533afd] focus:outline-none">
                     </div>
-                    <div class="flex justify-between font-bold text-sm text-white border-t border-slate-800 pt-2">
-                        <span>সর্বমোট বাজেট:</span>
-                        <span id="qtnGrandTotal" class="text-emerald-400 text-lg">৳26,880.00</span>
+                    <div class="flex justify-between font-semibold text-sm text-white border-t border-[#e3e8ee]/10 pt-2.5">
+                        <span class="text-[#b9b9f9]">সর্বমোট বাজেট:</span>
+                        <span id="qtnGrandTotal" class="text-white font-bold text-lg tnum">৳26,880.00</span>
                     </div>
                 </div>
             </div>
 
             <!-- Submit Button -->
-            <div class="border-t border-slate-800 pt-4 flex items-center justify-end gap-3">
-                <a href="{{ route('quotations.index') }}" class="px-5 py-2.5 text-xs text-slate-400 hover:text-white">বাতিল</a>
-                <button type="submit" class="px-6 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs shadow-lg shadow-cyan-500/20 transition">
-                    ✓ প্রজেক্ট কোটেশন সংরক্ষণ করুন
+            <div class="border-t border-[#e3e8ee]/10 pt-4 flex items-center justify-end gap-3">
+                <a href="{{ route('quotations.index') }}" class="btn-secondary text-xs py-2 px-4">বাতিল</a>
+                <button type="submit" class="btn-primary min-h-[42px] px-6">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <span>প্রজেক্ট কোটেশন সংরক্ষণ করুন</span>
                 </button>
             </div>
         </div>
@@ -211,52 +226,56 @@
     function addQuoteRow() {
         const tbody = document.getElementById('quoteItemsBody');
         const tr = document.createElement('tr');
-        tr.className = 'quote-row hover:bg-slate-800/30 transition';
+        tr.className = 'quote-row hover:bg-white/[0.02] transition';
         tr.innerHTML = `
-            <td class="p-2.5">
-                <select name="items[${rowIndex}][structure_type]" class="w-full px-2 py-1.5 rounded bg-slate-900 border border-slate-700 text-white text-xs">
+            <td class="p-3">
+                <select name="items[${rowIndex}][structure_type]" class="w-full px-2 py-1.5 rounded-lg bg-[#070d18] border border-[#e3e8ee]/15 text-white text-xs focus:border-[#533afd] focus:outline-none">
                     <option value="sliding_window_2_track">২-ট্র্যাক স্লাইডিং জানালা</option>
                     <option value="sliding_window_3_track">৩-ট্র্যাক স্লাইডিং জানালা (নেট সহ)</option>
                     <option value="casement_window">ক্যাসমেন্ট ওপেনিং জানালা</option>
                     <option value="fixed_partition">ফিক্সড গ্লাস পারটিশন</option>
                     <option value="swing_door">সুইং থাই ডোর</option>
                 </select>
-                <input type="text" name="items[${rowIndex}][location_tag]" placeholder="যেমন: ড্রয়িং রুম W-2" class="w-full mt-1 px-2 py-1 rounded bg-slate-950 border border-slate-800 text-slate-400 text-[11px]">
+                <input type="text" name="items[${rowIndex}][location_tag]" placeholder="যেমন: ড্রয়িং রুম W-2" class="w-full mt-1.5 px-2 py-1 rounded bg-[#070d18]/60 border border-[#e3e8ee]/10 text-slate-300 text-[11px] focus:border-[#533afd] focus:outline-none">
             </td>
-            <td class="p-2.5">
-                <input type="number" name="items[${rowIndex}][width_inch]" value="48" step="0.5" oninput="recalcRow(this)" class="w-20 px-2 py-1.5 rounded bg-slate-900 border border-slate-700 text-white text-center font-mono">
+            <td class="p-3">
+                <input type="number" name="items[${rowIndex}][width_inch]" value="48" step="0.5" oninput="recalcRow(this)" class="w-20 px-2 py-1.5 rounded bg-[#070d18] border border-[#e3e8ee]/15 text-white text-center font-mono tnum focus:border-[#533afd] focus:outline-none">
             </td>
-            <td class="p-2.5">
-                <input type="number" name="items[${rowIndex}][height_inch]" value="48" step="0.5" oninput="recalcRow(this)" class="w-20 px-2 py-1.5 rounded bg-slate-900 border border-slate-700 text-white text-center font-mono">
+            <td class="p-3">
+                <input type="number" name="items[${rowIndex}][height_inch]" value="48" step="0.5" oninput="recalcRow(this)" class="w-20 px-2 py-1.5 rounded bg-[#070d18] border border-[#e3e8ee]/15 text-white text-center font-mono tnum focus:border-[#533afd] focus:outline-none">
             </td>
-            <td class="p-2.5">
-                <input type="number" name="items[${rowIndex}][quantity]" value="1" min="1" oninput="recalcRow(this)" class="w-16 px-2 py-1.5 rounded bg-slate-900 border border-slate-700 text-white text-center font-mono">
+            <td class="p-3">
+                <input type="number" name="items[${rowIndex}][quantity]" value="1" min="1" oninput="recalcRow(this)" class="w-16 px-2 py-1.5 rounded bg-[#070d18] border border-[#e3e8ee]/15 text-white text-center font-mono tnum focus:border-[#533afd] focus:outline-none">
             </td>
-            <td class="p-2.5 text-center font-bold text-cyan-400 font-mono row-sqft">
+            <td class="p-3 text-center font-bold text-[#533afd] font-mono tnum row-sqft">
                 16.00
             </td>
-            <td class="p-2.5">
-                <select name="items[${rowIndex}][profile_product_id]" class="w-36 px-2 py-1 rounded bg-slate-900 border border-slate-700 text-white text-[11px] block mb-1">
+            <td class="p-3">
+                <select name="items[${rowIndex}][profile_product_id]" class="w-36 px-2 py-1 rounded bg-[#070d18] border border-[#e3e8ee]/15 text-white text-[11px] block mb-1 focus:border-[#533afd] focus:outline-none">
                     <option value="">সেকশন চয়ন...</option>
                     @foreach($profileProducts as $p)
                         <option value="{{ $p->id }}">{{ $p->name }}</option>
                     @endforeach
                 </select>
-                <select name="items[${rowIndex}][glass_product_id]" class="w-36 px-2 py-1 rounded bg-slate-900 border border-slate-700 text-white text-[11px] block">
+                <select name="items[${rowIndex}][glass_product_id]" class="w-36 px-2 py-1 rounded bg-[#070d18] border border-[#e3e8ee]/15 text-white text-[11px] block focus:border-[#533afd] focus:outline-none">
                     <option value="">কাঁচ চয়ন...</option>
                     @foreach($glassProducts as $g)
                         <option value="{{ $g->id }}">{{ $g->name }}</option>
                     @endforeach
                 </select>
             </td>
-            <td class="p-2.5 text-right">
-                <input type="number" name="items[${rowIndex}][rate_per_sqft]" value="420" step="5" oninput="recalcRow(this)" class="w-24 px-2 py-1.5 rounded bg-slate-900 border border-slate-700 text-white text-right font-mono">
+            <td class="p-3 text-right">
+                <input type="number" name="items[${rowIndex}][rate_per_sqft]" value="420" step="5" oninput="recalcRow(this)" class="w-24 px-2 py-1.5 rounded bg-[#070d18] border border-[#e3e8ee]/15 text-white text-right font-mono tnum focus:border-[#533afd] focus:outline-none">
             </td>
-            <td class="p-2.5 text-right font-bold text-emerald-400 font-mono-numbers row-total">
+            <td class="p-3 text-right font-medium text-emerald-400 tnum row-total">
                 ৳6,720.00
             </td>
-            <td class="p-2.5 text-center">
-                <button type="button" onclick="removeQuoteRow(this)" class="text-rose-400 hover:text-rose-300 font-bold">✕</button>
+            <td class="p-3 text-center">
+                <button type="button" onclick="removeQuoteRow(this)" class="w-6 h-6 rounded-full inline-flex items-center justify-center text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 transition">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
             </td>
         `;
         tbody.appendChild(tr);

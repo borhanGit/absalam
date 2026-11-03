@@ -1,0 +1,134 @@
+- generic [ref=f19e2]:
+  - complementary [ref=f19e3]:
+    - generic [ref=f19e8]:
+      - generic [ref=f19e9]: ঢাকা থাই ও গ্লাস
+      - text: ENTERPRISE POS & ERP
+    - navigation [ref=f19e10]:
+      - generic [ref=f19e11]:
+        - generic [ref=f19e12]: অপারেশনস (Operations)
+        - generic [ref=f19e13]:
+          - link "ড্যাশবোর্ড (Dashboard)" [ref=f19e14] [cursor=pointer]:
+            - /url: http://localhost:8000/dashboard
+          - link "পিওএস কাউন্টার (POS) F2" [ref=f19e21] [cursor=pointer]:
+            - /url: http://localhost:8000/pos
+            - generic [ref=f19e22]: পিওএস কাউন্টার (POS)
+            - generic [ref=f19e26]: F2
+          - link "সেলস চালান (Sales List)" [ref=f19e27] [cursor=pointer]:
+            - /url: http://localhost:8000/sales
+          - link "জানালা/দরজা কোটেশন" [ref=f19e33] [cursor=pointer]:
+            - /url: http://localhost:8000/quotations
+          - link "পারচেজ ও ফ্যাক্টরি চালান" [ref=f19e37] [cursor=pointer]:
+            - /url: http://localhost:8000/purchases
+      - generic [ref=f19e41]:
+        - generic [ref=f19e42]: ইনভেন্টরি (Inventory)
+        - generic [ref=f19e43]:
+          - link "পণ্য তালিকা (Products Master)" [ref=f19e44] [cursor=pointer]:
+            - /url: http://localhost:8000/products
+          - link "ওয়্যারহাউস স্টক (Stock)" [ref=f19e49] [cursor=pointer]:
+            - /url: http://localhost:8000/stocks
+          - link "কাটিং অফ-কাট ও স্ক্র্যাপ" [ref=f19e54] [cursor=pointer]:
+            - /url: http://localhost:8000/offcuts
+      - generic [ref=f19e62]:
+        - generic [ref=f19e63]: পার্টি ও লেজার (Parties & CRM)
+        - generic [ref=f19e64]:
+          - link "কাস্টমার ও থাই মিস্ত্রি" [ref=f19e65] [cursor=pointer]:
+            - /url: http://localhost:8000/customers
+          - link "মিল ও সাপ্লায়ার্স" [ref=f19e72] [cursor=pointer]:
+            - /url: http://localhost:8000/suppliers
+      - generic [ref=f19e77]:
+        - generic [ref=f19e78]: ফাইন্যান্স ও একাউন্টস (Finance)
+        - generic [ref=f19e79]:
+          - link "চেক ম্যানেজমেন্ট (Cheques)" [ref=f19e80] [cursor=pointer]:
+            - /url: http://localhost:8000/cheques
+          - link "কালেকশন ও মানি রিসিট" [ref=f19e84] [cursor=pointer]:
+            - /url: http://localhost:8000/receipts
+          - link "সাপ্লায়ার পেমেন্ট (Payments)" [ref=f19e89] [cursor=pointer]:
+            - /url: http://localhost:8000/payments
+          - link "দোকান খরচ (Expenses)" [ref=f19e93] [cursor=pointer]:
+            - /url: http://localhost:8000/expenses
+          - link "ক্যাশ বুক ও আর্থিক রিপোর্ট" [ref=f19e98] [cursor=pointer]:
+            - /url: http://localhost:8000/accounts
+      - generic [ref=f19e101]:
+        - generic [ref=f19e102]: অ্যাডমিনিস্ট্রেশন (Administration)
+        - link "ইউজার ও পারমিশন (Users)" [ref=f19e104] [cursor=pointer]:
+          - /url: http://localhost:8000/users
+    - generic [ref=f19e109]:
+      - generic [ref=f19e110]:
+        - generic [ref=f19e111]: M
+        - generic [ref=f19e112]:
+          - link "Md. Borhan Uddin (মালিক)" [ref=f19e113] [cursor=pointer]:
+            - /url: http://localhost:8000/profile
+          - generic [ref=f19e114]: মালিক / সুপার অ্যাডমিন (Admin)
+      - button "লগআউট" [ref=f19e116]
+  - generic [ref=f19e120]:
+    - banner [ref=f19e121]:
+      - heading "বকেয়া কালেকশন ও মানি রিসিট (Money Receipts)" [level=1] [ref=f19e123]
+      - generic [ref=f19e124]:
+        - generic [ref=f19e125]:
+          - generic [ref=f19e129]: "শাখা:"
+          - generic [ref=f19e130]: প্রধান শোরুম (মিরপুর)
+        - link "পিওএস কাউন্টার" [ref=f19e131] [cursor=pointer]:
+          - /url: http://localhost:8000/pos
+        - link "প্রোফাইল" [ref=f19e135] [cursor=pointer]:
+          - /url: http://localhost:8000/profile
+    - main [ref=f19e140]:
+      - generic [ref=f19e141]:
+        - generic [ref=f19e142]:
+          - generic [ref=f19e143]:
+            - heading "বকেয়া কালেকশন ও মানি রিসিট রেজিস্টার" [level=1] [ref=f19e144]
+            - paragraph [ref=f19e145]: কাস্টমার ও থাই মিস্ত্রিদের নগদ বা চেকের মাধ্যমে পরিশোধকৃত টাকা গ্রহণ ও রিসিট ভাউচার
+          - link "নতুন মানি রিসিট কাটুন" [ref=f19e146] [cursor=pointer]:
+            - /url: http://localhost:8000/receipts/create
+        - generic [ref=f19e149]:
+          - generic [ref=f19e150]:
+            - generic [ref=f19e151]: সর্বমোট কালেকশন
+            - generic [ref=f19e152]: ৳ 0.00
+            - generic [ref=f19e153]: সব রিসিটের মোট পরিমাণ
+          - generic [ref=f19e154]:
+            - generic [ref=f19e155]: আজকের কালেকশন
+            - generic [ref=f19e156]: ৳ 0.00
+            - generic [ref=f19e157]: 02 Nov, 2026
+          - generic [ref=f19e158]:
+            - generic [ref=f19e159]: নগদ টাকা (Cash)
+            - generic [ref=f19e160]: ৳ 0.00
+            - generic [ref=f19e161]: ক্যাশ কাউন্টারে জমা
+          - generic [ref=f19e162]:
+            - generic [ref=f19e163]: ব্যাংক চেক মারফত
+            - generic [ref=f19e164]: ৳ 0.00
+            - generic [ref=f19e165]: ক্লিয়ারেন্স চেক
+        - generic [ref=f19e166]:
+          - generic [ref=f19e167]:
+            - generic [ref=f19e168]: কাস্টমার দিয়ে খুঁজুন
+            - combobox [ref=f19e169]:
+              - option "-- সকল কাস্টমার --" [selected]
+              - option "Engr. Tanvir Hasan (House Owner)"
+              - option "Kawsar Ahmed (Thai Mistri)"
+              - option "Rahim Construction & Real Estate Ltd"
+          - generic [ref=f19e170]:
+            - generic [ref=f19e171]: পেমেন্ট মেথড
+            - combobox [ref=f19e172]:
+              - option "-- সব মাধ্যম --" [selected]
+              - option "ক্যাশ (Cash)"
+              - option "ব্যাংক চেক (Cheque)"
+              - option "ব্যাংক ট্রান্সফার"
+              - option "বিকাশ / নগদ"
+          - generic [ref=f19e173]:
+            - generic [ref=f19e174]: তারিখ থেকে
+            - textbox [ref=f19e175]
+          - generic [ref=f19e176]:
+            - button "ফিল্টার করুন" [ref=f19e177]
+            - link "রিসেট" [ref=f19e178] [cursor=pointer]:
+              - /url: http://localhost:8000/receipts
+        - table [ref=f19e181]:
+          - rowgroup [ref=f19e182]:
+            - row [ref=f19e183]:
+              - columnheader "রিসিট নং" [ref=f19e184]
+              - columnheader "কাস্টমার / মিস্ত্রি" [ref=f19e185]
+              - columnheader "তারিখ" [ref=f19e186]
+              - columnheader "পেমেন্ট মাধ্যম" [ref=f19e187]
+              - columnheader "চেক / রেফারেন্স" [ref=f19e188]
+              - columnheader "আদায়ের পরিমাণ" [ref=f19e189]
+              - columnheader "ভাউচার" [ref=f19e190]
+          - rowgroup [ref=f19e191]:
+            - row [ref=f19e192]:
+              - cell "এখনো কোনো মানি রিসিট কাটা হয়নি।" [ref=f19e193]

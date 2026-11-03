@@ -4,8 +4,115 @@
 @source '../../storage/framework/views/*.php';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Inter', 'Plus Jakarta Sans', 'Hind Siliguri', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    --color-primary: #533afd;
+    --color-primary-deep: #4434d4;
+    --color-primary-press: #2e2b8c;
+    --color-primary-soft: #665efd;
+    --color-primary-subdued: #b9b9f9;
+    --color-brand-dark: #1c1e54;
+    --color-ink: #0d253d;
+    --color-ink-secondary: #273951;
+    --color-ink-mute: #64748d;
+    --color-canvas: #ffffff;
+    --color-canvas-soft: #f6f9fc;
+    --color-canvas-cream: #f5e9d4;
+    --color-hairline: #e3e8ee;
+    --color-hairline-input: #a8c3de;
+    --color-ruby: #ea2261;
+    --color-magenta: #f96bee;
+    --color-lemon: #9b6829;
+}
+
+/* DESIGN.md Foundations & Anti-Slop System Grounding */
+:root {
+    --primary: #533afd;
+    --primary-deep: #4434d4;
+    --ink: #0d253d;
+    --ink-mute: #64748d;
+}
+
+body {
+    font-feature-settings: "ss01" on, "cv02" on;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Tabular figures for financial numbers, amounts, dates, and currency */
+.tnum, .tabular-nums {
+    font-feature-settings: "tnum" on;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.015em;
+}
+
+/* Atmospheric subtle mesh gradient (DESIGN.md upper third backdrop) */
+.mesh-backdrop {
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(83, 58, 253, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(234, 34, 97, 0.08) 0px, transparent 40%),
+        radial-gradient(at 50% 100%, rgba(28, 30, 84, 0.2) 0px, transparent 50%);
+}
+
+/* Pill buttons based on DESIGN.md: rounded-full with precise padding */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    min-height: 36px;
+    border-radius: 9999px;
+    background-color: #533afd;
+    color: #ffffff;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 3px rgba(83, 58, 253, 0.25);
+}
+.btn-primary:hover {
+    background-color: #4434d4;
+    box-shadow: 0 4px 14px rgba(83, 58, 253, 0.4);
+}
+.btn-primary:active {
+    background-color: #2e2b8c;
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    min-height: 36px;
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #e2e8f0;
+    border: 1px solid rgba(227, 232, 238, 0.14);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(227, 232, 238, 0.28);
+    color: #ffffff;
+}
+
+/* Card Depth Tokens from DESIGN.md */
+.card-shell {
+    background-color: #0b1523;
+    border: 1px solid rgba(227, 232, 238, 0.08);
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 55, 112, 0.12);
+}
+
+.card-elevated {
+    background-color: #0d253d;
+    border: 1px solid rgba(227, 232, 238, 0.12);
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 24px rgba(0, 55, 112, 0.16), 0 2px 6px rgba(0, 55, 112, 0.08);
 }
 
 /* Comprehensive Print Stylesheet */
