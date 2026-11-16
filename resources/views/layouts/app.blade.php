@@ -1,9 +1,24 @@
 <!DOCTYPE html>
-<html lang="bn" class="dark">
+<html lang="bn">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('page_title', 'Dashboard') | Dhaka Thai & Aluminium Glass House</title>
+    
+    <!-- Instant Theme Detection Script (Prevents FOUC / theme flicker) -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'light' || (!savedTheme && !prefersDark)) {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+            } else {
+                document.documentElement.classList.add('dark');
+                document.documentElement.classList.remove('light');
+            }
+        })();
+    </script>
     
     <!-- Modern Typography: Inter + Hind Siliguri + JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,7 +66,7 @@
         }
     </style>
 </head>
-<body class="bg-[#070d18] text-[#e2e8f0] font-sans antialiased min-h-screen flex flex-col selection:bg-[#533afd] selection:text-white print:bg-white print:text-black">
+<body class="bg-[#070d18] text-[#e2e8f0] font-sans antialiased min-h-screen flex flex-col print:bg-white print:text-black">
     <div class="flex-1 flex overflow-hidden print:overflow-visible print:block print:w-full">
         <!-- Sidebar Navigation -->
         <aside class="w-64 bg-[#0a1220]/95 backdrop-blur-xl border-r border-[#e3e8ee]/10 flex flex-col shrink-0 print:hidden z-20">
@@ -286,6 +301,18 @@
                         <span>প্রোফাইল</span>
                     </a>
                     @endauth
+
+                    <!-- Dark / White (Light) Mode Toggle Button -->
+                    <button type="button" onclick="toggleTheme()" class="btn-secondary !p-2 !min-h-[36px] !rounded-full relative" title="থিম পরিবর্তন করুন (Dark / White Mode)" aria-label="Toggle Theme">
+                        <!-- Sun Icon (Active in Dark mode -> click to switch to White mode) -->
+                        <svg id="themeIconSun" class="w-4 h-4 text-amber-400 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+                        </svg>
+                        <!-- Moon Icon (Active in White mode -> click to switch to Dark mode) -->
+                        <svg id="themeIconMoon" class="w-4 h-4 text-indigo-600 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+                        </svg>
+                    </button>
                 </div>
             </header>
 
@@ -348,6 +375,41 @@
                 });
             });
         });
+    </script>
+
+    <!-- Dark / White Mode Switcher Logic -->
+    <script>
+        function updateThemeIcons() {
+            const isDark = document.documentElement.classList.contains('dark');
+            const sunIcon = document.getElementById('themeIconSun');
+            const moonIcon = document.getElementById('themeIconMoon');
+            if (sunIcon && moonIcon) {
+                if (isDark) {
+                    sunIcon.classList.remove('hidden');
+                    moonIcon.classList.add('hidden');
+                } else {
+                    sunIcon.classList.add('hidden');
+                    moonIcon.classList.remove('hidden');
+                }
+            }
+        }
+
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.contains('dark');
+            if (isDark) {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                document.documentElement.classList.remove('light');
+                localStorage.setItem('theme', 'dark');
+            }
+            updateThemeIcons();
+        }
+
+        // Initialize icons on load
+        document.addEventListener('DOMContentLoaded', updateThemeIcons);
     </script>
 
     @stack('scripts')

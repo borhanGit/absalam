@@ -1,9 +1,24 @@
 <!DOCTYPE html>
-<html lang="bn" class="dark">
+<html lang="bn">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>লগইন | {{ $company->company_name ?? 'Dhaka Thai & Aluminium Glass House' }}</title>
+    
+    <!-- Instant Theme Detection Script -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'light' || (!savedTheme && !prefersDark)) {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+            } else {
+                document.documentElement.classList.add('dark');
+                document.documentElement.classList.remove('light');
+            }
+        })();
+    </script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +26,19 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-[#070d18] text-[#e2e8f0] font-sans antialiased min-h-screen flex items-center justify-center p-4 relative overflow-x-hidden selection:bg-[#533afd] selection:text-white">
+<body class="bg-[#070d18] text-[#e2e8f0] font-sans antialiased min-h-screen flex items-center justify-center p-4 relative overflow-x-hidden">
+    <!-- Top Right Theme Switcher -->
+    <div class="fixed top-4 right-4 z-50">
+        <button type="button" onclick="toggleTheme()" class="btn-secondary !p-2 !min-h-[38px] !rounded-full shadow-md" title="থিম পরিবর্তন করুন (Dark / White Mode)" aria-label="Toggle Theme">
+            <svg id="themeIconSun" class="w-4 h-4 text-amber-400 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+            </svg>
+            <svg id="themeIconMoon" class="w-4 h-4 text-indigo-600 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+            </svg>
+        </button>
+    </div>
+
     <!-- DESIGN.md Atmospheric Subtle Mesh Backdrop -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10 mesh-backdrop">
         <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#533afd]/10 rounded-full blur-3xl"></div>
@@ -94,8 +121,39 @@
         </div>
     </div>
 
-    <!-- Spinner script for login submit -->
+    <!-- Theme Switcher & Spinner scripts -->
     <script>
+        function updateThemeIcons() {
+            const isDark = document.documentElement.classList.contains('dark');
+            const sunIcon = document.getElementById('themeIconSun');
+            const moonIcon = document.getElementById('themeIconMoon');
+            if (sunIcon && moonIcon) {
+                if (isDark) {
+                    sunIcon.classList.remove('hidden');
+                    moonIcon.classList.add('hidden');
+                } else {
+                    sunIcon.classList.add('hidden');
+                    moonIcon.classList.remove('hidden');
+                }
+            }
+        }
+
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.contains('dark');
+            if (isDark) {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                document.documentElement.classList.remove('light');
+                localStorage.setItem('theme', 'dark');
+            }
+            updateThemeIcons();
+        }
+
+        document.addEventListener('DOMContentLoaded', updateThemeIcons);
+
         document.querySelector('form').addEventListener('submit', function (e) {
             const btn = this.querySelector('button[type="submit"]');
             if (btn && !btn.disabled) {
