@@ -7,11 +7,11 @@
 <div class="space-y-6">
 
     <!-- Header Actions & Search -->
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <form method="GET" action="{{ route('products.index') }}" class="flex flex-wrap items-center gap-2">
-            <input type="text" name="search" value="{{ request('search') }}" placeholder="{{ __('Search name, code or barcode...') }}" class="px-3.5 py-2 rounded-xl bg-[#070d18] border border-[#e3e8ee]/15 text-white text-xs placeholder-[#64748d] focus:outline-none focus:border-[#533afd] w-64">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+        <form method="GET" action="{{ route('products.index') }}" class="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+            <input type="text" name="search" value="{{ request('search') }}" placeholder="{{ __('Search name, code or barcode...') }}" class="px-3.5 py-2 rounded-xl bg-slate-50 dark:bg-[#070d18] border border-slate-300 dark:border-[#e3e8ee]/15 text-slate-900 dark:text-white text-xs placeholder-slate-400 dark:placeholder-[#64748d] focus:outline-none focus:border-[#533afd] w-full sm:w-64">
             
-            <select name="product_type" onchange="this.form.submit()" class="px-3 py-2 rounded-xl bg-[#070d18] border border-[#e3e8ee]/15 text-white text-xs focus:outline-none focus:border-[#533afd]">
+            <select name="product_type" onchange="this.form.submit()" class="px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#070d18] border border-slate-300 dark:border-[#e3e8ee]/15 text-slate-900 dark:text-white text-xs focus:outline-none focus:border-[#533afd] flex-1 sm:flex-initial">
                 <option value="">{{ __('All Types') }}</option>
                 <option value="profile" {{ request('product_type') === 'profile' ? 'selected' : '' }}>Aluminium Profile</option>
                 <option value="glass" {{ request('product_type') === 'glass' ? 'selected' : '' }}>Glass</option>
@@ -27,7 +27,7 @@
             @endif
         </form>
 
-        <a href="{{ route('products.create') }}" class="btn-primary">
+        <a href="{{ route('products.create') }}" class="btn-primary w-full sm:w-auto justify-center">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" x2="16" y1="12" y2="12"/>
             </svg>

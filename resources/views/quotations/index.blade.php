@@ -7,18 +7,18 @@
 <div class="space-y-6">
 
     <!-- Actions & Search -->
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <form method="GET" action="{{ route('quotations.index') }}" class="flex items-center gap-2">
-            <input type="text" name="search" value="{{ request('search') }}" placeholder="{{ __('Search quotation or project...') }}" class="px-3.5 py-2 rounded-xl bg-[#070d18] border border-[#e3e8ee]/15 text-white text-xs placeholder-[#64748d] focus:outline-none focus:border-[#533afd] w-72">
-            <button type="submit" class="btn-secondary text-xs py-2 px-4">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+        <form method="GET" action="{{ route('quotations.index') }}" class="flex items-center gap-2 w-full sm:w-auto">
+            <input type="text" name="search" value="{{ request('search') }}" placeholder="{{ __('Search quotation or project...') }}" class="px-3.5 py-2 rounded-xl bg-slate-50 dark:bg-[#070d18] border border-slate-300 dark:border-[#e3e8ee]/15 text-slate-900 dark:text-white text-xs placeholder-slate-400 dark:placeholder-[#64748d] focus:outline-none focus:border-[#533afd] w-full sm:w-72">
+            <button type="submit" class="btn-secondary text-xs py-2 px-4 shrink-0">
                 {{ __('Search') }}
             </button>
             @if(request('search'))
-                <a href="{{ route('quotations.index') }}" class="px-3 py-2 text-xs text-rose-400 hover:underline">{{ __('Reset') }}</a>
+                <a href="{{ route('quotations.index') }}" class="px-3 py-2 text-xs text-rose-400 hover:underline shrink-0">{{ __('Reset') }}</a>
             @endif
         </form>
 
-        <a href="{{ route('quotations.create') }}" class="btn-primary">
+        <a href="{{ route('quotations.create') }}" class="btn-primary w-full sm:w-auto justify-center">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="16"/><line x1="8" x2="16" y1="12" y2="12"/>
             </svg>
