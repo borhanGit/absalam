@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'নতুন পারচেজ চালান এন্ট্রি')
-@section('page_title', 'ফ্যাক্টরি / মিল থেকে পণ্য ক্রয় এন্ট্রি (Purchase)')
+@section('title', __('New Purchase Entry'))
+@section('page_title', __('New Purchase Entry (Stock In)'))
 
 @section('content')
 <div class="max-w-5xl mx-auto space-y-6">
@@ -15,23 +15,23 @@
                     <svg class="w-4 h-4 text-[#533afd]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/>
                     </svg>
-                    <span class="text-sm font-semibold text-white">মিল / সাপ্লায়ার ও ডেলিভারি গোডাউন</span>
+                    <span class="text-sm font-semibold text-white">{{ __('Purchase Information') }}</span>
                 </div>
-                <a href="{{ route('purchases.index') }}" class="text-xs text-[#64748d] hover:text-white transition">← ফিরে যান</a>
+                <a href="{{ route('purchases.index') }}" class="text-xs text-[#64748d] hover:text-white transition">← {{ __('Back') }}</a>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 text-xs">
                 <div>
-                    <label class="block text-slate-300 font-semibold mb-1">সাপ্লায়ার / মিল নির্বাচন <span class="text-rose-400">*</span></label>
+                    <label class="block text-slate-300 font-semibold mb-1">{{ __('Select Supplier') }} <span class="text-rose-400">*</span></label>
                     <select name="supplier_id" required class="w-full px-3 py-2 rounded-xl bg-[#070d18] border border-[#e3e8ee]/15 text-white text-xs focus:border-[#533afd] focus:outline-none">
                         @foreach($suppliers as $s)
-                            <option value="{{ $s->id }}">{{ $s->name }} (বর্তমান দেনা: ৳{{ number_format($s->current_balance, 0) }})</option>
+                            <option value="{{ $s->id }}">{{ $s->name }} ({{ __('Current Balance (Payable)') }}: ৳{{ number_format($s->current_balance, 0) }})</option>
                         @endforeach
                     </select>
                 </div>
 
                 <div>
-                    <label class="block text-slate-300 font-semibold mb-1">আনলোডিং গোডাউন <span class="text-rose-400">*</span></label>
+                    <label class="block text-slate-300 font-semibold mb-1">{{ __('Select Warehouse') }} <span class="text-rose-400">*</span></label>
                     <select name="warehouse_id" required class="w-full px-3 py-2 rounded-xl bg-[#070d18] border border-[#e3e8ee]/15 text-white text-xs focus:border-[#533afd] focus:outline-none">
                         @foreach($warehouses as $wh)
                             <option value="{{ $wh->id }}">{{ $wh->name }}</option>
@@ -40,13 +40,13 @@
                 </div>
 
                 <div>
-                    <label class="block text-slate-300 font-semibold mb-1">ক্রয় তারিখ <span class="text-rose-400">*</span></label>
+                    <label class="block text-slate-300 font-semibold mb-1">{{ __('Date') }} <span class="text-rose-400">*</span></label>
                     <input type="date" name="purchase_date" value="{{ date('Y-m-d') }}" required class="w-full px-3 py-2 rounded-xl bg-[#070d18] border border-[#e3e8ee]/15 text-white text-xs tnum focus:border-[#533afd] focus:outline-none">
                 </div>
 
                 <div>
-                    <label class="block text-slate-300 font-semibold mb-1">মিলের চালান / ইনভয়েস নং</label>
-                    <input type="text" name="supplier_invoice_no" placeholder="যেমন: KAI-98124" class="w-full px-3 py-2 rounded-xl bg-[#070d18] border border-[#e3e8ee]/15 text-white text-xs font-mono focus:border-[#533afd] focus:outline-none">
+                    <label class="block text-slate-300 font-semibold mb-1">{{ __('Challan / Bill No') }}</label>
+                    <input type="text" name="supplier_invoice_no" placeholder="KAI-98124" class="w-full px-3 py-2 rounded-xl bg-[#070d18] border border-[#e3e8ee]/15 text-white text-xs font-mono focus:border-[#533afd] focus:outline-none">
                 </div>
             </div>
         </div>
@@ -54,12 +54,12 @@
         <!-- Purchase Line Items -->
         <div class="rounded-xl card-shell p-6 space-y-4">
             <div class="flex items-center justify-between border-b border-[#e3e8ee]/10 pb-3">
-                <h2 class="text-sm font-semibold text-white">ক্রয়কৃত পণ্যের তালিকা (Purchase Items)</h2>
+                <h2 class="text-sm font-semibold text-white">{{ __('Purchase Items') }}</h2>
                 <button type="button" onclick="addPurchaseRow()" class="btn-secondary text-xs py-1.5 px-3">
                     <svg class="w-3.5 h-3.5 text-[#533afd]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line>
                     </svg>
-                    <span>আরেকটি পণ্য যোগ করুন</span>
+                    <span>{{ __('Add Another Item') }}</span>
                 </button>
             </div>
 
@@ -67,12 +67,12 @@
                 <table class="w-full text-left text-xs">
                     <thead class="bg-[#070d18]/80 text-[#64748d] border-b border-[#e3e8ee]/5">
                         <tr>
-                            <th class="p-3 font-semibold">পণ্য নির্বাচন</th>
-                            <th class="p-3 text-center font-semibold">পরিমাণ (বার/SFT)</th>
-                            <th class="p-3 text-center font-semibold">মোট ওজন (Kg)</th>
-                            <th class="p-3 text-right font-semibold">দর / ক্রয়মূল্য (৳)</th>
-                            <th class="p-3 text-right font-semibold">মোট টাকা (৳)</th>
-                            <th class="p-3 text-center font-semibold">অ্যাকশন</th>
+                            <th class="p-3 font-semibold">{{ __('Product') }}</th>
+                            <th class="p-3 text-center font-semibold">{{ __('Quantity') }}</th>
+                            <th class="p-3 text-center font-semibold">{{ __('Weight (Kg)') }}</th>
+                            <th class="p-3 text-right font-semibold">{{ __('Purchase Price') }} (৳)</th>
+                            <th class="p-3 text-right font-semibold">{{ __('Total (৳)') }}</th>
+                            <th class="p-3 text-center font-semibold">{{ __('Action') }}</th>
                         </tr>
                     </thead>
                     <tbody id="purchaseItemsBody" class="divide-y divide-[#e3e8ee]/5 text-slate-300">
@@ -111,34 +111,34 @@
             <!-- Transport & Bill Totals -->
             <div class="border-t border-[#e3e8ee]/10 pt-4 flex flex-col sm:flex-row justify-between gap-6 text-xs">
                 <div class="sm:w-1/2 space-y-2">
-                    <label class="block font-semibold text-slate-300">নোট ও বিশেষ বিবরণ</label>
-                    <textarea name="notes" rows="3" placeholder="ট্রাক ড্রাইভার নম্বর বা চালানের বিশেষ তথ্য..." class="w-full p-2.5 rounded-xl bg-[#070d18] border border-[#e3e8ee]/15 text-white text-xs focus:border-[#533afd] focus:outline-none"></textarea>
+                    <label class="block font-semibold text-slate-300">{{ __('Notes') }}</label>
+                    <textarea name="notes" rows="3" placeholder="" class="w-full p-2.5 rounded-xl bg-[#070d18] border border-[#e3e8ee]/15 text-white text-xs focus:border-[#533afd] focus:outline-none"></textarea>
                 </div>
 
                 <div class="sm:w-80 space-y-2 text-slate-300">
                     <div class="flex justify-between">
-                        <span>আইটেম মোট:</span>
+                        <span>{{ __('Item Subtotal') }}:</span>
                         <span id="purSubtotal" class="font-semibold text-white tnum">৳97,500.00</span>
                         <input type="hidden" name="subtotal" id="purSubtotalInput" value="97500">
                     </div>
                     <div class="flex items-center justify-between gap-2">
-                        <span class="text-[#64748d]">ট্রাক / পিকআপ ভাড়া (+):</span>
+                        <span class="text-[#64748d]">{{ __('Van / Transport Cost (+)') }}</span>
                         <input type="number" name="carrying_cost" id="purCarrying" value="2500" step="50" oninput="recalcPurGrand()" class="w-28 px-2 py-1 rounded bg-[#070d18] border border-[#e3e8ee]/15 text-white text-right font-mono tnum focus:border-[#533afd] focus:outline-none">
                     </div>
                     <div class="flex items-center justify-between gap-2">
-                        <span class="text-[#64748d]">কুলি / আনলোডিং খরচ (+):</span>
+                        <span class="text-[#64748d]">{{ __('Cutting / Labor Cost (+)') }}</span>
                         <input type="number" name="labor_cost" id="purLabor" value="800" step="50" oninput="recalcPurGrand()" class="w-28 px-2 py-1 rounded bg-[#070d18] border border-[#e3e8ee]/15 text-white text-right font-mono tnum focus:border-[#533afd] focus:outline-none">
                     </div>
                     <div class="flex items-center justify-between gap-2">
-                        <span class="text-[#64748d]">মিল ডিসকাউন্ট (-):</span>
+                        <span class="text-[#64748d]">{{ __('Discount (-)') }}</span>
                         <input type="number" name="discount_amount" id="purDiscount" value="0" step="50" oninput="recalcPurGrand()" class="w-28 px-2 py-1 rounded bg-[#070d18] border border-[#e3e8ee]/15 text-rose-400 text-right font-mono tnum focus:border-[#533afd] focus:outline-none">
                     </div>
                     <div class="flex justify-between font-semibold text-sm text-white border-t border-[#e3e8ee]/10 pt-2.5">
-                        <span class="text-[#b9b9f9]">সর্বমোট খরচ চালান:</span>
+                        <span class="text-[#b9b9f9]">{{ __('Grand Total') }}:</span>
                         <span id="purGrandTotal" class="text-white font-bold text-lg tnum">৳100,800.00</span>
                     </div>
                     <div class="flex items-center justify-between gap-2 pt-2">
-                        <span class="text-slate-200 font-semibold">নগদ প্রদান (Paid):</span>
+                        <span class="text-slate-200 font-semibold">{{ __('Cash Paid') }}:</span>
                         <input type="number" name="paid_amount" id="purPaid" value="50000" step="100" class="w-32 px-3 py-1.5 rounded-xl bg-[#070d18] border border-emerald-500/40 text-emerald-400 font-bold text-right font-mono text-sm tnum focus:border-emerald-500 focus:outline-none">
                     </div>
                 </div>
@@ -146,12 +146,12 @@
 
             <!-- Submit -->
             <div class="border-t border-[#e3e8ee]/10 pt-4 flex items-center justify-end gap-3">
-                <a href="{{ route('purchases.index') }}" class="btn-secondary text-xs py-2 px-4">বাতিল</a>
+                <a href="{{ route('purchases.index') }}" class="btn-secondary text-xs py-2 px-4">{{ __('Cancel') }}</a>
                 <button type="submit" class="btn-primary min-h-[42px] px-6">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="20 6 9 17 4 12"/>
                     </svg>
-                    <span>পারচেজ চালান সম্পন্ন করুন</span>
+                    <span>{{ __('Confirm Purchase') }}</span>
                 </button>
             </div>
         </div>
@@ -231,7 +231,7 @@
     function removePurRow(btn) {
         const rows = document.querySelectorAll('.purchase-row');
         if (rows.length <= 1) {
-            alert('কমপক্ষে একটি পণ্য থাকতে হবে!');
+            alert('At least one purchase item is required.');
             return;
         }
         btn.closest('tr').remove();

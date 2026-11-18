@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'সাপ্লায়ার ও মিল তালিকা')
-@section('page_title', 'অ্যালুমিনিয়াম মিল ও কাঁচ সাপ্লায়ার্স (Suppliers & Mills)')
+@section('title', __('Mills & Suppliers'))
+@section('page_title', __('Aluminium Mills & Glass Factories'))
 
 @section('content')
 <div class="space-y-6">
@@ -10,8 +10,8 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div class="card-shell p-5 flex items-center justify-between">
             <div>
-                <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold">মোট নিবন্ধিত মিল ও সাপ্লায়ার</span>
-                <div class="text-2xl font-bold text-white font-mono tnum mt-1">{{ $suppliers->total() }} <span class="text-sm font-normal text-slate-400">টি প্রতিষ্ঠান</span></div>
+                <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold">{{ __('Total Suppliers / Mills') }}</span>
+                <div class="text-2xl font-bold text-white font-mono tnum mt-1">{{ $suppliers->total() }}</div>
             </div>
             <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center">
                 <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -22,7 +22,7 @@
 
         <div class="card-shell p-5 flex items-center justify-between">
             <div>
-                <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold">মিল ও সাপ্লায়ার মোট দেনা (Accounts Payable)</span>
+                <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold">{{ __('Total Payable') }}</span>
                 <div class="text-2xl font-bold text-rose-400 font-mono tnum mt-1">৳{{ number_format($totalPayable, 2) }}</div>
             </div>
             <div class="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center">
@@ -37,16 +37,16 @@
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <form method="GET" action="{{ route('suppliers.index') }}" class="flex items-center gap-2">
             <div class="relative w-72">
-                <input type="text" name="search" value="{{ request('search') }}" placeholder="মিলের নাম বা কোম্পানি খুঁজুন..." class="w-full pl-9 pr-3.5 py-2 rounded-xl bg-slate-900 border border-slate-700/80 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-indigo-500">
+                <input type="text" name="search" value="{{ request('search') }}" placeholder="{{ __('Search...') }}" class="w-full pl-9 pr-3.5 py-2 rounded-xl bg-slate-900 border border-slate-700/80 text-white text-xs placeholder:text-slate-500 focus:outline-none focus:border-indigo-500">
                 <svg class="w-4 h-4 text-slate-500 absolute left-3 top-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
             </div>
             <button type="submit" class="btn-secondary text-xs">
-                ফিল্টার
+                {{ __('Filter') }}
             </button>
             @if(request('search'))
-                <a href="{{ route('suppliers.index') }}" class="text-xs text-slate-400 hover:text-white px-2">রিসেট</a>
+                <a href="{{ route('suppliers.index') }}" class="text-xs text-slate-400 hover:text-white px-2">{{ __('Reset') }}</a>
             @endif
         </form>
 
@@ -54,7 +54,7 @@
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
-            নতুন মিল / সাপ্লায়ার যুক্ত করুন
+            {{ __('Add New Mill / Supplier') }}
         </a>
     </div>
 
@@ -64,12 +64,12 @@
             <table class="w-full text-left text-xs">
                 <thead class="bg-slate-900/60 text-slate-400 font-semibold border-b border-slate-800">
                     <tr>
-                        <th class="p-3">প্রতিষ্ঠানের নাম</th>
-                        <th class="p-3">যোগাযোগের ব্যক্তি / কোম্পানি</th>
-                        <th class="p-3">মোবাইল নম্বর</th>
-                        <th class="p-3">ঠিকানা / ফ্যাক্টরি এলাকা</th>
-                        <th class="p-3 text-right">বর্তমান দেনা (৳)</th>
-                        <th class="p-3 text-center">লেজার খাতা</th>
+                        <th class="p-3">{{ __('Mill / Supplier Name') }}</th>
+                        <th class="p-3">{{ __('Contact Person') }}</th>
+                        <th class="p-3">{{ __('Phone Number') }}</th>
+                        <th class="p-3">{{ __('Address & Area') }}</th>
+                        <th class="p-3 text-right">{{ __('Current Balance (Payable)') }} (৳)</th>
+                        <th class="p-3 text-center">{{ __('Supplier Ledger') }}</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-800/60 text-slate-300">
@@ -86,7 +86,7 @@
                             </td>
                             <td class="p-3 text-center">
                                 <a href="{{ route('suppliers.show', $s->id) }}" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 hover:bg-indigo-500/20 font-medium text-[11px] transition">
-                                    লেজার দেখুন
+                                    {{ __('View') }}
                                     <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                     </svg>
@@ -96,7 +96,7 @@
                     @empty
                         <tr>
                             <td colspan="6" class="p-8 text-center text-slate-500">
-                                কোনো সাপ্লায়ার পাওয়া যায়নি।
+                                {{ __('No suppliers found.') }}
                             </td>
                         </tr>
                     @endforelse
@@ -105,7 +105,7 @@
         </div>
 
         @if($suppliers->hasPages())
-            <div class="p-4 border-t border-slate-800 bg-slate-900/60">
+            <div class="p-4 border-t border-slate-800 bg-slate-900/40">
                 {{ $suppliers->links() }}
             </div>
         @endif

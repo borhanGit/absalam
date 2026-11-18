@@ -78,8 +78,8 @@
                     </svg>
                 </div>
                 <div class="leading-tight">
-                    <span class="font-semibold text-sm tracking-tight text-white block">ঢাকা থাই ও গ্লাস</span>
-                    <span class="text-[10px] text-[#64748d] font-medium tracking-wide">ENTERPRISE POS & ERP</span>
+                    <span class="font-semibold text-sm tracking-tight text-white block">{{ __('app.app_name') }}</span>
+                    <span class="text-[10px] text-[#64748d] font-medium tracking-wide">{{ __('app.app_subtitle') }}</span>
                 </div>
             </div>
 
@@ -87,13 +87,13 @@
             <nav class="flex-1 overflow-y-auto px-3 py-4 space-y-6 text-xs scrollbar-thin">
                 <!-- Group 1: Core Operations -->
                 <div>
-                    <div class="px-3 mb-2 font-semibold tracking-wider text-[#64748d] uppercase text-[10px]">অপারেশনস (Operations)</div>
+                    <div class="px-3 mb-2 font-semibold tracking-wider text-[#64748d] uppercase text-[10px]">{{ __('app.nav_operations') }}</div>
                     <div class="space-y-1">
                         <a href="{{ route('dashboard') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('dashboard') ? 'bg-[#533afd]/15 text-[#ffffff] border border-[#533afd]/30' : 'text-slate-300 hover:bg-white/5 hover:text-white' }}">
                             <svg class="w-4 h-4 text-[#533afd]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/>
                             </svg>
-                            <span>ড্যাশবোর্ড (Dashboard)</span>
+                            <span>{{ __('app.dashboard') }}</span>
                         </a>
 
                         @if(!auth()->check() || auth()->user()->hasRole(['admin', 'manager', 'cashier']))
@@ -102,7 +102,7 @@
                                 <svg class="w-4 h-4 text-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
                                 </svg>
-                                <span>পিওএস কাউন্টার (POS)</span>
+                                <span>{{ __('app.pos_counter') }}</span>
                             </span>
                             <span class="px-1.5 py-0.5 rounded text-[10px] bg-black/25 font-mono">F2</span>
                         </a>
@@ -110,13 +110,13 @@
                             <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
                             </svg>
-                            <span>সেলস চালান (Sales List)</span>
+                            <span>{{ __('app.sales_list') }}</span>
                         </a>
                         <a href="{{ route('quotations.index') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('quotations.*') ? 'bg-[#533afd]/15 text-[#ffffff] border border-[#533afd]/30' : 'text-slate-300 hover:bg-white/5 hover:text-white' }}">
                             <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
                             </svg>
-                            <span>জানালা/দরজা কোটেশন</span>
+                            <span>{{ __('app.quotations') }}</span>
                         </a>
                         @endif
 
@@ -125,7 +125,7 @@
                             <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/>
                             </svg>
-                            <span>পারচেজ ও ফ্যাক্টরি চালান</span>
+                            <span>{{ __('app.purchases') }}</span>
                         </a>
                         @endif
                     </div>
@@ -133,45 +133,45 @@
 
                 <!-- Group 2: Thai & Glass Inventory -->
                 <div>
-                    <div class="px-3 mb-2 font-semibold tracking-wider text-[#64748d] uppercase text-[10px]">ইনভেন্টরি (Inventory)</div>
+                    <div class="px-3 mb-2 font-semibold tracking-wider text-[#64748d] uppercase text-[10px]">{{ __('app.nav_inventory') }}</div>
                     <div class="space-y-1">
                         <a href="{{ route('products.index') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('products.*') ? 'bg-[#533afd]/15 text-[#ffffff] border border-[#533afd]/30' : 'text-slate-300 hover:bg-white/5 hover:text-white' }}">
                             <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><circle cx="7" cy="7" r=".5" fill="currentColor"/>
                             </svg>
-                            <span>পণ্য তালিকা (Products Master)</span>
+                            <span>{{ __('app.products') }}</span>
                         </a>
                         <a href="{{ route('stocks.index') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('stocks.*') ? 'bg-[#533afd]/15 text-[#ffffff] border border-[#533afd]/30' : 'text-slate-300 hover:bg-white/5 hover:text-white' }}">
                             <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="m7.5 4.27 9 5.15M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/>
                             </svg>
-                            <span>ওয়্যারহাউস স্টক (Stock)</span>
+                            <span>{{ __('app.stocks') }}</span>
                         </a>
                         <a href="{{ route('offcuts.index') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('offcuts.*') ? 'bg-[#533afd]/15 text-[#ffffff] border border-[#533afd]/30' : 'text-slate-300 hover:bg-white/5 hover:text-white' }}">
                             <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" x2="8.12" y1="4" y2="15.88"/><line x1="14.47" x2="20" y1="14.48" y2="20"/><line x1="8.12" x2="12" y1="8.12" y2="12"/>
                             </svg>
-                            <span>কাটিং অফ-কাট ও স্ক্র্যাপ</span>
+                            <span>{{ __('app.offcuts') }}</span>
                         </a>
                     </div>
                 </div>
 
                 <!-- Group 3: Parties & Ledgers -->
                 <div>
-                    <div class="px-3 mb-2 font-semibold tracking-wider text-[#64748d] uppercase text-[10px]">পার্টি ও লেজার (Parties & CRM)</div>
+                    <div class="px-3 mb-2 font-semibold tracking-wider text-[#64748d] uppercase text-[10px]">{{ __('app.nav_parties') }}</div>
                     <div class="space-y-1">
                         <a href="{{ route('customers.index') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('customers.*') ? 'bg-[#533afd]/15 text-[#ffffff] border border-[#533afd]/30' : 'text-slate-300 hover:bg-white/5 hover:text-white' }}">
                             <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                             </svg>
-                            <span>কাস্টমার ও থাই মিস্ত্রি</span>
+                            <span>{{ __('app.customers') }}</span>
                         </a>
                         @if(!auth()->check() || auth()->user()->hasRole(['admin', 'manager', 'storekeeper']))
                         <a href="{{ route('suppliers.index') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('suppliers.*') ? 'bg-[#533afd]/15 text-[#ffffff] border border-[#533afd]/30' : 'text-slate-300 hover:bg-white/5 hover:text-white' }}">
                             <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/>
                             </svg>
-                            <span>মিল ও সাপ্লায়ার্স</span>
+                            <span>{{ __('app.suppliers') }}</span>
                         </a>
                         @endif
                     </div>
@@ -180,32 +180,32 @@
                 <!-- Group 4: Finance, Cheque & Accounts -->
                 @if(!auth()->check() || auth()->user()->hasRole(['admin', 'manager', 'cashier']))
                 <div>
-                    <div class="px-3 mb-2 font-semibold tracking-wider text-[#64748d] uppercase text-[10px]">ফাইন্যান্স ও একাউন্টস (Finance)</div>
+                    <div class="px-3 mb-2 font-semibold tracking-wider text-[#64748d] uppercase text-[10px]">{{ __('app.nav_finance') }}</div>
                     <div class="space-y-1">
                         <a href="{{ route('cheques.index') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('cheques.*') ? 'bg-[#533afd]/15 text-[#ffffff] border border-[#533afd]/30' : 'text-slate-300 hover:bg-white/5 hover:text-white' }}">
                             <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/>
                             </svg>
-                            <span>চেক ম্যানেজমেন্ট (Cheques)</span>
+                            <span>{{ __('app.cheques') }}</span>
                         </a>
                         <a href="{{ route('receipts.index') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('receipts.*') ? 'bg-[#533afd]/15 text-[#ffffff] border border-[#533afd]/30' : 'text-slate-300 hover:bg-white/5 hover:text-white' }}">
                             <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/>
                             </svg>
-                            <span>কালেকশন ও মানি রিসিট</span>
+                            <span>{{ __('app.receipts') }}</span>
                         </a>
                         @if(!auth()->check() || auth()->user()->hasRole(['admin', 'manager']))
                         <a href="{{ route('payments.index') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('payments.*') ? 'bg-[#533afd]/15 text-[#ffffff] border border-[#533afd]/30' : 'text-slate-300 hover:bg-white/5 hover:text-white' }}">
                             <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="m5 12 7-7 7 7"/><path d="M12 19V5"/>
                             </svg>
-                            <span>সাপ্লায়ার পেমেন্ট (Payments)</span>
+                            <span>{{ __('app.payments') }}</span>
                         </a>
                         <a href="{{ route('expenses.index') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('expenses.*') ? 'bg-[#533afd]/15 text-[#ffffff] border border-[#533afd]/30' : 'text-slate-300 hover:bg-white/5 hover:text-white' }}">
                             <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/>
                             </svg>
-                            <span>দোকান খরচ (Expenses)</span>
+                            <span>{{ __('app.expenses') }}</span>
                         </a>
                         @endif
                         @if(!auth()->check() || auth()->user()->isAdmin())
@@ -213,7 +213,7 @@
                             <svg class="w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/>
                             </svg>
-                            <span>ক্যাশ বুক ও আর্থিক রিপোর্ট</span>
+                            <span>{{ __('app.accounts') }}</span>
                         </a>
                         @endif
                     </div>
@@ -223,13 +223,13 @@
                 <!-- Group 5: Settings & Administration -->
                 @if(!auth()->check() || auth()->user()->isAdmin())
                 <div>
-                    <div class="px-3 mb-2 font-semibold tracking-wider text-[#64748d] uppercase text-[10px]">অ্যাডমিনিস্ট্রেশন (Administration)</div>
+                    <div class="px-3 mb-2 font-semibold tracking-wider text-[#64748d] uppercase text-[10px]">{{ __('app.nav_administration') }}</div>
                     <div class="space-y-1">
                         <a href="{{ route('users.index') }}" class="flex items-center gap-2.5 px-3 py-2 rounded-lg font-medium transition {{ request()->routeIs('users.*') ? 'bg-[#533afd]/15 text-[#ffffff] border border-[#533afd]/30' : 'text-slate-300 hover:bg-white/5 hover:text-white' }}">
                             <svg class="w-4 h-4 text-[#533afd]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/>
                             </svg>
-                            <span>ইউজার ও পারমিশন (Users)</span>
+                            <span>{{ __('app.users') }}</span>
                         </a>
                     </div>
                 </div>
@@ -245,12 +245,12 @@
                     </div>
                     <div class="min-w-0 truncate">
                         <a href="{{ route('profile') }}" class="font-medium text-white block hover:text-[#533afd] truncate">{{ auth()->user()->name }}</a>
-                        <span class="text-[10px] text-[#64748d] block truncate">{{ auth()->user()->roleNameBengali() }}</span>
+                        <span class="text-[10px] text-[#64748d] block truncate">{{ auth()->user()->roleName() }}</span>
                     </div>
                 </div>
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button type="submit" title="লগআউট" class="w-8 h-8 rounded-full flex items-center justify-center bg-white/5 hover:bg-rose-500/20 hover:text-rose-400 text-slate-400 border border-white/10 transition" aria-label="লগআউট">
+                    <button type="submit" title="{{ __('app.logout') }}" class="w-8 h-8 rounded-full flex items-center justify-center bg-white/5 hover:bg-rose-500/20 hover:text-rose-400 text-slate-400 border border-white/10 transition" aria-label="{{ __('app.logout') }}">
                         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/>
                         </svg>
@@ -258,8 +258,8 @@
                 </form>
                 @else
                 <div class="flex items-center justify-between w-full">
-                    <span class="text-slate-400">লগইন করুন</span>
-                    <a href="{{ route('login') }}" class="btn-primary text-xs py-1.5 px-3">লগইন</a>
+                    <span class="text-slate-400">{{ __('app.login') }}</span>
+                    <a href="{{ route('login') }}" class="btn-primary text-xs py-1.5 px-3">{{ __('app.login') }}</a>
                 </div>
                 @endauth
             </div>
@@ -278,9 +278,9 @@
                         <svg class="w-3.5 h-3.5 text-[#533afd]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/>
                         </svg>
-                        <span>শাখা:</span>
+                        <span>{{ __('app.branch') }}</span>
                         <span class="font-medium text-white">
-                            {{ auth()->user()?->warehouse?->name ?? 'প্রধান শোরুম (মিরপুর)' }}
+                            {{ auth()->user()?->warehouse?->name ?? __('app.default_branch') }}
                         </span>
                     </div>
 
@@ -289,7 +289,7 @@
                         <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
                         </svg>
-                        <span>পিওএস কাউন্টার</span>
+                        <span>{{ __('app.pos_counter') }}</span>
                     </a>
                     @endif
 
@@ -298,12 +298,26 @@
                         <svg class="w-3.5 h-3.5 text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
                         </svg>
-                        <span>প্রোফাইল</span>
+                        <span>{{ __('app.profile') }}</span>
                     </a>
                     @endauth
 
+                    <!-- Language Switcher (বাং / EN) -->
+                    <div class="flex items-center rounded-full bg-[#0d253d] border border-[#e3e8ee]/10 p-0.5 text-[11px] font-semibold" title="{{ __('app.switch_language') }}">
+                        <a href="{{ route('locale.switch', 'bn') }}" 
+                           class="px-2.5 py-1 rounded-full transition {{ app()->getLocale() === 'bn' ? 'bg-[#533afd] text-white shadow-sm' : 'text-slate-400 hover:text-white' }}"
+                           title="বাংলা">
+                            বাং
+                        </a>
+                        <a href="{{ route('locale.switch', 'en') }}" 
+                           class="px-2.5 py-1 rounded-full transition {{ app()->getLocale() === 'en' ? 'bg-[#533afd] text-white shadow-sm' : 'text-slate-400 hover:text-white' }}"
+                           title="English">
+                            EN
+                        </a>
+                    </div>
+
                     <!-- Dark / White (Light) Mode Toggle Button -->
-                    <button type="button" onclick="toggleTheme()" class="btn-secondary !p-2 !min-h-[36px] !rounded-full relative" title="থিম পরিবর্তন করুন (Dark / White Mode)" aria-label="Toggle Theme">
+                    <button type="button" onclick="toggleTheme()" class="btn-secondary !p-2 !min-h-[36px] !rounded-full relative" title="{{ __('app.toggle_theme') }}" aria-label="Toggle Theme">
                         <!-- Sun Icon (Active in Dark mode -> click to switch to White mode) -->
                         <svg id="themeIconSun" class="w-4 h-4 text-amber-400 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
