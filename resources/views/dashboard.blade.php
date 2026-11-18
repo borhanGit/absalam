@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Dashboard')
-@section('page_title', 'ব্যবসা ওভারভিউ ও কন্ট্রোল প্যানেল (Dashboard)')
+@section('title', __('dashboard.title'))
+@section('page_title', __('dashboard.page_title'))
 
 @section('content')
 <div class="space-y-6">
@@ -11,7 +11,7 @@
         <!-- Card 1: Today Sales -->
         <div class="card-shell p-4 hover:border-[#533afd]/40 transition-colors">
             <div class="flex items-center justify-between text-[#64748d] text-xs">
-                <span class="font-medium">আজকের মোট বিক্রয়</span>
+                <span class="font-medium">{{ __('dashboard.today_sales') }}</span>
                 <span class="p-2 rounded-lg bg-[#533afd]/10 text-[#533afd]">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
@@ -21,13 +21,13 @@
             <div class="mt-3">
                 <span class="text-2xl font-bold text-white tnum tracking-tight">৳{{ number_format($todaySales, 2) }}</span>
             </div>
-            <p class="text-[11px] text-[#64748d] mt-1.5">ক্যাশ ও ক্রেডিট সর্বমোট</p>
+            <p class="text-[11px] text-[#64748d] mt-1.5">{{ __('dashboard.sales_sub') }}</p>
         </div>
 
         <!-- Card 2: Today Collection -->
         <div class="card-shell p-4 hover:border-emerald-500/40 transition-colors">
             <div class="flex items-center justify-between text-[#64748d] text-xs">
-                <span class="font-medium">আজকের ক্যাশ আদায়</span>
+                <span class="font-medium">{{ __('dashboard.today_collections') }}</span>
                 <span class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/>
@@ -37,13 +37,13 @@
             <div class="mt-3">
                 <span class="text-2xl font-bold text-white tnum tracking-tight">৳{{ number_format($todayCollections, 2) }}</span>
             </div>
-            <p class="text-[11px] text-emerald-400/80 mt-1.5">কাউন্টার ও বাকি কালেকশন</p>
+            <p class="text-[11px] text-emerald-400/80 mt-1.5">{{ __('dashboard.collections_sub') }}</p>
         </div>
 
         <!-- Card 3: Customer Receivables -->
         <div class="card-shell p-4 hover:border-amber-500/40 transition-colors">
             <div class="flex items-center justify-between text-[#64748d] text-xs">
-                <span class="font-medium">মোট কাস্টমার বাকি</span>
+                <span class="font-medium">{{ __('dashboard.customer_due') }}</span>
                 <span class="p-2 rounded-lg bg-amber-500/10 text-amber-400">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
@@ -53,13 +53,13 @@
             <div class="mt-3">
                 <span class="text-2xl font-bold text-white tnum tracking-tight">৳{{ number_format($totalCustomerDue, 2) }}</span>
             </div>
-            <p class="text-[11px] text-amber-400/80 mt-1.5">মিস্ত্রি ও পার্টির মোট বাকি</p>
+            <p class="text-[11px] text-amber-400/80 mt-1.5">{{ __('dashboard.customer_due_sub') }}</p>
         </div>
 
         <!-- Card 4: Supplier Payables -->
         <div class="card-shell p-4 hover:border-rose-500/40 transition-colors">
             <div class="flex items-center justify-between text-[#64748d] text-xs">
-                <span class="font-medium">মিল ও সাপ্লায়ার দেনা</span>
+                <span class="font-medium">{{ __('dashboard.supplier_payable') }}</span>
                 <span class="p-2 rounded-lg bg-rose-500/10 text-rose-400">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/>
@@ -69,13 +69,13 @@
             <div class="mt-3">
                 <span class="text-2xl font-bold text-white tnum tracking-tight">৳{{ number_format($totalSupplierPayable, 2) }}</span>
             </div>
-            <p class="text-[11px] text-rose-400/80 mt-1.5">মিল চালানের বকেয়া বিল</p>
+            <p class="text-[11px] text-rose-400/80 mt-1.5">{{ __('dashboard.supplier_payable_sub') }}</p>
         </div>
 
         <!-- Card 5: Cheques in Hand -->
         <div class="card-shell p-4 hover:border-[#533afd]/40 transition-colors col-span-2 md:col-span-1">
             <div class="flex items-center justify-between text-[#64748d] text-xs">
-                <span class="font-medium">হাতে থাকা চেক</span>
+                <span class="font-medium">{{ __('dashboard.cheques_in_hand') }}</span>
                 <span class="p-2 rounded-lg bg-[#533afd]/10 text-[#533afd]">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/>
@@ -85,7 +85,7 @@
             <div class="mt-3">
                 <span class="text-2xl font-bold text-white tnum tracking-tight">৳{{ number_format($chequesInHand, 2) }}</span>
             </div>
-            <p class="text-[11px] text-[#64748d] mt-1.5"><strong class="text-white tnum">{{ $chequesInHandCount }}</strong> টি জমা দেওয়ার অপেক্ষায়</p>
+            <p class="text-[11px] text-[#64748d] mt-1.5"><strong class="text-white tnum">{{ $chequesInHandCount }}</strong> {{ __('dashboard.cheques_sub') }}</p>
         </div>
     </div>
 
@@ -93,8 +93,8 @@
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5">
         <a href="{{ route('pos.create') }}" class="p-4 rounded-xl bg-[#533afd] hover:bg-[#4434d4] text-white flex items-center justify-between shadow-md shadow-[#533afd]/25 transition group">
             <div>
-                <span class="text-[11px] uppercase tracking-wider block text-white/75 font-semibold">কাউন্টার সেলস</span>
-                <span class="text-sm font-semibold text-white mt-0.5 block">নতুন পিওএস (POS)</span>
+                <span class="text-[11px] uppercase tracking-wider block text-white/75 font-semibold">{{ __('dashboard.quick_pos_badge') }}</span>
+                <span class="text-sm font-semibold text-white mt-0.5 block">{{ __('dashboard.quick_pos') }}</span>
             </div>
             <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -105,8 +105,8 @@
 
         <a href="{{ route('quotations.create') }}" class="p-4 rounded-xl card-shell hover:border-[#533afd]/50 text-white flex items-center justify-between transition group">
             <div>
-                <span class="text-[11px] text-[#64748d] uppercase tracking-wider block font-semibold">প্রজেক্ট এস্টিমেটর</span>
-                <span class="text-sm font-semibold text-white mt-0.5 block">জানালা/দরজা কোটেশন</span>
+                <span class="text-[11px] text-[#64748d] uppercase tracking-wider block font-semibold">{{ __('dashboard.quick_quotation_badge') }}</span>
+                <span class="text-sm font-semibold text-white mt-0.5 block">{{ __('dashboard.quick_quotation') }}</span>
             </div>
             <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 group-hover:text-white group-hover:bg-[#533afd]/20 transition">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -117,8 +117,8 @@
 
         <a href="{{ route('purchases.create') }}" class="p-4 rounded-xl card-shell hover:border-emerald-500/50 text-white flex items-center justify-between transition group">
             <div>
-                <span class="text-[11px] text-[#64748d] uppercase tracking-wider block font-semibold">মিল থেকে মাল গ্রহণ</span>
-                <span class="text-sm font-semibold text-white mt-0.5 block">নতুন পারচেজ এন্ট্রি</span>
+                <span class="text-[11px] text-[#64748d] uppercase tracking-wider block font-semibold">{{ __('dashboard.quick_purchase_badge') }}</span>
+                <span class="text-sm font-semibold text-white mt-0.5 block">{{ __('dashboard.quick_purchase') }}</span>
             </div>
             <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 group-hover:text-emerald-400 group-hover:bg-emerald-500/10 transition">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -129,8 +129,8 @@
 
         <a href="{{ route('receipts.create') }}" class="p-4 rounded-xl card-shell hover:border-amber-500/50 text-white flex items-center justify-between transition group">
             <div>
-                <span class="text-[11px] text-[#64748d] uppercase tracking-wider block font-semibold">বাকি আদায়</span>
-                <span class="text-sm font-semibold text-white mt-0.5 block">মানি রিসিট গ্রহণ</span>
+                <span class="text-[11px] text-[#64748d] uppercase tracking-wider block font-semibold">{{ __('dashboard.quick_receipt_badge') }}</span>
+                <span class="text-sm font-semibold text-white mt-0.5 block">{{ __('dashboard.quick_receipt') }}</span>
             </div>
             <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 group-hover:text-amber-400 group-hover:bg-amber-500/10 transition">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -151,10 +151,10 @@
                             <circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
                         </svg>
                     </div>
-                    <h2 class="text-sm font-semibold text-white">সাম্প্রতিক সেলস চালানসমূহ (Recent Invoices)</h2>
+                    <h2 class="text-sm font-semibold text-white">{{ __('dashboard.recent_sales_title') }}</h2>
                 </div>
                 <a href="{{ route('sales.index') }}" class="text-xs text-[#533afd] hover:text-[#b9b9f9] font-medium transition flex items-center gap-1">
-                    <span>সকল চালান</span>
+                    <span>{{ __('dashboard.view_all_sales') }}</span>
                     <span>→</span>
                 </a>
             </div>
@@ -163,13 +163,13 @@
                 <table class="w-full text-left text-xs">
                     <thead class="bg-[#070d18]/60 text-[#64748d] border-b border-[#e3e8ee]/5">
                         <tr>
-                            <th class="p-3 font-semibold">চালান নং</th>
-                            <th class="p-3 font-semibold">কাস্টমার / মিস্ত্রি</th>
-                            <th class="p-3 font-semibold">তারিখ</th>
-                            <th class="p-3 font-semibold text-right">মোট মূল্য</th>
-                            <th class="p-3 font-semibold text-right">পরিশোধ</th>
-                            <th class="p-3 font-semibold text-right">বাকি</th>
-                            <th class="p-3 font-semibold text-center">স্ট্যাটাস</th>
+                            <th class="p-3 font-semibold">{{ __('dashboard.invoice_no') }}</th>
+                            <th class="p-3 font-semibold">{{ __('dashboard.customer_name') }}</th>
+                            <th class="p-3 font-semibold">{{ __('app.date') }}</th>
+                            <th class="p-3 font-semibold text-right">{{ __('app.total') }}</th>
+                            <th class="p-3 font-semibold text-right">{{ __('app.paid') }}</th>
+                            <th class="p-3 font-semibold text-right">{{ __('app.due') }}</th>
+                            <th class="p-3 font-semibold text-center">{{ __('app.status') }}</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-[#e3e8ee]/5 text-slate-300">
@@ -185,18 +185,18 @@
                                 <td class="p-3 text-right font-medium text-amber-400 tnum">৳{{ number_format($sale->due_amount, 2) }}</td>
                                 <td class="p-3 text-center">
                                     @if($sale->payment_status === 'paid')
-                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">পরিশোধ</span>
+                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">{{ __('app.paid') }}</span>
                                     @elseif($sale->payment_status === 'partial')
-                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">আংশিক</span>
+                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">{{ __('app.partial') }}</span>
                                     @else
-                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-rose-500/10 text-rose-400 border border-rose-500/20">বাকি</span>
+                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-rose-500/10 text-rose-400 border border-rose-500/20">{{ __('app.due') }}</span>
                                     @endif
                                 </td>
                             </tr>
                         @empty
                             <tr>
                                 <td colspan="7" class="p-8 text-center text-[#64748d]">
-                                    এখনও কোনো সেলস চালান তৈরি হয়নি। <a href="{{ route('pos.create') }}" class="text-[#533afd] font-semibold hover:underline">প্রথম সেলস তৈরি করুন</a>
+                                    {{ __('dashboard.no_recent_sales') }} <a href="{{ route('pos.create') }}" class="text-[#533afd] font-semibold hover:underline">{{ __('app.create') }}</a>
                                 </td>
                             </tr>
                         @endforelse
@@ -215,11 +215,10 @@
                         </svg>
                     </div>
                     <div>
-                        <h2 class="text-sm font-semibold text-white">স্টকে থাকা অফ-কাট (Off-Cuts)</h2>
-                        <p class="text-[10px] text-[#64748d]">ছোট অর্ডারে রিইউজ করার মজুত টুকরো</p>
+                        <h2 class="text-sm font-semibold text-white">{{ __('dashboard.offcuts_title') }}</h2>
                     </div>
                 </div>
-                <a href="{{ route('offcuts.index') }}" class="text-xs text-[#533afd] hover:text-[#b9b9f9] font-medium transition">সব →</a>
+                <a href="{{ route('offcuts.index') }}" class="text-xs text-[#533afd] hover:text-[#b9b9f9] font-medium transition">{{ __('dashboard.view_all_offcuts') }} →</a>
             </div>
 
             <div class="space-y-2.5">
@@ -228,17 +227,17 @@
                         <div>
                             <span class="font-semibold text-white block">{{ $cut->product->name ?? '-' }}</span>
                             <span class="text-[#64748d] text-[11px] tnum">
-                                সাইজ: <strong class="text-slate-200">{{ $cut->length_feet }} ফুট</strong> 
+                                {{ __('pos.size_measurement') }}: <strong class="text-slate-200">{{ $cut->length_feet }}'</strong> 
                                 @if($cut->width_inch) × {{ $cut->width_inch }}" @endif
                             </span>
                         </div>
                         <div class="text-right">
-                            <span class="px-2.5 py-1 rounded-full bg-[#533afd]/15 text-white font-semibold font-mono text-[11px] border border-[#533afd]/20 tnum">{{ $cut->quantity }} পিস</span>
+                            <span class="px-2.5 py-1 rounded-full bg-[#533afd]/15 text-white font-semibold font-mono text-[11px] border border-[#533afd]/20 tnum">{{ $cut->quantity }} pcs</span>
                         </div>
                     </div>
                 @empty
                     <div class="p-8 text-center text-[#64748d] text-xs">
-                        বর্তমানে কোনো অবিক্রিত অফ-কাট টুকরো নেই।
+                        {{ __('dashboard.no_offcuts') }}
                     </div>
                 @endforelse
             </div>

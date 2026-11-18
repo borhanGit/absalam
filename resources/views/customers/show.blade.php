@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'লেজার: ' . $customer->name)
-@section('page_title', 'কাস্টমার লেজার ও খতিয়ান: ' . $customer->name)
+@section('title', __('Customer Ledger') . ': ' . $customer->name)
+@section('page_title', __('Customer Details & Ledger') . ': ' . $customer->name)
 
 @section('content')
 <div class="space-y-6">
@@ -12,14 +12,14 @@
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
-            কাস্টমার তালিকায় ফিরুন
+            {{ __('Back') }}
         </a>
         <div class="flex items-center gap-3">
             <a href="{{ route('receipts.create') }}?customer_id={{ $customer->id }}" class="btn-primary inline-flex items-center gap-2">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                 </svg>
-                টাকা গ্রহণ (Money Receipt)
+                {{ __('New Money Receipt') }}
             </a>
         </div>
     </div>
@@ -49,7 +49,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
-                        {{ $customer->address ?? 'ঠিকানা নেই' }}
+                        {{ $customer->address ?? '-' }}
                     </span>
                 </div>
             </div>
@@ -57,7 +57,7 @@
 
         <div class="flex items-center gap-6 sm:border-l sm:border-slate-800 sm:pl-6">
             <div class="text-right sm:text-right">
-                <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold block">বর্তমান বকেয়া (Due)</span>
+                <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold block">{{ __('Current Balance') }}</span>
                 <span class="text-2xl font-bold font-mono tnum {{ $customer->current_balance > 0 ? 'text-amber-400' : 'text-emerald-400' }}">
                     ৳{{ number_format($customer->current_balance, 2) }}
                 </span>
@@ -74,20 +74,20 @@
                     <svg class="w-4 h-4 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                     </svg>
-                    <h3 class="text-sm font-bold text-white">চালানে মাল ক্রয়ের ইতিহাস</h3>
+                    <h3 class="text-sm font-bold text-white">{{ __('Recent Sales Invoices') }}</h3>
                 </div>
-                <span class="text-xs font-mono text-slate-400">{{ count($customer->sales) }} টি চালান</span>
+                <span class="text-xs font-mono text-slate-400">{{ count($customer->sales) }}</span>
             </div>
 
             <div class="overflow-x-auto">
                 <table class="w-full text-left text-xs">
                     <thead class="bg-slate-900/60 text-slate-400 font-semibold border-b border-slate-800">
                         <tr>
-                            <th class="p-3">চালান নং</th>
-                            <th class="p-3">তারিখ</th>
-                            <th class="p-3 text-right">মোট বিল</th>
-                            <th class="p-3 text-right">নগদ</th>
-                            <th class="p-3 text-right">বাকি</th>
+                            <th class="p-3">{{ __('Invoice #') }}</th>
+                            <th class="p-3">{{ __('Date') }}</th>
+                            <th class="p-3 text-right">{{ __('Grand Total') }}</th>
+                            <th class="p-3 text-right">{{ __('Cash Paid') }}</th>
+                            <th class="p-3 text-right">{{ __('Due') }}</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-800/60 text-slate-300">
@@ -103,7 +103,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="5" class="p-8 text-center text-slate-500">এখনও কোনো বিক্রয় রেকর্ড নেই।</td>
+                                <td colspan="5" class="p-8 text-center text-slate-500">{{ __('No sales invoices found.') }}</td>
                             </tr>
                         @endforelse
                     </tbody>
@@ -118,19 +118,19 @@
                     <svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <h3 class="text-sm font-bold text-white">বাকি পরিশোধ ও রিসিটের ইতিহাস</h3>
+                    <h3 class="text-sm font-bold text-white">{{ __('Money Receipts') }}</h3>
                 </div>
-                <span class="text-xs font-mono text-slate-400">{{ count($customer->receipts) }} টি রিসিট</span>
+                <span class="text-xs font-mono text-slate-400">{{ count($customer->receipts) }}</span>
             </div>
 
             <div class="overflow-x-auto">
                 <table class="w-full text-left text-xs">
                     <thead class="bg-slate-900/60 text-slate-400 font-semibold border-b border-slate-800">
                         <tr>
-                            <th class="p-3">রিসিট নং</th>
-                            <th class="p-3">তারিখ</th>
-                            <th class="p-3">মাধ্যম</th>
-                            <th class="p-3 text-right">জমা টাকা (৳)</th>
+                            <th class="p-3">{{ __('Receipt #') }}</th>
+                            <th class="p-3">{{ __('Date') }}</th>
+                            <th class="p-3">{{ __('Payment Method') }}</th>
+                            <th class="p-3 text-right">{{ __('Collected Amount') }} (৳)</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-800/60 text-slate-300">
@@ -147,7 +147,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="4" class="p-8 text-center text-slate-500">এখনও কোনো মানি রিসিট গ্রহণ করা হয়নি।</td>
+                                <td colspan="4" class="p-8 text-center text-slate-500">{{ __('No receipts found.') }}</td>
                             </tr>
                         @endforelse
                     </tbody>

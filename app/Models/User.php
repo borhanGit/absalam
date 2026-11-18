@@ -82,6 +82,13 @@ class User extends Authenticatable
         return in_array($this->role, ['admin', 'manager']);
     }
 
+    public function roleName(): string
+    {
+        $key = "roles.{$this->role}";
+        $trans = __($key);
+        return $trans !== $key ? $trans : $this->roleNameBengali();
+    }
+
     public function roleNameBengali(): string
     {
         return match ($this->role) {

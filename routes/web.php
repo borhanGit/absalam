@@ -22,10 +22,14 @@ use App\Models\Category;
 use App\Models\CompanySetting;
 use App\Models\Customer;
 use App\Models\Product;
+use App\Http\Controllers\LocaleController;
 use App\Models\Stock;
 use App\Models\Supplier;
 use App\Models\Warehouse;
 use Illuminate\Support\Facades\Route;
+
+// Language Switcher Route
+Route::get('/lang/{locale}', [LocaleController::class, 'switch'])->name('locale.switch');
 
 // Public Showcase / Landing
 Route::get('/', function () {

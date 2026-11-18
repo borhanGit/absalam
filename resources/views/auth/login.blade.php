@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>লগইন | {{ $company->company_name ?? 'Dhaka Thai & Aluminium Glass House' }}</title>
+    <title>{{ __('Login') }} | {{ $company->company_name ?? 'Thai & Aluminium Glass House' }}</title>
     
     <!-- Instant Theme Detection Script -->
     <script>
@@ -26,10 +26,22 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-[#070d18] text-[#e2e8f0] font-sans antialiased min-h-screen flex items-center justify-center p-4 relative overflow-x-hidden">
-    <!-- Top Right Theme Switcher -->
-    <div class="fixed top-4 right-4 z-50">
-        <button type="button" onclick="toggleTheme()" class="btn-secondary !p-2 !min-h-[38px] !rounded-full shadow-md" title="থিম পরিবর্তন করুন (Dark / White Mode)" aria-label="Toggle Theme">
+<body class="bg-[#f6f9fc] dark:bg-[#070d18] text-slate-800 dark:text-[#e2e8f0] font-sans antialiased min-h-screen flex items-center justify-center p-4 relative overflow-x-hidden transition-colors duration-200">
+    <!-- Top Right Language & Theme Switcher -->
+    <div class="fixed top-4 right-4 z-50 flex items-center gap-2">
+        <!-- Language Switcher (বাং / EN) -->
+        <div class="flex items-center rounded-full bg-[#0d253d] border border-[#e3e8ee]/10 p-0.5 text-[11px] font-semibold" title="{{ __('app.switch_language') }}">
+            <a href="{{ route('locale.switch', 'bn') }}" 
+               class="px-2.5 py-1 rounded-full transition {{ app()->getLocale() === 'bn' ? 'bg-[#533afd] text-white shadow-sm' : 'text-slate-400 hover:text-white' }}">
+                বাং
+            </a>
+            <a href="{{ route('locale.switch', 'en') }}" 
+               class="px-2.5 py-1 rounded-full transition {{ app()->getLocale() === 'en' ? 'bg-[#533afd] text-white shadow-sm' : 'text-slate-400 hover:text-white' }}">
+                EN
+            </a>
+        </div>
+
+        <button type="button" onclick="toggleTheme()" class="btn-secondary !p-2 !min-h-[38px] !rounded-full shadow-md" title="{{ __('app.toggle_theme') }}" aria-label="Toggle Theme">
             <svg id="themeIconSun" class="w-4 h-4 text-amber-400 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
             </svg>
@@ -53,11 +65,11 @@
                     <path d="M3 3h18v18H3zM3 9h18M9 21V9"/>
                 </svg>
             </div>
-            <h1 class="text-xl font-semibold tracking-tight text-white">
+            <h1 class="text-xl font-semibold tracking-tight text-slate-900 dark:text-white">
                 {{ $company->company_name ?? 'Dhaka Thai & Aluminium Glass House' }}
             </h1>
-            <p class="text-xs text-[#64748d]">
-                পিওএস কাউন্টার, থাই গ্লাস ডাইমেনশন বিলিং ও ওয়্যারহাউস ইআরপি
+            <p class="text-xs text-slate-500 dark:text-[#64748d]">
+                {{ __('POS counter, Thai glass dimension billing & warehouse ERP') }}
             </p>
         </div>
 
@@ -85,7 +97,7 @@
                 @csrf
 
                 <div>
-                    <label class="block text-xs font-medium text-slate-300 mb-1.5">ইমেইল ঠিকানা (Email)</label>
+                    <label class="block text-xs font-medium text-slate-300 mb-1.5">{{ __('Email / Username') }}</label>
                     <input type="email" id="email_input" name="email" value="{{ old('email', 'admin@thaiglass.com') }}" required autofocus placeholder="name@company.com" class="w-full bg-[#070d18] border border-[#e3e8ee]/15 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-[#64748d] focus:outline-none focus:border-[#533afd] focus:ring-1 focus:ring-[#533afd] transition font-mono">
                     @error('email')
                         <p class="text-[11px] text-rose-400 mt-1">{{ $message }}</p>
@@ -93,7 +105,7 @@
                 </div>
 
                 <div>
-                    <label class="block text-xs font-medium text-slate-300 mb-1.5">পাসওয়ার্ড (Password)</label>
+                    <label class="block text-xs font-medium text-slate-300 mb-1.5">{{ __('Password') }}</label>
                     <input type="password" id="password_input" name="password" value="password" required placeholder="••••••••" class="w-full bg-[#070d18] border border-[#e3e8ee]/15 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-[#64748d] focus:outline-none focus:border-[#533afd] focus:ring-1 focus:ring-[#533afd] transition font-mono">
                     @error('password')
                         <p class="text-[11px] text-rose-400 mt-1">{{ $message }}</p>
@@ -103,7 +115,7 @@
                 <div class="flex items-center justify-between text-xs pt-1">
                     <label class="flex items-center gap-2 cursor-pointer text-[#64748d] hover:text-slate-300">
                         <input type="checkbox" name="remember" class="w-4 h-4 rounded bg-[#070d18] border-[#e3e8ee]/20 text-[#533afd] focus:ring-0">
-                        <span>মনে রাখুন (Remember me)</span>
+                        <span>{{ __('Remember me') }}</span>
                     </label>
                 </div>
 
@@ -111,7 +123,7 @@
                     <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                     </svg>
-                    <span>সিস্টেমে প্রবেশ করুন</span>
+                    <span>{{ __('Sign In') }}</span>
                 </button>
             </form>
         </div>
@@ -164,7 +176,7 @@
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    <span>লগইন হচ্ছে...</span>
+                    <span>{{ __('Logging in...') }}</span>
                 `;
             }
         });
