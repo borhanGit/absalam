@@ -31,8 +31,11 @@ use Illuminate\Support\Facades\Route;
 // Language Switcher Route
 Route::get('/lang/{locale}', [LocaleController::class, 'switch'])->name('locale.switch');
 
-// Public Showcase / Landing
-Route::get('/', function () {
+// Redirect root to Login
+Route::redirect('/', '/login');
+
+// Public Showcase / Landing Page (Preserved at /landing and /welcome)
+Route::get('/landing', function () {
     $company = CompanySetting::first() ?? new CompanySetting([
         'company_name' => 'Dhaka Thai & Aluminium Glass House',
         'phone' => '01712-345678',
@@ -69,6 +72,10 @@ Route::get('/', function () {
         'suppliers',
         'stats'
     ));
+})->name('landing');
+
+Route::get('/welcome', function () {
+    return redirect()->route('landing');
 });
 
 // Authentication Routes

@@ -23,18 +23,18 @@
     </div>
 
     <!-- Filter & Search Bar -->
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <form method="GET" action="{{ route('sales.index') }}" class="flex flex-wrap items-center gap-2">
-            <input type="text" name="search" value="{{ request('search') }}" placeholder="{{ __('Search invoice or customer...') }}" class="px-3.5 py-2 rounded-xl bg-[#070d18] border border-[#e3e8ee]/15 text-white text-xs placeholder-[#64748d] focus:outline-none focus:border-[#533afd] w-64">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+        <form method="GET" action="{{ route('sales.index') }}" class="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+            <input type="text" name="search" value="{{ request('search') }}" placeholder="{{ __('Search invoice or customer...') }}" class="px-3.5 py-2 rounded-xl bg-slate-50 dark:bg-[#070d18] border border-slate-300 dark:border-[#e3e8ee]/15 text-slate-900 dark:text-white text-xs placeholder-slate-400 dark:placeholder-[#64748d] focus:outline-none focus:border-[#533afd] w-full sm:w-64">
             
-            <select name="payment_status" onchange="this.form.submit()" class="px-3 py-2 rounded-xl bg-[#070d18] border border-[#e3e8ee]/15 text-white text-xs focus:outline-none focus:border-[#533afd]">
+            <select name="payment_status" onchange="this.form.submit()" class="px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#070d18] border border-slate-300 dark:border-[#e3e8ee]/15 text-slate-900 dark:text-white text-xs focus:outline-none focus:border-[#533afd] flex-1 sm:flex-initial">
                 <option value="">{{ __('All Statuses') }}</option>
                 <option value="paid" {{ request('payment_status') === 'paid' ? 'selected' : '' }}>{{ __('Paid') }}</option>
                 <option value="partial" {{ request('payment_status') === 'partial' ? 'selected' : '' }}>{{ __('Partial') }}</option>
                 <option value="due" {{ request('payment_status') === 'due' ? 'selected' : '' }}>{{ __('Due') }}</option>
             </select>
 
-            <input type="date" name="date" value="{{ request('date') }}" onchange="this.form.submit()" class="px-3 py-2 rounded-xl bg-[#070d18] border border-[#e3e8ee]/15 text-white text-xs tnum focus:outline-none focus:border-[#533afd]">
+            <input type="date" name="date" value="{{ request('date') }}" onchange="this.form.submit()" class="px-3 py-2 rounded-xl bg-slate-50 dark:bg-[#070d18] border border-slate-300 dark:border-[#e3e8ee]/15 text-slate-900 dark:text-white text-xs tnum focus:outline-none focus:border-[#533afd]">
 
             <button type="submit" class="btn-secondary text-xs py-2 px-4">
                 {{ __('Filter') }}
@@ -44,7 +44,7 @@
             @endif
         </form>
 
-        <a href="{{ route('pos.create') }}" class="btn-primary">
+        <a href="{{ route('pos.create') }}" class="btn-primary w-full sm:w-auto justify-center">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
             </svg>
